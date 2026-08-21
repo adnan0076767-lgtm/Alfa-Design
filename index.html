@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALFA DESIGN | Jasa Website Profesional</title>
+
+<meta name="description"
+content="ALFA DESIGN menyediakan jasa pembuatan website profesional untuk UMKM, sekolah, yayasan dan bisnis.">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#6c5ce7;
+    --secondary:#00cec9;
+    --dark:#111827;
+    --light:#f5f7fb;
+    --white:#ffffff;
+    --text:#374151;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+    transition:.3s;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+    background:#0f172a;
+    color:#e5e7eb;
+}
+
+body.dark nav{
+    background:#111827;
+}
+
+body.dark .menu a{
+    color:white;
+}
+
+body.dark .card,
+body.dark .price-card{
+    background:#1e293b;
+    color:white;
+}
+
+body.dark .card h3{
+    color:white;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.95);
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:var(--primary);
+}
+
+.dark-button{
+    border:none;
+    background:#111827;
+    color:white;
+    padding:9px 14px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 20px 80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(108,92,231,.5),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 80% 30%,
+        rgba(0,206,201,.35),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #111827,
+        #312e81
+    );
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,75px);
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--secondary);
+}
+
+.hero p{
+    font-size:20px;
+    color:#e5e7eb;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:5px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn-primary{
+    background:var(--secondary);
+    color:#073b3a;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+body.dark .section-title h2{
+    color:white;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio{
+    background:#eef2ff;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.project{
+    min-height:240px;
+    padding:30px;
+
+    border-radius:20px;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    transition:.3s;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6c5ce7,
+        #00cec9
+    );
+}
+
+.project:nth-child(2){
+    background:
+    linear-gradient(
+        135deg,
+        #0984e3,
+        #6c5ce7
+    );
+}
+
+.project:nth-child(3){
+    background:
+    linear-gradient(
+        135deg,
+        #e84393,
+        #6c5ce7
+    );
+}
+
+.project:hover{
+    transform:scale(1.03);
+}
+
+.project h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.price-card{
+    background:white;
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.07);
+
+    position:relative;
+}
+
+.price-card.popular{
+    border:3px solid var(--primary);
+    transform:scale(1.03);
+}
+
+.popular{
+    position:relative;
+}
+
+.popular-label{
+    position:absolute;
+    top:-16px;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:var(--primary);
+    color:white;
+
+    padding:7px 18px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+}
+
+.price{
+    font-size:38px;
+    font-weight:bold;
+    color:var(--primary);
+
+    margin:20px 0;
+}
+
+.price-card ul{
+    list-style:none;
+    margin-bottom:20px;
+    line-height:2;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+}
+
+.about-logo{
+    min-height:350px;
+
+    border-radius:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:90px;
+    font-weight:bold;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6c5ce7,
+        #00cec9
+    );
+}
+
+.about-text h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    margin-bottom:15px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#111827;
+    color:white;
+}
+
+.contact-box{
+    max-width:800px;
+    margin:auto;
+
+    background:#1f2937;
+
+    padding:35px;
+
+    border-radius:20px;
+}
+
+input,
+textarea{
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-family:Arial;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.submit-button{
+    width:100%;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:var(--secondary);
+
+    color:#073b3a;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#080d17;
+
+    color:#94a3b8;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:60px;
+    height:60px;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.3);
+
+    z-index:2000;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    .menu{
+        display:none;
+    }
+
+    .grid,
+    .portfolio-grid,
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.popular{
+        transform:none;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+ALFA <span>DESIGN</span>
+</div>
+
+<ul class="menu">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#layanan">Layanan</a>
+</li>
+
+<li>
+<a href="#portfolio">Portfolio</a>
+</li>
+
+<li>
+<a href="#harga">Harga</a>
+</li>
+
+<li>
+<a href="#tentang">Tentang</a>
+</li>
+
+<li>
+<a href="#kontak">Kontak</a>
+</li>
+
+</ul>
+
+<button
+class="dark-button"
+onclick="darkMode()">
+
+🌙
+
+</button>
+
+</div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+class="hero"
+id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+
+🚀 Website Profesional
+
+</div>
+
+<h1>
+
+Bangun Website
+<span>Impian Anda</span>
+
+</h1>
+
+<p>
+
+ALFA DESIGN membantu UMKM,
+sekolah, yayasan, organisasi
+dan perusahaan memiliki website
+modern dan profesional.
+
+</p>
+
+<a
+href="#portfolio"
+class="btn btn-primary">
+
+Lihat Portfolio
+
+</a>
+
+<a
+href="#kontak"
+class="btn btn-outline">
+
+Konsultasi Gratis
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="layanan">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Layanan Kami
+</h2>
+
+<p>
+Solusi digital untuk bisnis Anda.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Website Profesional
+</h3>
+
+<p>
+Website modern untuk perusahaan,
+sekolah, yayasan dan bisnis.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+Desain Website
+</h3>
+
+<p>
+Desain menarik dan profesional
+sesuai identitas bisnis.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+Responsive
+</h3>
+
+<p>
+Website nyaman digunakan
+di komputer dan smartphone.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+⚡
+</div>
+
+<h3>
+Landing Page
+</h3>
+
+<p>
+Landing page untuk promosi
+produk dan jasa.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🔧
+</div>
+
+<h3>
+Maintenance
+</h3>
+
+<p>
+Perubahan dan pembaruan
+isi website.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🚀
+</div>
+
+<h3>
+Optimasi Website
+</h3>
+
+<p>
+Membantu membuat website
+lebih cepat dan nyaman.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section
+class="portfolio"
+id="portfolio">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Portfolio
+</h2>
+
+<p>
+Contoh website yang dapat kami buat.
+</p>
+
+</div>
+
+
+<div class="portfolio-grid">
+
+
+<div class="project">
+
+<h3>
+🏫 Website Sekolah
+</h3>
+
+<p>
+Profil sekolah, berita,
+informasi dan kontak.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>
+🏪 Website UMKM
+</h3>
+
+<p>
+Promosikan bisnis dan
+produk Anda secara online.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>
+🏢 Website Yayasan
+</h3>
+
+<p>
+Profil yayasan, program,
+kegiatan dan informasi.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+
+<section id="harga">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Paket Website
+</h2>
+
+<p>
+Pilih paket sesuai kebutuhan.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="price-card">
+
+<h3>
+STARTER
+</h3>
+
+<div class="price">
+Rp300K
+</div>
+
+<ul>
+
+<li>✓ 1 Halaman</li>
+<li>✓ Responsive</li>
+<li>✓ Desain Modern</li>
+<li>✓ Tombol WhatsApp</li>
+
+</ul>
+
+<a
+href="#kontak"
+class="btn btn-primary">
+
+Pilih Paket
+
+</a>
+
+</div>
+
+
+<div
+class="price-card popular">
+
+<div class="popular-label">
+
+POPULER
+
+</div>
+
+<h3>
+PROFESSIONAL
+</h3>
+
+<div class="price">
+Rp750K
+</div>
+
+<ul>
+
+<li>✓ Hingga 5 Halaman</li>
+<li>✓ Responsive</li>
+<li>✓ Animasi</li>
+<li>✓ JavaScript</li>
+<li>✓ WhatsApp</li>
+<li>✓ Form Kontak</li>
+
+</ul>
+
+<a
+href="#kontak"
+class="btn btn-primary">
+
+Pilih Paket
+
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>
+BUSINESS
+</h3>
+
+<div class="price">
+Rp1,5JT
+</div>
+
+<ul>
+
+<li>✓ Website Lengkap</li>
+<li>✓ Desain Premium</li>
+<li>✓ JavaScript</li>
+<li>✓ Responsive</li>
+<li>✓ Form Kontak</li>
+
+</ul>
+
+<a
+href="#kontak"
+class="btn btn-primary">
+
+Pilih Paket
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="tentang">
+
+<div class="container">
+
+<div class="about">
+
+
+<div class="about-logo">
+
+AD
+
+</div>
+
+
+<div class="about-text">
+
+<h2>
+Tentang ALFA DESIGN
+</h2>
+
+<p>
+
+ALFA DESIGN adalah layanan
+digital yang membantu bisnis
+dan organisasi membangun
+kehadiran online.
+
+</p>
+
+<p>
+
+Kami membuat website modern,
+responsif dan mudah digunakan
+oleh pelanggan.
+
+</p>
+
+<a
+href="#kontak"
+class="btn btn-primary">
+
+Mulai Konsultasi
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact"
+id="kontak">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2 style="color:white">
+
+Hubungi ALFA DESIGN
+
+</h2>
+
+<p style="color:#cbd5e1">
+
+Konsultasikan kebutuhan website Anda.
+
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<form
+onsubmit="kirimWhatsApp(event)">
+
+
+<input
+type="text"
+id="nama"
+placeholder="Nama Anda"
+required>
+
+
+<input
+type="text"
+id="usaha"
+placeholder="Nama usaha / organisasi"
+required>
+
+
+<textarea
+id="pesan"
+placeholder="Ceritakan website yang Anda inginkan..."
+required>
+</textarea>
+
+
+<button
+class="submit-button"
+type="submit">
+
+📲 Kirim ke WhatsApp
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+
+© 2026 ALFA DESIGN
+
+</p>
+
+<p>
+
+Website & Digital Design
+
+</p>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP FLOATING BUTTON
+========================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/6283870874140"
+target="_blank"
+title="Chat WhatsApp">
+
+💬
+
+</a>
+
+
+<script>
+
+/* =========================
+   DARK MODE
+========================= */
+
+function darkMode(){
+
+    document.body.classList.toggle("dark");
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function kirimWhatsApp(event){
+
+    event.preventDefault();
+
+    let nama =
+    document.getElementById("nama").value;
+
+    let usaha =
+    document.getElementById("usaha").value;
+
+    let pesan =
+    document.getElementById("pesan").value;
+
+
+    let nomor =
+    "6283870874140";
+
+
+    let text =
+    "Halo ALFA DESIGN,%0A%0A" +
+
+    "Nama: " +
+    nama +
+
+    "%0AUsaha/Organisasi: " +
+    usaha +
+
+    "%0A%0AKebutuhan Website:%0A" +
+
+    pesan;
+
+
+    let url =
+    "https://wa.me/" +
+    nomor +
+    "?text=" +
+    text;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
