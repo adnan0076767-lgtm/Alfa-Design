@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adnan0076767-lgtm.github.io/Alfa-Design/sitemap.xml
