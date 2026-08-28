@@ -2,1897 +2,1075 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALFA DESIGN V4 | Website & Dashboard</title>
 
-<title>ALFA DESIGN | Website Profesional untuk Bisnis</title>
-
-<meta name="description" content="ALFA DESIGN adalah jasa pembuatan website profesional untuk UMKM, bisnis, sekolah, yayasan dan organisasi.">
-
-<meta name="keywords" content="Alfa Design, jasa website, website UMKM, landing page, website sekolah, website bisnis">
-
-<meta name="author" content="ALFA DESIGN">
-
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="ALFA DESIGN | Jasa Website Profesional">
-
-<meta property="og:description" content="Bangun website profesional untuk meningkatkan kepercayaan bisnis Anda.">
-
-<meta property="og:type" content="website">
+<meta name="description"
+content="ALFA DESIGN - jasa pembuatan website profesional untuk UMKM, bisnis, sekolah dan organisasi.">
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 :root{
-
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --secondary:#7c3aed;
-
-    --dark:#0f172a;
-    --dark2:#020617;
-
-    --text:#334155;
-    --muted:#64748b;
-
-    --bg:#f8fafc;
-    --card:#ffffff;
-
-    --border:#e2e8f0;
-
-    --success:#16a34a;
-
-    --shadow:
-    0 15px 45px rgba(15,23,42,.10);
-
+--primary:#2563eb;
+--secondary:#7c3aed;
+--dark:#0f172a;
+--text:#334155;
+--muted:#64748b;
+--bg:#f8fafc;
+--card:#fff;
+--border:#e2e8f0;
+--danger:#dc2626;
+--success:#16a34a;
 }
 
 body.dark{
-
-    --dark:#f8fafc;
-    --dark2:#020617;
-
-    --text:#cbd5e1;
-    --muted:#94a3b8;
-
-    --bg:#020617;
-    --card:#0f172a;
-
-    --border:#1e293b;
-
+--dark:#f8fafc;
+--text:#cbd5e1;
+--muted:#94a3b8;
+--bg:#020617;
+--card:#0f172a;
+--border:#1e293b;
 }
 
 body{
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+transition:.3s;
+}
 
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+button,input,textarea,select{
+font:inherit;
+}
 
-    background:var(--bg);
-
-    color:var(--text);
-
-    line-height:1.6;
-
-    transition:
-    background .3s,
-    color .3s;
-
+button{
+cursor:pointer;
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-input,
-textarea,
-select{
-    font-family:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 .container{
-
-    width:min(1150px,92%);
-
-    margin:auto;
-
+width:min(1150px,92%);
+margin:auto;
 }
 
-/* =========================
-   PRELOADER
-========================= */
+/* LOADER */
 
 #loader{
-
-    position:fixed;
-
-    inset:0;
-
-    background:var(--dark2);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:9999;
-
-    transition:.5s;
-
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+transition:.5s;
 }
 
-.loader-box{
-
-    text-align:center;
-
-    color:white;
-
+.loader{
+color:white;
+text-align:center;
 }
 
-.loader-logo{
-
-    font-size:32px;
-
-    font-weight:900;
-
-    margin-bottom:20px;
-
+.loader h1{
+font-size:34px;
+margin-bottom:15px;
 }
 
-.loader-logo span{
-    color:#60a5fa;
+.loader h1 span{
+color:#60a5fa;
 }
 
-.loader-bar{
-
-    width:180px;
-
-    height:4px;
-
-    background:#334155;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
+.loader-line{
+width:180px;
+height:4px;
+background:#334155;
+overflow:hidden;
+border-radius:20px;
 }
 
-.loader-progress{
-
-    height:100%;
-
-    width:0;
-
-    background:#2563eb;
-
-    animation:
-    loading 1.5s forwards;
-
+.loader-line div{
+width:0;
+height:100%;
+background:#2563eb;
+animation:load 1.4s forwards;
 }
 
-@keyframes loading{
-
-    to{
-        width:100%;
-    }
-
+@keyframes load{
+to{width:100%}
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAV */
 
 nav{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    background:rgba(255,255,255,.92);
-
-    backdrop-filter:blur(14px);
-
-    border-bottom:
-    1px solid var(--border);
-
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:72px;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--border);
+z-index:1000;
 }
 
 body.dark nav{
-
-    background:
-    rgba(2,6,23,.90);
-
+background:rgba(2,6,23,.92);
 }
 
-.nav-inner{
-
-    min-height:72px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
+.nav{
+height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
-
-    font-size:24px;
-
-    font-weight:900;
-
-    color:var(--dark);
-
+font-size:23px;
+font-weight:900;
+color:var(--dark);
 }
 
 .logo span{
-    color:var(--primary);
+color:var(--primary);
 }
 
-.menu{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:22px;
-
+.nav-right{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.menu a{
-
-    font-size:14px;
-
-    font-weight:700;
-
-    color:var(--dark);
-
-    transition:.2s;
-
+.nav-menu{
+display:flex;
+gap:22px;
+align-items:center;
 }
 
-.menu a:hover{
-    color:var(--primary);
+.nav-menu a{
+font-weight:700;
+font-size:14px;
+color:var(--dark);
 }
 
-.nav-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
+.nav-menu a:hover{
+color:var(--primary);
 }
 
-.theme-btn{
-
-    width:40px;
-    height:40px;
-
-    border-radius:10px;
-
-    border:
-    1px solid var(--border);
-
-    background:var(--card);
-
-    color:var(--dark);
-
-    cursor:pointer;
-
-    font-size:18px;
-
+.theme{
+width:40px;
+height:40px;
+border:1px solid var(--border);
+background:var(--card);
+border-radius:10px;
 }
 
-.nav-contact{
-
-    background:var(--primary);
-
-    color:white!important;
-
-    padding:
-    10px 16px;
-
-    border-radius:10px;
-
+.admin-btn{
+background:var(--primary);
+color:white;
+padding:10px 15px;
+border-radius:10px;
+font-weight:800;
+border:0;
 }
 
-.mobile-btn{
-
-    display:none;
-
-    font-size:28px;
-
-    cursor:pointer;
-
-    color:var(--dark);
-
+.mobile{
+display:none;
+font-size:27px;
+color:var(--dark);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-
-    min-height:100vh;
-
-    padding:
-    145px 0 90px;
-
-    display:flex;
-
-    align-items:center;
-
-    background:
-
-    radial-gradient(
-    circle at 10% 10%,
-    rgba(37,99,235,.18),
-    transparent 30%
-    ),
-
-    radial-gradient(
-    circle at 90% 90%,
-    rgba(124,58,237,.16),
-    transparent 30%
-    );
-
+padding:145px 0 90px;
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+radial-gradient(circle at 10% 10%,rgba(37,99,235,.16),transparent 30%),
+radial-gradient(circle at 90% 90%,rgba(124,58,237,.15),transparent 30%);
 }
 
 .hero-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1.1fr .9fr;
-
-    gap:60px;
-
-    align-items:center;
-
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:55px;
+align-items:center;
 }
 
 .badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    background:
-    rgba(37,99,235,.10);
-
-    color:var(--primary);
-
-    padding:
-    8px 14px;
-
-    border-radius:50px;
-
-    font-size:13px;
-
-    font-weight:800;
-
-    margin-bottom:22px;
-
+display:inline-block;
+background:rgba(37,99,235,.1);
+color:var(--primary);
+padding:8px 14px;
+border-radius:50px;
+font-size:13px;
+font-weight:900;
+margin-bottom:20px;
 }
 
 .hero h1{
-
-    font-size:
-    clamp(42px,6vw,72px);
-
-    line-height:1.02;
-
-    color:var(--dark);
-
-    margin-bottom:22px;
-
+font-size:clamp(42px,6vw,70px);
+line-height:1.03;
+color:var(--dark);
+margin-bottom:22px;
 }
 
 .hero h1 span{
-
-    background:
-    linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary)
-    );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+background-clip:text;
+-webkit-background-clip:text;
+color:transparent;
 }
 
 .hero p{
-
-    font-size:18px;
-
-    color:var(--muted);
-
-    max-width:650px;
-
-    margin-bottom:30px;
-
+font-size:18px;
+color:var(--muted);
+margin-bottom:28px;
+max-width:650px;
 }
 
-.hero-buttons{
-
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
+.buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
 }
 
 .btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    padding:
-    13px 20px;
-
-    border-radius:12px;
-
-    border:none;
-
-    cursor:pointer;
-
-    font-weight:800;
-
-    transition:.25s;
-
+border:0;
+padding:13px 19px;
+border-radius:11px;
+font-weight:800;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+transition:.25s;
 }
 
 .btn:hover{
-
-    transform:
-    translateY(-3px);
-
+transform:translateY(-3px);
 }
 
-.btn-primary{
-
-    background:var(--primary);
-
-    color:white;
-
+.primary{
+background:var(--primary);
+color:white;
 }
 
-.btn-primary:hover{
-
-    background:var(--primary-dark);
-
-    box-shadow:
-    0 12px 25px
-    rgba(37,99,235,.25);
-
+.outline{
+background:var(--card);
+color:var(--dark);
+border:1px solid var(--border);
 }
 
-.btn-outline{
+/* HERO CARD */
 
-    border:
-    1px solid var(--border);
-
-    color:var(--dark);
-
-    background:var(--card);
-
-}
-
-/* HERO VISUAL */
-
-.hero-visual{
-
-    position:relative;
-
-}
-
-.dashboard{
-
-    background:
-    linear-gradient(
-    145deg,
-    #0f172a,
-    #1e293b
-    );
-
-    padding:22px;
-
-    border-radius:26px;
-
-    box-shadow:
-    0 25px 70px
-    rgba(15,23,42,.25);
-
-    transform:
-    rotate(1deg);
-
+.preview{
+background:#0f172a;
+padding:22px;
+border-radius:25px;
+box-shadow:0 25px 70px rgba(0,0,0,.2);
 }
 
 .browser{
-
-    background:white;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
+background:white;
+border-radius:14px;
+overflow:hidden;
 }
 
 .browser-top{
-
-    height:38px;
-
-    background:#e2e8f0;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    padding-left:14px;
-
+height:38px;
+background:#e2e8f0;
+display:flex;
+align-items:center;
+gap:7px;
+padding-left:14px;
 }
 
-.browser-dot{
-
-    width:9px;
-
-    height:9px;
-
-    border-radius:50%;
-
-    background:#94a3b8;
-
+.dot{
+width:9px;
+height:9px;
+background:#94a3b8;
+border-radius:50%;
 }
 
-.browser-body{
-
-    padding:25px;
-
+.browser-content{
+padding:25px;
 }
 
-.browser-title{
-
-    font-size:25px;
-
-    font-weight:900;
-
-    color:#0f172a;
-
-    margin-bottom:10px;
-
+.fake-title{
+font-size:25px;
+font-weight:900;
+color:#0f172a;
+margin-bottom:15px;
 }
 
-.browser-text{
-
-    height:9px;
-
-    width:85%;
-
-    background:#e2e8f0;
-
-    border-radius:20px;
-
-    margin-bottom:10px;
-
+.fake-box{
+height:9px;
+background:#e2e8f0;
+border-radius:20px;
+margin:8px 0;
 }
 
-.browser-text.small{
-    width:55%;
+.fake-box.short{
+width:55%;
 }
 
-.browser-cards{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:10px;
-
-    margin-top:25px;
-
+.fake-cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:22px;
 }
 
-.browser-card{
-
-    height:80px;
-
-    background:#eff6ff;
-
-    border-radius:10px;
-
+.fake-card{
+height:90px;
+background:#dbeafe;
+border-radius:10px;
 }
 
-.floating-card{
-
-    position:absolute;
-
-    right:-20px;
-
-    bottom:-20px;
-
-    background:var(--card);
-
-    border:
-    1px solid var(--border);
-
-    padding:18px;
-
-    border-radius:16px;
-
-    box-shadow:var(--shadow);
-
-    min-width:180px;
-
-}
-
-.floating-card strong{
-
-    display:block;
-
-    color:var(--dark);
-
-    font-size:25px;
-
-}
-
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 section{
-    padding:90px 0;
+padding:90px 0;
 }
 
-.section-head{
-
-    text-align:center;
-
-    max-width:720px;
-
-    margin:
-    0 auto 50px;
-
+.head{
+text-align:center;
+max-width:720px;
+margin:0 auto 45px;
 }
 
-.section-label{
-
-    color:var(--primary);
-
-    font-size:13px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-
+.label{
+color:var(--primary);
+font-size:13px;
+font-weight:900;
+letter-spacing:1px;
 }
 
-.section-head h2{
-
-    color:var(--dark);
-
-    font-size:
-    clamp(30px,4vw,44px);
-
-    margin:
-    8px 0 12px;
-
+.head h2{
+font-size:clamp(30px,4vw,45px);
+color:var(--dark);
+margin:8px 0;
 }
 
-.section-head p{
-
-    color:var(--muted);
-
+.head p{
+color:var(--muted);
 }
 
-/* =========================
-   STATS
-========================= */
+/* STATS */
 
 .stats{
-
-    background:var(--dark2);
-
-    color:white;
-
-    padding:45px 0;
-
+background:#020617;
+color:white;
+padding:45px 0;
 }
 
 .stats-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:20px;
-
-    text-align:center;
-
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+text-align:center;
 }
 
 .stat h3{
-
-    font-size:40px;
-
-    color:white;
-
+font-size:38px;
 }
 
 .stat p{
-
-    color:#94a3b8;
-
+color:#94a3b8;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* SERVICES */
 
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
 }
 
 .card{
-
-    background:var(--card);
-
-    border:
-    1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:28px;
-
-    transition:.3s;
-
+background:var(--card);
+border:1px solid var(--border);
+border-radius:20px;
+padding:27px;
+transition:.3s;
 }
 
 .card:hover{
-
-    transform:
-    translateY(-7px);
-
-    box-shadow:var(--shadow);
-
+transform:translateY(-6px);
+box-shadow:0 18px 45px rgba(0,0,0,.1);
 }
 
-.service-icon{
-
-    width:58px;
-    height:58px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:16px;
-
-    background:
-    rgba(37,99,235,.10);
-
-    font-size:27px;
-
-    margin-bottom:18px;
-
+.icon{
+font-size:30px;
+margin-bottom:14px;
 }
 
 .card h3{
-
-    color:var(--dark);
-
-    margin-bottom:8px;
-
+color:var(--dark);
+margin-bottom:8px;
 }
 
 .card p{
-
-    color:var(--muted);
-
+color:var(--muted);
 }
 
-/* =========================
-   PORTFOLIO
-========================= */
+/* PORTFOLIO */
 
 .portfolio{
-
-    background:
-    rgba(148,163,184,.08);
-
+background:rgba(148,163,184,.07);
 }
 
 .filters{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:35px;
-
+display:flex;
+justify-content:center;
+gap:9px;
+flex-wrap:wrap;
+margin-bottom:30px;
 }
 
 .filter{
-
-    border:
-    1px solid var(--border);
-
-    background:var(--card);
-
-    color:var(--dark);
-
-    padding:
-    9px 17px;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    font-weight:800;
-
+padding:9px 16px;
+border-radius:50px;
+background:var(--card);
+border:1px solid var(--border);
+color:var(--dark);
+font-weight:800;
 }
 
-.filter.active,
-.filter:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-    border-color:var(--primary);
-
+.filter.active{
+background:var(--primary);
+color:white;
+border-color:var(--primary);
 }
 
 .portfolio-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:24px;
-
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
 }
 
 .project{
-
-    background:var(--card);
-
-    border:
-    1px solid var(--border);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    transition:.3s;
-
+background:var(--card);
+border:1px solid var(--border);
+border-radius:20px;
+overflow:hidden;
 }
 
-.project:hover{
-
-    transform:
-    translateY(-6px);
-
-    box-shadow:var(--shadow);
-
+.project-img{
+height:200px;
+display:grid;
+place-items:center;
+font-size:50px;
+font-weight:900;
+color:white;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
 }
 
-.project-image{
-
-    height:210px;
-
-    display:grid;
-
-    place-items:center;
-
-    color:white;
-
-    font-size:55px;
-
-    font-weight:900;
-
-    background:
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-    );
-
+.project:nth-child(2) .project-img{
+background:linear-gradient(135deg,#059669,#0f766e);
 }
 
-.project:nth-child(2)
-.project-image{
-
-    background:
-    linear-gradient(
-    135deg,
-    #059669,
-    #0f766e
-    );
-
+.project:nth-child(3) .project-img{
+background:linear-gradient(135deg,#ea580c,#dc2626);
 }
 
-.project:nth-child(3)
-.project-image{
-
-    background:
-    linear-gradient(
-    135deg,
-    #ea580c,
-    #dc2626
-    );
-
+.project:nth-child(4) .project-img{
+background:linear-gradient(135deg,#7c3aed,#db2777);
 }
 
-.project:nth-child(4)
-.project-image{
-
-    background:
-    linear-gradient(
-    135deg,
-    #7c3aed,
-    #db2777
-    );
-
+.project:nth-child(5) .project-img{
+background:linear-gradient(135deg,#0891b2,#2563eb);
 }
 
-.project:nth-child(5)
-.project-image{
-
-    background:
-    linear-gradient(
-    135deg,
-    #0891b2,
-    #2563eb
-    );
-
-}
-
-.project:nth-child(6)
-.project-image{
-
-    background:
-    linear-gradient(
-    135deg,
-    #ca8a04,
-    #ea580c
-    );
-
+.project:nth-child(6) .project-img{
+background:linear-gradient(135deg,#ca8a04,#ea580c);
 }
 
 .project-body{
-
-    padding:22px;
-
+padding:20px;
 }
 
 .project-body h3{
-
-    color:var(--dark);
-
-    margin-bottom:5px;
-
+color:var(--dark);
 }
 
 .project-body p{
-
-    color:var(--muted);
-
-    font-size:14px;
-
+color:var(--muted);
+font-size:14px;
 }
 
 .tag{
-
-    display:inline-block;
-
-    margin-top:12px;
-
-    padding:
-    5px 9px;
-
-    border-radius:6px;
-
-    background:
-    rgba(37,99,235,.10);
-
-    color:var(--primary);
-
-    font-size:12px;
-
-    font-weight:900;
-
+display:inline-block;
+margin-top:10px;
+background:rgba(37,99,235,.1);
+color:var(--primary);
+padding:4px 8px;
+border-radius:6px;
+font-size:11px;
+font-weight:900;
 }
 
-.project-actions{
+/* PRICING */
 
-    margin-top:15px;
-
-    display:flex;
-
-    gap:8px;
-
-}
-
-/* =========================
-   PRICING
-========================= */
-
-.pricing-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:24px;
-
-}
-
-.price-card{
-
-    background:var(--card);
-
-    border:
-    1px solid var(--border);
-
-    padding:32px;
-
-    border-radius:22px;
-
-    position:relative;
-
-}
-
-.price-card.popular{
-
-    border:
-    2px solid var(--primary);
-
-    transform:
-    scale(1.03);
-
-}
-
-.popular-label{
-
-    position:absolute;
-
-    top:-14px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-    background:var(--primary);
-
-    color:white;
-
-    padding:
-    6px 15px;
-
-    border-radius:50px;
-
-    font-size:11px;
-
-    font-weight:900;
-
-}
-
-.price-card h3{
-
-    color:var(--dark);
-
+.pricing{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
 }
 
 .price{
-
-    font-size:38px;
-
-    font-weight:900;
-
-    color:var(--primary);
-
-    margin:
-    15px 0;
-
+position:relative;
+background:var(--card);
+border:1px solid var(--border);
+padding:30px;
+border-radius:20px;
 }
 
-.price small{
-
-    font-size:13px;
-
-    color:var(--muted);
-
+.price.popular{
+border:2px solid var(--primary);
 }
 
-.features{
-
-    list-style:none;
-
-    margin:
-    20px 0 25px;
-
+.popular{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%);
+background:var(--primary);
+color:white;
+padding:5px 14px;
+border-radius:50px;
+font-size:11px;
+font-weight:900;
 }
 
-.features li{
-
-    padding:
-    8px 0;
-
-    border-bottom:
-    1px solid var(--border);
-
+.price h3{
+color:var(--dark);
 }
 
-/* =========================
-   TESTIMONIAL
-========================= */
-
-.testimonial-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-
+.amount{
+font-size:38px;
+font-weight:900;
+color:var(--primary);
+margin:12px 0;
 }
 
-.stars{
-
-    color:#f59e0b;
-
-    margin-bottom:12px;
-
+.price ul{
+list-style:none;
+margin:20px 0;
 }
 
-.quote{
-
-    color:var(--text);
-
-    font-style:italic;
-
-    margin-bottom:20px;
-
+.price li{
+padding:7px 0;
+border-bottom:1px solid var(--border);
 }
 
-.person{
-
-    color:var(--dark);
-
-    font-weight:900;
-
-}
-
-/* =========================
-   FAQ
-========================= */
+/* FAQ */
 
 .faq{
-
-    max-width:800px;
-
-    margin:auto;
-
+max-width:800px;
+margin:auto;
 }
 
 .faq-item{
-
-    background:var(--card);
-
-    border:
-    1px solid var(--border);
-
-    border-radius:14px;
-
-    margin-bottom:12px;
-
-    overflow:hidden;
-
+background:var(--card);
+border:1px solid var(--border);
+border-radius:14px;
+margin-bottom:10px;
+overflow:hidden;
 }
 
-.faq-question{
-
-    width:100%;
-
-    border:none;
-
-    background:none;
-
-    color:var(--dark);
-
-    padding:18px 20px;
-
-    text-align:left;
-
-    font-weight:800;
-
-    cursor:pointer;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:15px;
-
+.question{
+width:100%;
+border:0;
+background:none;
+color:var(--dark);
+padding:18px;
+display:flex;
+justify-content:space-between;
+font-weight:800;
+text-align:left;
 }
 
-.faq-answer{
-
-    max-height:0;
-
-    overflow:hidden;
-
-    transition:.3s;
-
+.answer{
+display:none;
+padding:0 18px 18px;
+color:var(--muted);
 }
 
-.faq-answer p{
-
-    padding:
-    0 20px 20px;
-
-    color:var(--muted);
-
+.faq-item.open .answer{
+display:block;
 }
 
-.faq-item.open
-.faq-answer{
+/* CONTACT */
 
-    max-height:200px;
-
+.contact{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:25px;
 }
 
-/* =========================
-   CTA
-========================= */
+.contact-box{
+background:#020617;
+color:white;
+padding:32px;
+border-radius:20px;
+}
+
+.contact-box h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.contact-box p{
+color:#94a3b8;
+}
+
+.contact-row{
+margin-top:20px;
+}
+
+.contact-row strong{
+display:block;
+}
+
+.contact-row a{
+color:#60a5fa;
+}
+
+.form{
+background:var(--card);
+border:1px solid var(--border);
+padding:30px;
+border-radius:20px;
+}
+
+.group{
+margin-bottom:15px;
+}
+
+.group label{
+display:block;
+font-weight:800;
+color:var(--dark);
+margin-bottom:6px;
+}
+
+.group input,
+.group textarea,
+.group select{
+width:100%;
+padding:12px;
+border:1px solid var(--border);
+border-radius:10px;
+background:var(--bg);
+color:var(--text);
+outline:none;
+}
+
+.group textarea{
+min-height:120px;
+resize:vertical;
+}
+
+/* CTA */
 
 .cta{
-
-    background:
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-    );
-
-    color:white;
-
-}
-
-.cta-box{
-
-    text-align:center;
-
-    max-width:800px;
-
-    margin:auto;
-
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+text-align:center;
 }
 
 .cta h2{
-
-    font-size:
-    clamp(32px,5vw,48px);
-
-    margin-bottom:12px;
-
+font-size:45px;
+margin-bottom:10px;
 }
 
 .cta p{
-
-    opacity:.9;
-
-    margin-bottom:25px;
-
+opacity:.9;
+margin-bottom:22px;
 }
 
-.btn-white{
-
-    background:white;
-
-    color:var(--primary);
-
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    .8fr 1.2fr;
-
-    gap:30px;
-
-}
-
-.contact-info{
-
-    background:var(--dark2);
-
-    color:white;
-
-    padding:35px;
-
-    border-radius:22px;
-
-}
-
-.contact-info h3{
-
-    font-size:30px;
-
-    margin-bottom:10px;
-
-}
-
-.contact-info p{
-
-    color:#94a3b8;
-
-}
-
-.contact-item{
-
-    margin-top:22px;
-
-}
-
-.contact-item strong{
-
-    display:block;
-
-    margin-bottom:4px;
-
-}
-
-.contact-item a{
-
-    color:#60a5fa;
-
-    word-break:break-word;
-
-}
-
-.contact-item span{
-
-    color:#cbd5e1;
-
-}
-
-form{
-
-    background:var(--card);
-
-    border:
-    1px solid var(--border);
-
-    padding:32px;
-
-    border-radius:22px;
-
-}
-
-.form-group{
-
-    margin-bottom:17px;
-
-}
-
-.form-group label{
-
-    display:block;
-
-    color:var(--dark);
-
-    font-weight:800;
-
-    margin-bottom:7px;
-
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-
-    width:100%;
-
-    padding:
-    13px 14px;
-
-    border:
-    1px solid var(--border);
-
-    border-radius:10px;
-
-    outline:none;
-
-    background:var(--bg);
-
-    color:var(--text);
-
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-
-    border-color:var(--primary);
-
-}
-
-textarea{
-
-    min-height:130px;
-
-    resize:vertical;
-
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-
-    background:#020617;
-
-    color:white;
-
-    padding:
-    50px 0 25px;
-
+background:#020617;
+color:white;
+padding:45px 0 20px;
 }
 
 .footer-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1.3fr 1fr 1fr;
-
-    gap:40px;
-
-    margin-bottom:35px;
-
-}
-
-footer h3{
-
-    margin-bottom:12px;
-
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr;
+gap:35px;
+margin-bottom:30px;
 }
 
 footer p{
-
-    color:#94a3b8;
-
+color:#94a3b8;
 }
 
 .footer-links{
-
-    list-style:none;
-
+list-style:none;
 }
 
 .footer-links li{
-
-    margin:8px 0;
-
+margin:7px 0;
 }
 
 .footer-links a{
-
-    color:#cbd5e1;
-
+color:#cbd5e1;
 }
 
-.footer-links a:hover{
-
-    color:white;
-
+.copy{
+border-top:1px solid #1e293b;
+padding-top:18px;
+text-align:center;
+color:#64748b;
+font-size:13px;
 }
 
-.copyright{
-
-    border-top:
-    1px solid #1e293b;
-
-    padding-top:20px;
-
-    text-align:center;
-
-    color:#64748b;
-
-    font-size:13px;
-
-}
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
+/* WHATSAPP */
 
 .whatsapp{
-
-    position:fixed;
-
-    right:22px;
-
-    bottom:22px;
-
-    width:60px;
-    height:60px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:50%;
-
-    background:#25d366;
-
-    color:white;
-
-    font-size:29px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.25);
-
-    z-index:900;
-
-    transition:.25s;
-
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25d366;
+color:white;
+display:grid;
+place-items:center;
+font-size:29px;
+z-index:900;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-.whatsapp:hover{
+/* TOP */
 
-    transform:
-    scale(1.1);
-
+.top{
+position:fixed;
+right:24px;
+bottom:92px;
+width:43px;
+height:43px;
+border:0;
+border-radius:50%;
+background:var(--primary);
+color:white;
+display:none;
+z-index:899;
 }
 
-/* =========================
-   BACK TO TOP
-========================= */
+/* ADMIN */
 
-#topBtn{
-
-    position:fixed;
-
-    right:24px;
-
-    bottom:95px;
-
-    width:45px;
-    height:45px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:var(--primary);
-
-    color:white;
-
-    cursor:pointer;
-
-    display:none;
-
-    z-index:899;
-
+.admin-overlay{
+position:fixed;
+inset:0;
+background:rgba(2,6,23,.8);
+z-index:3000;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
 }
 
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-    rgba(2,6,23,.75);
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-
-    z-index:2000;
-
+.admin-overlay.show{
+display:flex;
 }
 
-.modal.show{
-
-    display:flex;
-
+.login-box{
+width:min(420px,100%);
+background:var(--card);
+border-radius:20px;
+padding:30px;
+position:relative;
 }
 
-.modal-box{
-
-    width:min(650px,100%);
-
-    max-height:90vh;
-
-    overflow:auto;
-
-    background:var(--card);
-
-    border-radius:22px;
-
-    padding:30px;
-
-    position:relative;
-
+.login-box h2{
+color:var(--dark);
+margin-bottom:8px;
 }
 
-.modal-close{
-
-    position:absolute;
-
-    top:15px;
-
-    right:18px;
-
-    border:none;
-
-    background:none;
-
-    color:var(--dark);
-
-    font-size:28px;
-
-    cursor:pointer;
-
+.login-box p{
+color:var(--muted);
+margin-bottom:20px;
 }
 
-.modal-box h2{
-
-    color:var(--dark);
-
-    margin-bottom:10px;
-
+.login-input{
+width:100%;
+padding:13px;
+margin-bottom:12px;
+border:1px solid var(--border);
+border-radius:10px;
+background:var(--bg);
+color:var(--text);
 }
 
-.modal-box p{
-
-    color:var(--muted);
-
+.login-error{
+color:#dc2626;
+font-size:13px;
+margin-bottom:10px;
+display:none;
 }
 
-/* =========================
-   MOBILE
-========================= */
+.close{
+position:absolute;
+right:17px;
+top:12px;
+border:0;
+background:none;
+font-size:27px;
+color:var(--dark);
+}
+
+/* DASHBOARD */
+
+.dashboard-overlay{
+position:fixed;
+inset:0;
+background:var(--bg);
+z-index:3100;
+display:none;
+overflow:auto;
+}
+
+.dashboard-overlay.show{
+display:block;
+}
+
+.dashboard-nav{
+height:70px;
+background:var(--card);
+border-bottom:1px solid var(--border);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 4%;
+position:sticky;
+top:0;
+z-index:5;
+}
+
+.dashboard-title{
+font-size:21px;
+font-weight:900;
+color:var(--dark);
+}
+
+.dashboard-actions{
+display:flex;
+gap:8px;
+}
+
+.dashboard-main{
+width:min(1200px,94%);
+margin:30px auto;
+}
+
+.dashboard-stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-bottom:25px;
+}
+
+.dash-stat{
+background:var(--card);
+border:1px solid var(--border);
+padding:22px;
+border-radius:17px;
+}
+
+.dash-stat span{
+color:var(--muted);
+font-size:13px;
+}
+
+.dash-stat strong{
+display:block;
+font-size:30px;
+color:var(--dark);
+margin-top:5px;
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.panel{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:17px;
+padding:22px;
+}
+
+.panel h3{
+color:var(--dark);
+margin-bottom:15px;
+}
+
+.admin-form input,
+.admin-form textarea{
+width:100%;
+padding:11px;
+margin-bottom:10px;
+border:1px solid var(--border);
+border-radius:9px;
+background:var(--bg);
+color:var(--text);
+}
+
+.admin-form textarea{
+min-height:90px;
+}
+
+.admin-project{
+display:flex;
+justify-content:space-between;
+gap:10px;
+padding:12px 0;
+border-bottom:1px solid var(--border);
+}
+
+.admin-project strong{
+color:var(--dark);
+}
+
+.delete{
+background:#fee2e2;
+color:#dc2626;
+border:0;
+padding:6px 10px;
+border-radius:7px;
+font-weight:800;
+}
+
+.message-item{
+padding:12px 0;
+border-bottom:1px solid var(--border);
+}
+
+.message-item strong{
+color:var(--dark);
+}
+
+.message-item small{
+display:block;
+color:var(--muted);
+}
+
+.empty{
+color:var(--muted);
+font-size:14px;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
-    .menu{
+.nav-menu{
+position:absolute;
+top:72px;
+left:0;
+width:100%;
+background:var(--card);
+display:none;
+flex-direction:column;
+align-items:stretch;
+padding:20px;
+border-bottom:1px solid var(--border);
+}
 
-        position:absolute;
+.nav-menu.show{
+display:flex;
+}
 
-        top:72px;
+.mobile{
+display:block;
+}
 
-        left:0;
+.hero-grid{
+grid-template-columns:1fr;
+}
 
-        width:100%;
+.services,
+.portfolio-grid,
+.pricing{
+grid-template-columns:repeat(2,1fr);
+}
 
-        background:var(--card);
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
 
-        flex-direction:column;
+.contact{
+grid-template-columns:1fr;
+}
 
-        align-items:stretch;
-
-        padding:20px;
-
-        border-bottom:
-        1px solid var(--border);
-
-        display:none;
-
-    }
-
-    .menu.show{
-        display:flex;
-    }
-
-    .mobile-btn{
-        display:block;
-    }
-
-    .nav-actions{
-        margin-left:auto;
-        margin-right:12px;
-    }
-
-    .hero-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .services-grid,
-    .portfolio-grid,
-    .pricing-grid,
-    .testimonial-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-    .contact-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .stats-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-    .price-card.popular{
-
-        transform:none;
-
-    }
+.dashboard-stats{
+grid-template-columns:repeat(2,1fr);
+}
 
 }
 
 @media(max-width:560px){
 
-    section{
-
-        padding:65px 0;
-
-    }
-
-    .hero{
-
-        padding-top:120px;
-
-    }
-
-    .hero h1{
-
-        font-size:44px;
-
-    }
-
-    .hero p{
-
-        font-size:16px;
-
-    }
-
-    .services-grid,
-    .portfolio-grid,
-    .pricing-grid,
-    .testimonial-grid,
-    .stats-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .floating-card{
-
-        right:0;
-
-    }
-
-    .nav-contact{
-
-        display:none;
-
-    }
-
+section{
+padding:65px 0;
 }
 
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-.reveal{
-
-    opacity:0;
-
-    transform:
-    translateY(25px);
-
-    transition:
-    opacity .7s,
-    transform .7s;
-
+.hero{
+padding-top:120px;
 }
 
-.reveal.visible{
+.hero h1{
+font-size:43px;
+}
 
-    opacity:1;
+.services,
+.portfolio-grid,
+.pricing,
+.stats-grid,
+.dashboard-stats,
+.dashboard-grid,
+.footer-grid{
+grid-template-columns:1fr;
+}
 
-    transform:
-    translateY(0);
+.cta h2{
+font-size:34px;
+}
+
+.admin-btn{
+display:none;
+}
 
 }
 
 </style>
-
 </head>
 
 <body>
@@ -1900,67 +1078,56 @@ footer p{
 <!-- LOADER -->
 
 <div id="loader">
-
-<div class="loader-box">
-
-<div class="loader-logo">
-ALFA<span>DESIGN</span>
+<div class="loader">
+<h1>ALFA<span>DESIGN</span></h1>
+<div class="loader-line">
+<div></div>
 </div>
-
-<div class="loader-bar">
-<div class="loader-progress"></div>
 </div>
-
-</div>
-
 </div>
 
 
-<!-- NAVBAR -->
+<!-- NAV -->
 
 <nav>
 
-<div class="container nav-inner">
+<div class="container nav">
 
 <a href="#home" class="logo">
 ALFA<span>DESIGN</span>
 </a>
 
-<div class="nav-actions">
+<div class="nav-right">
+
+<div class="nav-menu" id="navMenu">
+
+<a href="#home">Beranda</a>
+<a href="#services">Jasa</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#pricing">Harga</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Kontak</a>
+
+</div>
 
 <button
-class="theme-btn"
+class="theme"
 onclick="toggleTheme()"
-id="themeBtn"
-title="Mode gelap">
+id="theme">
 🌙
 </button>
 
-</div>
+<button
+class="admin-btn"
+onclick="openLogin()">
+⚙ Admin
+</button>
 
 <div
-class="mobile-btn"
+class="mobile"
 onclick="toggleMenu()">
 ☰
 </div>
-
-<div class="menu" id="menu">
-
-<a href="#home">Beranda</a>
-
-<a href="#services">Jasa</a>
-
-<a href="#portfolio">Portfolio</a>
-
-<a href="#pricing">Harga</a>
-
-<a href="#faq">FAQ</a>
-
-<a
-href="#contact"
-class="nav-contact">
-Hubungi Kami
-</a>
 
 </div>
 
@@ -1971,50 +1138,39 @@ Hubungi Kami
 
 <!-- HERO -->
 
-<section
-class="hero"
-id="home">
+<section class="hero" id="home">
 
 <div class="container hero-grid">
 
-<div class="reveal">
+<div>
 
-<span class="badge">
-🚀 JASA WEBSITE PROFESIONAL
-</span>
+<div class="badge">
+🚀 WEBSITE PROFESIONAL
+</div>
 
 <h1>
-
-Bangun Website
-
+Bangun
 <span>
-Profesional
+Website Profesional
 </span>
-
 untuk Bisnis Anda
-
 </h1>
 
 <p>
-
 ALFA DESIGN membantu UMKM, bisnis,
-sekolah, yayasan dan organisasi memiliki
-website modern, responsive dan profesional
-untuk meningkatkan kepercayaan pelanggan.
-
+sekolah, yayasan dan organisasi membangun
+website modern, responsive dan profesional.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a
-href="#portfolio"
-class="btn btn-primary">
+<a href="#portfolio"
+class="btn primary">
 💼 Lihat Portfolio
 </a>
 
-<a
-href="#contact"
-class="btn btn-outline">
+<a href="#contact"
+class="btn outline">
 📩 Konsultasi Gratis
 </a>
 
@@ -2023,51 +1179,32 @@ class="btn btn-outline">
 </div>
 
 
-<div class="hero-visual reveal">
-
-<div class="dashboard">
+<div class="preview">
 
 <div class="browser">
 
 <div class="browser-top">
-
-<span class="browser-dot"></span>
-<span class="browser-dot"></span>
-<span class="browser-dot"></span>
-
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
 </div>
 
-<div class="browser-body">
+<div class="browser-content">
 
-<div class="browser-title">
+<div class="fake-title">
 ALFA DESIGN
 </div>
 
-<div class="browser-text"></div>
+<div class="fake-box"></div>
+<div class="fake-box short"></div>
 
-<div class="browser-text small"></div>
-
-<div class="browser-cards">
-
-<div class="browser-card"></div>
-<div class="browser-card"></div>
-<div class="browser-card"></div>
-
+<div class="fake-cards">
+<div class="fake-card"></div>
+<div class="fake-card"></div>
+<div class="fake-card"></div>
 </div>
 
 </div>
-
-</div>
-
-</div>
-
-<div class="floating-card">
-
-<strong>100%</strong>
-
-<span>
-Responsive Website
-</span>
 
 </div>
 
@@ -2084,60 +1221,24 @@ Responsive Website
 
 <div class="container stats-grid">
 
-<div class="stat reveal">
-
-<h3
-data-target="50"
-data-suffix="+">
-0
-</h3>
-
-<p>
-Project Konsep
-</p>
-
+<div class="stat">
+<h3>50+</h3>
+<p>Project Konsep</p>
 </div>
 
-<div class="stat reveal">
-
-<h3
-data-target="6"
-data-suffix="+">
-0
-</h3>
-
-<p>
-Demo Website
-</p>
-
+<div class="stat">
+<h3>6+</h3>
+<p>Demo Website</p>
 </div>
 
-<div class="stat reveal">
-
-<h3
-data-target="100"
-data-suffix="%">
-0
-</h3>
-
-<p>
-Responsive
-</p>
-
+<div class="stat">
+<h3>100%</h3>
+<p>Responsive</p>
 </div>
 
-<div class="stat reveal">
-
-<h3
-data-target="24"
-data-suffix="/7">
-0
-</h3>
-
-<p>
-Dukungan Online
-</p>
-
+<div class="stat">
+<h3>24/7</h3>
+<p>Online Support</p>
 </div>
 
 </div>
@@ -2151,134 +1252,61 @@ Dukungan Online
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="head">
 
-<div class="section-label">
-LAYANAN ALFA DESIGN
+<div class="label">
+LAYANAN
 </div>
 
 <h2>
-Solusi Digital untuk Bisnis Anda
+Solusi Digital untuk Bisnis
 </h2>
 
 <p>
-Kami menyediakan berbagai konsep website
-sesuai kebutuhan bisnis dan organisasi.
+Website yang disesuaikan dengan kebutuhan
+bisnis dan organisasi.
 </p>
 
 </div>
 
 
-<div class="services-grid">
+<div class="services">
 
-
-<div class="card reveal">
-
-<div class="service-icon">
-🌐
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Landing Page</h3>
+<p>Landing page profesional untuk promosi produk dan jasa.</p>
 </div>
 
-<h3>
-Landing Page
-</h3>
-
-<p>
-Landing page profesional untuk promosi produk,
-jasa, campaign dan bisnis.
-</p>
-
+<div class="card">
+<div class="icon">🏪</div>
+<h3>Website UMKM</h3>
+<p>Website profil usaha untuk meningkatkan kepercayaan pelanggan.</p>
 </div>
 
-
-<div class="card reveal">
-
-<div class="service-icon">
-🏪
+<div class="card">
+<div class="icon">🎓</div>
+<h3>Website Sekolah</h3>
+<p>Website sekolah modern untuk informasi dan kegiatan.</p>
 </div>
 
-<h3>
-Website UMKM
-</h3>
-
-<p>
-Website profil bisnis untuk menampilkan
-produk, layanan dan informasi usaha.
-</p>
-
+<div class="card">
+<div class="icon">🛒</div>
+<h3>Website Toko</h3>
+<p>Konsep katalog dan toko online untuk bisnis.</p>
 </div>
 
-
-<div class="card reveal">
-
-<div class="service-icon">
-🎓
+<div class="card">
+<div class="icon">🏢</div>
+<h3>Website Organisasi</h3>
+<p>Website profesional untuk yayasan dan organisasi.</p>
 </div>
 
-<h3>
-Website Sekolah
-</h3>
-
-<p>
-Website sekolah modern untuk informasi,
-profil, kegiatan dan pengumuman.
-</p>
-
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Custom Website</h3>
+<p>Website dengan fitur sesuai kebutuhan project.</p>
 </div>
-
-
-<div class="card reveal">
-
-<div class="service-icon">
-🛒
-</div>
-
-<h3>
-Website Toko
-</h3>
-
-<p>
-Konsep website katalog dan toko online
-untuk menampilkan produk.
-</p>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="service-icon">
-🏢
-</div>
-
-<h3>
-Website Organisasi
-</h3>
-
-<p>
-Website profesional untuk organisasi,
-yayasan dan komunitas.
-</p>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="service-icon">
-⚙️
-</div>
-
-<h3>
-Custom Website
-</h3>
-
-<p>
-Website dengan desain dan fitur yang
-disesuaikan kebutuhan Anda.
-</p>
-
-</div>
-
 
 </div>
 
@@ -2289,25 +1317,22 @@ disesuaikan kebutuhan Anda.
 
 <!-- PORTFOLIO -->
 
-<section
-class="portfolio"
-id="portfolio">
+<section class="portfolio" id="portfolio">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="head">
 
-<div class="section-label">
+<div class="label">
 PORTFOLIO
 </div>
 
 <h2>
-Project & Demo Website
+Project ALFA DESIGN
 </h2>
 
 <p>
-Beberapa project dan konsep yang
-dikembangkan ALFA DESIGN.
+Beberapa konsep website yang dikembangkan.
 </p>
 
 </div>
@@ -2317,47 +1342,45 @@ dikembangkan ALFA DESIGN.
 
 <button
 class="filter active"
-onclick="filterProject('all',this)">
+onclick="filterProjects('all',this)">
 Semua
 </button>
 
 <button
 class="filter"
-onclick="filterProject('umkm',this)">
+onclick="filterProjects('umkm',this)">
 UMKM
 </button>
 
 <button
 class="filter"
-onclick="filterProject('school',this)">
-Sekolah
+onclick="filterProjects('business',this)">
+Bisnis
 </button>
 
 <button
 class="filter"
-onclick="filterProject('business',this)">
-Bisnis
+onclick="filterProjects('school',this)">
+Sekolah
 </button>
 
 </div>
 
 
-<div class="portfolio-grid">
-
-
 <div
-class="project reveal"
+class="portfolio-grid"
+id="portfolioGrid">
+
+<div class="project"
 data-category="umkm">
 
-<div class="project-image">
+<div class="project-img">
 AD
 </div>
 
 <div class="project-body">
 
-<h3>
-Alfa Design
-</h3>
+<h3>Alfa Design</h3>
 
 <p>
 Website portfolio jasa digital.
@@ -2367,37 +1390,21 @@ Website portfolio jasa digital.
 UMKM
 </span>
 
-<div class="project-actions">
-
-<button
-class="btn btn-primary"
-onclick="openProject(
-'Alfa Design',
-'Website portfolio ALFA DESIGN untuk menampilkan jasa, portfolio, paket harga dan kontak.'
-)">
-Detail
-</button>
-
-</div>
-
 </div>
 
 </div>
 
 
-<div
-class="project reveal"
+<div class="project"
 data-category="business">
 
-<div class="project-image">
+<div class="project-img">
 AS
 </div>
 
 <div class="project-body">
 
-<h3>
-Alfa Shop
-</h3>
+<h3>Alfa Shop</h3>
 
 <p>
 Konsep website toko online.
@@ -2407,37 +1414,21 @@ Konsep website toko online.
 Bisnis
 </span>
 
-<div class="project-actions">
-
-<button
-class="btn btn-primary"
-onclick="openProject(
-'Alfa Shop',
-'Konsep website toko online dengan katalog produk dan fitur pencarian.'
-)">
-Detail
-</button>
-
-</div>
-
 </div>
 
 </div>
 
 
-<div
-class="project reveal"
+<div class="project"
 data-category="school">
 
-<div class="project-image">
+<div class="project-img">
 SD
 </div>
 
 <div class="project-body">
 
-<h3>
-Belajar Pintar SD
-</h3>
+<h3>Belajar Pintar SD</h3>
 
 <p>
 Platform pembelajaran sekolah dasar.
@@ -2447,77 +1438,45 @@ Platform pembelajaran sekolah dasar.
 Sekolah
 </span>
 
-<div class="project-actions">
-
-<button
-class="btn btn-primary"
-onclick="openProject(
-'Belajar Pintar SD',
-'Konsep platform pembelajaran digital untuk siswa sekolah dasar.'
-)">
-Detail
-</button>
-
-</div>
-
 </div>
 
 </div>
 
 
-<div
-class="project reveal"
+<div class="project"
 data-category="business">
 
-<div class="project-image">
+<div class="project-img">
 KR
 </div>
 
 <div class="project-body">
 
-<h3>
-Kantin Ibu Rezza
-</h3>
+<h3>Kantin Ibu Rezza</h3>
 
 <p>
-Konsep sistem kantin digital.
+Konsep sistem digital kantin.
 </p>
 
 <span class="tag">
 Bisnis
 </span>
 
-<div class="project-actions">
-
-<button
-class="btn btn-primary"
-onclick="openProject(
-'Kantin Ibu Rezza',
-'Konsep sistem digital untuk membantu pengelolaan menu, pesanan dan transaksi kantin.'
-)">
-Detail
-</button>
-
-</div>
-
 </div>
 
 </div>
 
 
-<div
-class="project reveal"
+<div class="project"
 data-category="business">
 
-<div class="project-image">
+<div class="project-img">
 AI
 </div>
 
 <div class="project-body">
 
-<h3>
-ALFA AI
-</h3>
+<h3>ALFA AI</h3>
 
 <p>
 Konsep aplikasi AI Video Ads.
@@ -2527,63 +1486,33 @@ Konsep aplikasi AI Video Ads.
 Bisnis
 </span>
 
-<div class="project-actions">
-
-<button
-class="btn btn-primary"
-onclick="openProject(
-'ALFA AI',
-'Konsep aplikasi untuk membantu membuat ide dan konsep video advertisement menggunakan AI.'
-)">
-Detail
-</button>
-
-</div>
-
 </div>
 
 </div>
 
 
-<div
-class="project reveal"
+<div class="project"
 data-category="umkm">
 
-<div class="project-image">
+<div class="project-img">
 UM
 </div>
 
 <div class="project-body">
 
-<h3>
-Website UMKM
-</h3>
+<h3>Website UMKM</h3>
 
 <p>
-Konsep website profil bisnis.
+Konsep website profil usaha.
 </p>
 
 <span class="tag">
 UMKM
 </span>
 
-<div class="project-actions">
-
-<button
-class="btn btn-primary"
-onclick="openProject(
-'Website UMKM',
-'Konsep website profesional untuk membantu UMKM memperkenalkan bisnis secara online.'
-)">
-Detail
-</button>
-
 </div>
 
 </div>
-
-</div>
-
 
 </div>
 
@@ -2598,209 +1527,103 @@ Detail
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="head">
 
-<div class="section-label">
-PAKET WEBSITE
+<div class="label">
+PAKET
 </div>
 
 <h2>
-Pilih Paket Sesuai Kebutuhan
+Harga Website
 </h2>
 
 <p>
-Paket dapat disesuaikan dengan fitur dan
-kebutuhan project.
+Pilih paket sesuai kebutuhan.
 </p>
 
 </div>
 
 
-<div class="pricing-grid">
-
-
-<div class="price-card reveal">
-
-<h3>
-Starter
-</h3>
+<div class="pricing">
 
 <div class="price">
+
+<h3>Starter</h3>
+
+<div class="amount">
 Rp299K
-<small>/project</small>
 </div>
 
-<ul class="features">
-
+<ul>
 <li>✅ 1 Halaman</li>
 <li>✅ Responsive</li>
 <li>✅ Desain Modern</li>
 <li>✅ WhatsApp</li>
 <li>✅ GitHub Pages</li>
-
 </ul>
 
 <a
 href="#contact"
-class="btn btn-outline">
+class="btn outline">
 Pilih Paket
 </a>
 
 </div>
 
 
-<div class="price-card popular reveal">
+<div class="price popular">
 
-<span class="popular-label">
+<div class="popular">
 PALING POPULER
-</span>
-
-<h3>
-Professional
-</h3>
-
-<div class="price">
-Rp599K
-<small>/project</small>
 </div>
 
-<ul class="features">
+<h3>Professional</h3>
 
+<div class="amount">
+Rp599K
+</div>
+
+<ul>
 <li>✅ Multi Section</li>
 <li>✅ Responsive</li>
 <li>✅ SEO Basic</li>
 <li>✅ Portfolio</li>
 <li>✅ Form Kontak</li>
 <li>✅ WhatsApp</li>
-
 </ul>
 
 <a
 href="#contact"
-class="btn btn-primary">
+class="btn primary">
 Pilih Paket
 </a>
 
 </div>
 
 
-<div class="price-card reveal">
-
-<h3>
-Business
-</h3>
-
 <div class="price">
+
+<h3>Business</h3>
+
+<div class="amount">
 Rp999K
-<small>/project</small>
 </div>
 
-<ul class="features">
-
+<ul>
 <li>✅ Custom Website</li>
 <li>✅ SEO</li>
 <li>✅ Fitur Custom</li>
-<li>✅ Dashboard Konsep</li>
+<li>✅ Dashboard</li>
 <li>✅ Support</li>
-
 </ul>
 
 <a
 href="#contact"
-class="btn btn-outline">
+class="btn outline">
 Pilih Paket
 </a>
 
 </div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TESTIMONIAL -->
-
-<section id="testimonials">
-
-<div class="container">
-
-<div class="section-head reveal">
-
-<div class="section-label">
-TESTIMONI
-</div>
-
-<h2>
-Kepercayaan Klien
-</h2>
-
-<p>
-Contoh testimonial yang nantinya dapat
-diganti dengan testimonial klien asli.
-</p>
-
-</div>
-
-
-<div class="testimonial-grid">
-
-
-<div class="card reveal">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p class="quote">
-"Website terlihat profesional dan
-mudah digunakan."
-</p>
-
-<div class="person">
-— Pemilik UMKM
-</div>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p class="quote">
-"Desainnya modern dan cocok
-untuk kebutuhan bisnis."
-</p>
-
-<div class="person">
-— Pelaku Bisnis
-</div>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p class="quote">
-"Komunikasinya cepat dan hasil
-website sangat menarik."
-</p>
-
-<div class="person">
-— Klien ALFA DESIGN
-</div>
-
-</div>
-
 
 </div>
 
@@ -2815,14 +1638,14 @@ website sangat menarik."
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="head">
 
-<div class="section-label">
+<div class="label">
 FAQ
 </div>
 
 <h2>
-Pertanyaan yang Sering Ditanyakan
+Pertanyaan Umum
 </h2>
 
 </div>
@@ -2830,28 +1653,17 @@ Pertanyaan yang Sering Ditanyakan
 
 <div class="faq">
 
-
 <div class="faq-item">
 
 <button
-class="faq-question"
-onclick="toggleFAQ(this)">
-
+class="question"
+onclick="faq(this)">
 Berapa lama pembuatan website?
-
-<span>
-+
-</span>
-
+<span>+</span>
 </button>
 
-<div class="faq-answer">
-
-<p>
-Waktu pengerjaan tergantung jenis website,
-jumlah halaman dan fitur yang dibutuhkan.
-</p>
-
+<div class="answer">
+Tergantung jenis website dan jumlah fitur yang dibutuhkan.
 </div>
 
 </div>
@@ -2860,25 +1672,14 @@ jumlah halaman dan fitur yang dibutuhkan.
 <div class="faq-item">
 
 <button
-class="faq-question"
-onclick="toggleFAQ(this)">
-
-Apakah website bisa dibuka di HP?
-
-<span>
-+
-</span>
-
+class="question"
+onclick="faq(this)">
+Apakah website responsive?
+<span>+</span>
 </button>
 
-<div class="faq-answer">
-
-<p>
-Ya. Website ALFA DESIGN dibuat responsive
-agar dapat menyesuaikan tampilan HP,
-tablet dan komputer.
-</p>
-
+<div class="answer">
+Ya. Website dibuat agar nyaman digunakan di HP, tablet dan komputer.
 </div>
 
 </div>
@@ -2887,54 +1688,17 @@ tablet dan komputer.
 <div class="faq-item">
 
 <button
-class="faq-question"
-onclick="toggleFAQ(this)">
-
-Apakah bisa request desain sendiri?
-
-<span>
-+
-</span>
-
+class="question"
+onclick="faq(this)">
+Apakah bisa request desain?
+<span>+</span>
 </button>
 
-<div class="faq-answer">
-
-<p>
-Bisa. Desain, warna, konten dan struktur
-website dapat disesuaikan dengan kebutuhan.
-</p>
-
+<div class="answer">
+Bisa. Warna, layout, konten dan fitur dapat disesuaikan.
 </div>
 
 </div>
-
-
-<div class="faq-item">
-
-<button
-class="faq-question"
-onclick="toggleFAQ(this)">
-
-Bagaimana cara memesan?
-
-<span>
-+
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Isi formulir konsultasi atau langsung
-hubungi WhatsApp ALFA DESIGN.
-</p>
-
-</div>
-
-</div>
-
 
 </div>
 
@@ -2949,24 +1713,20 @@ hubungi WhatsApp ALFA DESIGN.
 
 <div class="container">
 
-<div class="cta-box reveal">
-
 <h2>
 Siap Membuat Website?
 </h2>
 
 <p>
-Mari bangun website profesional yang
-membantu bisnis Anda terlihat lebih terpercaya.
+Mari bangun website profesional untuk bisnis Anda.
 </p>
 
 <a
 href="#contact"
-class="btn btn-white">
+class="btn"
+style="background:white;color:#2563eb">
 🚀 Mulai Konsultasi
 </a>
-
-</div>
 
 </div>
 
@@ -2979,10 +1739,10 @@ class="btn btn-white">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="head">
 
-<div class="section-label">
-HUBUNGI ALFA DESIGN
+<div class="label">
+KONTAK
 </div>
 
 <h2>
@@ -2990,29 +1750,27 @@ Konsultasikan Project Anda
 </h2>
 
 <p>
-Ceritakan kebutuhan website Anda.
-Kami siap membantu.
+Isi form dan lanjutkan konsultasi melalui WhatsApp.
 </p>
 
 </div>
 
 
-<div class="contact-grid">
+<div class="contact">
 
-
-<div class="contact-info reveal">
+<div class="contact-box">
 
 <h3>
 ALFA DESIGN
 </h3>
 
 <p>
-Jasa pembuatan website profesional
-untuk UMKM, bisnis, sekolah dan organisasi.
+Jasa pembuatan website profesional untuk
+UMKM, bisnis, sekolah dan organisasi.
 </p>
 
 
-<div class="contact-item">
+<div class="contact-row">
 
 <strong>
 📱 WhatsApp
@@ -3029,7 +1787,7 @@ target="_blank">
 </div>
 
 
-<div class="contact-item">
+<div class="contact-row">
 
 <strong>
 📧 Email
@@ -3044,135 +1802,87 @@ adnan0076767@gmail.com
 
 </div>
 
-
-<div class="contact-item">
-
-<strong>
-⚡ Respon
-</strong>
-
-<span>
-Fast Response Online
-</span>
-
-</div>
-
-
 </div>
 
 
 <form
-onsubmit="sendWhatsApp(event)"
-class="reveal">
+class="form"
+onsubmit="sendWhatsApp(event)">
 
-
-<div class="form-group">
+<div class="group">
 
 <label>
 Nama
 </label>
 
 <input
-type="text"
-id="name"
-placeholder="Nama Anda"
-required>
+id="clientName"
+required
+placeholder="Nama Anda">
 
 </div>
 
 
-<div class="form-group">
+<div class="group">
 
 <label>
 Jenis Website
 </label>
 
-<select id="website">
+<select id="clientWebsite">
 
-<option>
-Landing Page
-</option>
-
-<option>
-Website UMKM
-</option>
-
-<option>
-Website Sekolah
-</option>
-
-<option>
-Website Toko
-</option>
-
-<option>
-Website Organisasi
-</option>
-
-<option>
-Custom Website
-</option>
+<option>Landing Page</option>
+<option>Website UMKM</option>
+<option>Website Sekolah</option>
+<option>Website Toko</option>
+<option>Website Organisasi</option>
+<option>Custom Website</option>
 
 </select>
 
 </div>
 
 
-<div class="form-group">
+<div class="group">
 
 <label>
 Budget
 </label>
 
-<select id="budget">
+<select id="clientBudget">
 
-<option>
-Belum menentukan
-</option>
-
-<option>
-Di bawah Rp500K
-</option>
-
-<option>
-Rp500K - Rp1 Juta
-</option>
-
-<option>
-Rp1 Juta - Rp3 Juta
-</option>
-
-<option>
-Di atas Rp3 Juta
-</option>
+<option>Belum menentukan</option>
+<option>Di bawah Rp500K</option>
+<option>Rp500K - Rp1 Juta</option>
+<option>Rp1 Juta - Rp3 Juta</option>
+<option>Di atas Rp3 Juta</option>
 
 </select>
 
 </div>
 
 
-<div class="form-group">
+<div class="group">
 
 <label>
 Pesan
 </label>
 
 <textarea
-id="message"
-placeholder="Ceritakan kebutuhan website Anda..."
-required></textarea>
+id="clientMessage"
+required
+placeholder="Ceritakan kebutuhan website..."></textarea>
 
 </div>
 
 
 <button
-class="btn btn-primary"
+class="btn primary"
 type="submit">
 
-📲 Kirim Konsultasi via WhatsApp
+📲 Kirim via WhatsApp
 
 </button>
-
 
 </form>
 
@@ -3191,7 +1901,6 @@ type="submit">
 
 <div class="footer-grid">
 
-
 <div>
 
 <h3>
@@ -3201,8 +1910,8 @@ DESIGN
 </h3>
 
 <p>
-Solusi website profesional untuk
-bisnis, UMKM, sekolah dan organisasi.
+Solusi website profesional untuk bisnis
+dan organisasi.
 </p>
 
 </div>
@@ -3216,29 +1925,10 @@ Navigasi
 
 <ul class="footer-links">
 
-<li>
-<a href="#home">
-Beranda
-</a>
-</li>
-
-<li>
-<a href="#services">
-Jasa
-</a>
-</li>
-
-<li>
-<a href="#portfolio">
-Portfolio
-</a>
-</li>
-
-<li>
-<a href="#pricing">
-Harga
-</a>
-</li>
+<li><a href="#home">Beranda</a></li>
+<li><a href="#services">Jasa</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#pricing">Harga</a></li>
 
 </ul>
 
@@ -3254,45 +1944,28 @@ Kontak
 <ul class="footer-links">
 
 <li>
-
 <a
 href="https://wa.me/6283870874140"
 target="_blank">
-
 WhatsApp
-
 </a>
-
 </li>
 
 <li>
-
 <a
 href="mailto:adnan0076767@gmail.com">
-
 Email
-
 </a>
-
-</li>
-
-<li>
-
-<a href="#contact">
-Konsultasi
-</a>
-
 </li>
 
 </ul>
 
 </div>
 
-
 </div>
 
 
-<div class="copyright">
+<div class="copy">
 
 © 2026 ALFA DESIGN.
 All Rights Reserved.
@@ -3304,23 +1977,23 @@ All Rights Reserved.
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- WHATSAPP -->
 
 <a
 class="whatsapp"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%20%F0%9F%91%8B%20Saya%20ingin%20konsultasi%20mengenai%20pembuatan%20website."
-target="_blank"
-title="Chat WhatsApp">
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%20%F0%9F%91%8B%20Saya%20ingin%20konsultasi%20website."
+target="_blank">
 
 ☏
 
 </a>
 
 
-<!-- BACK TO TOP -->
+<!-- TOP -->
 
 <button
-id="topBtn"
+class="top"
+id="top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 ↑
@@ -3328,40 +2001,255 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 </button>
 
 
-<!-- PROJECT MODAL -->
+<!-- LOGIN -->
 
 <div
-class="modal"
-id="projectModal"
-onclick="closeModalOutside(event)">
+class="admin-overlay"
+id="loginOverlay">
 
-<div class="modal-box">
+<div class="login-box">
 
 <button
-class="modal-close"
-onclick="closeModal()">
-
+class="close"
+onclick="closeLogin()">
 ×
 </button>
 
-<h2 id="modalTitle">
-Portfolio
+<h2>
+🔐 Admin ALFA DESIGN
 </h2>
 
-<p id="modalDescription">
-Detail project.
+<p>
+Masuk ke dashboard pengelolaan website.
+</p>
+
+<div
+class="login-error"
+id="loginError">
+Username atau password salah.
+</div>
+
+<input
+class="login-input"
+id="adminUser"
+placeholder="Username">
+
+<input
+class="login-input"
+id="adminPass"
+type="password"
+placeholder="Password">
+
+<button
+class="btn primary"
+style="width:100%"
+onclick="loginAdmin()">
+
+Masuk Dashboard
+
+</button>
+
+<br><br>
+
+<small style="color:var(--muted)">
+Demo: admin / alfa123
+</small>
+
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div
+class="dashboard-overlay"
+id="dashboard">
+
+<div class="dashboard-nav">
+
+<div class="dashboard-title">
+⚙ ALFA DESIGN ADMIN
+</div>
+
+<div class="dashboard-actions">
+
+<button
+class="btn outline"
+onclick="closeDashboard()">
+← Website
+</button>
+
+<button
+class="btn primary"
+onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+
+<div class="dashboard-main">
+
+
+<div class="dashboard-stats">
+
+<div class="dash-stat">
+
+<span>
+Total Project
+</span>
+
+<strong id="totalProjects">
+0
+</strong>
+
+</div>
+
+
+<div class="dash-stat">
+
+<span>
+Pesan Masuk
+</span>
+
+<strong id="totalMessages">
+0
+</strong>
+
+</div>
+
+
+<div class="dash-stat">
+
+<span>
+Mode
+</span>
+
+<strong>
+V4
+</strong>
+
+</div>
+
+
+<div class="dash-stat">
+
+<span>
+Status
+</span>
+
+<strong style="color:#16a34a">
+ONLINE
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+
+<!-- ADD PROJECT -->
+
+<div class="panel">
+
+<h3>
+➕ Tambah Project
+</h3>
+
+<form
+class="admin-form"
+onsubmit="addProject(event)">
+
+<input
+id="projectName"
+required
+placeholder="Nama project">
+
+<input
+id="projectCategory"
+required
+placeholder="Kategori: UMKM / Bisnis / Sekolah">
+
+<textarea
+id="projectDescription"
+required
+placeholder="Deskripsi project"></textarea>
+
+<button
+class="btn primary"
+type="submit">
+
+Tambah Project
+
+</button>
+
+</form>
+
+</div>
+
+
+<!-- PROJECT LIST -->
+
+<div class="panel">
+
+<h3>
+📁 Daftar Project
+</h3>
+
+<div id="adminProjects">
+</div>
+
+</div>
+
+
+<!-- MESSAGE -->
+
+<div class="panel">
+
+<h3>
+📩 Pesan Konsultasi
+</h3>
+
+<div id="adminMessages">
+</div>
+
+</div>
+
+
+<!-- INFO -->
+
+<div class="panel">
+
+<h3>
+🚀 ALFA DESIGN V4
+</h3>
+
+<p style="color:var(--muted)">
+
+Dashboard ini menggunakan
+<strong>localStorage</strong> sebagai
+penyimpanan sementara di browser.
+
 </p>
 
 <br>
 
-<a
-href="#contact"
-onclick="closeModal()"
-class="btn btn-primary">
+<p style="color:var(--muted)">
 
-📩 Konsultasikan Project
+Tahap berikutnya dapat menggunakan
+backend + database sungguhan.
 
-</a>
+</p>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -3370,288 +2258,159 @@ class="btn btn-primary">
 
 <script>
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
-window.addEventListener("load",function(){
+window.addEventListener("load",()=>{
 
-    setTimeout(function(){
+setTimeout(()=>{
 
-        const loader =
-        document.getElementById("loader");
+document.getElementById("loader").style.opacity="0";
 
-        loader.style.opacity="0";
+setTimeout(()=>{
 
-        setTimeout(function(){
+document.getElementById("loader").style.display="none";
 
-            loader.style.display="none";
+},500);
 
-        },500);
-
-    },900);
+},800);
 
 });
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE */
 
 function toggleMenu(){
 
-    document
-    .getElementById("menu")
-    .classList
-    .toggle("show");
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
 
 }
 
-document
-.querySelectorAll(".menu a")
-.forEach(function(link){
 
-    link.addEventListener("click",function(){
-
-        document
-        .getElementById("menu")
-        .classList
-        .remove("show");
-
-    });
-
-});
-
-
-/* =========================
-   DARK MODE
-========================= */
+/* THEME */
 
 function toggleTheme(){
 
-    document
-    .body
-    .classList
-    .toggle("dark");
+document.body.classList.toggle("dark");
 
-    const btn =
-    document.getElementById("themeBtn");
+const dark =
+document.body.classList.contains("dark");
 
-    if(
-        document.body.classList.contains("dark")
-    ){
+document.getElementById("theme").textContent =
+dark ? "☀️" : "🌙";
 
-        btn.textContent="☀️";
-
-        localStorage.setItem(
-            "alfaTheme",
-            "dark"
-        );
-
-    }else{
-
-        btn.textContent="🌙";
-
-        localStorage.setItem(
-            "alfaTheme",
-            "light"
-        );
-
-    }
+localStorage.setItem(
+"alfaTheme",
+dark ? "dark" : "light"
+);
 
 }
-
-
-/* LOAD THEME */
 
 if(
-    localStorage.getItem("alfaTheme")
-    ===
-    "dark"
+localStorage.getItem("alfaTheme")
+==="dark"
 ){
 
-    document
-    .body
-    .classList
-    .add("dark");
+document.body.classList.add("dark");
 
-    document
-    .getElementById("themeBtn")
-    .textContent="☀️";
+document.getElementById("theme").textContent="☀️";
 
 }
 
 
-/* =========================
-   PORTFOLIO FILTER
-========================= */
+/* FILTER */
 
-function filterProject(
-    category,
-    button
-){
+function filterProjects(category,btn){
 
-    const projects =
-    document.querySelectorAll(".project");
+document
+.querySelectorAll(".filter")
+.forEach(x=>x.classList.remove("active"));
 
-    const filters =
-    document.querySelectorAll(".filter");
+btn.classList.add("active");
 
-    filters.forEach(function(btn){
+document
+.querySelectorAll(".project")
+.forEach(project=>{
 
-        btn.classList.remove("active");
+project.style.display =
+category==="all" ||
+project.dataset.category===category
+? "block"
+: "none";
 
-    });
-
-    button.classList.add("active");
-
-    projects.forEach(function(project){
-
-        if(
-            category === "all"
-            ||
-            project.dataset.category
-            === category
-        ){
-
-            project.style.display="block";
-
-        }else{
-
-            project.style.display="none";
-
-        }
-
-    });
+});
 
 }
 
 
-/* =========================
-   PROJECT MODAL
-========================= */
+/* FAQ */
 
-function openProject(
-    title,
-    description
-){
+function faq(button){
 
-    document
-    .getElementById("modalTitle")
-    .textContent=title;
+const item=button.parentElement;
 
-    document
-    .getElementById("modalDescription")
-    .textContent=description;
+item.classList.toggle("open");
 
-    document
-    .getElementById("projectModal")
-    .classList
-    .add("show");
-
-}
-
-function closeModal(){
-
-    document
-    .getElementById("projectModal")
-    .classList
-    .remove("show");
-
-}
-
-function closeModalOutside(event){
-
-    if(
-        event.target.id
-        ===
-        "projectModal"
-    ){
-
-        closeModal();
-
-    }
+button.querySelector("span").textContent =
+item.classList.contains("open")
+? "−"
+: "+";
 
 }
 
 
-/* =========================
-   FAQ
-========================= */
+/* WHATSAPP */
 
-function toggleFAQ(button){
+function sendWhatsApp(e){
 
-    const item =
-    button.parentElement;
+e.preventDefault();
 
-    const all =
-    document.querySelectorAll(".faq-item");
+const name=
+document.getElementById("clientName").value;
 
-    all.forEach(function(faq){
+const website=
+document.getElementById("clientWebsite").value;
 
-        if(faq !== item){
+const budget=
+document.getElementById("clientBudget").value;
 
-            faq.classList.remove("open");
-
-            faq
-            .querySelector(".faq-question span")
-            .textContent="+";
-
-        }
-
-    });
-
-    item.classList.toggle("open");
-
-    const icon =
-    button.querySelector("span");
-
-    if(
-        item.classList.contains("open")
-    ){
-
-        icon.textContent="−";
-
-    }else{
-
-        icon.textContent="+";
-
-    }
-
-}
+const message=
+document.getElementById("clientMessage").value;
 
 
-/* =========================
-   WHATSAPP FORM
-========================= */
+/* SAVE MESSAGE */
 
-function sendWhatsApp(event){
+const messages=
+JSON.parse(
+localStorage.getItem("alfaMessages")
+||"[]"
+);
 
-    event.preventDefault();
+messages.push({
 
-    const name =
-    document
-    .getElementById("name")
-    .value;
+name:name,
 
-    const website =
-    document
-    .getElementById("website")
-    .value;
+website:website,
 
-    const budget =
-    document
-    .getElementById("budget")
-    .value;
+budget:budget,
 
-    const message =
-    document
-    .getElementById("message")
-    .value;
+message:message,
+
+date:new Date().toLocaleString("id-ID")
+
+});
+
+localStorage.setItem(
+"alfaMessages",
+JSON.stringify(messages)
+);
 
 
-    const text =
+/* WHATSAPP */
 
+const text=
 `Halo ALFA DESIGN 👋
 
 Saya ingin konsultasi website.
@@ -3659,7 +2418,7 @@ Saya ingin konsultasi website.
 👤 Nama:
 ${name}
 
-🌐 Jenis Website:
+🌐 Website:
 ${website}
 
 💰 Budget:
@@ -3668,180 +2427,343 @@ ${budget}
 📝 Kebutuhan:
 ${message}
 
-Mohon informasi dan penawarannya. Terima kasih.`;
+Mohon informasi lebih lanjut. Terima kasih.`;
 
+const url=
+"https://wa.me/6283870874140?text="
++
+encodeURIComponent(text);
 
-    const phone =
-    "6283870874140";
-
-
-    const url =
-    "https://wa.me/"
-    +
-    phone
-    +
-    "?text="
-    +
-    encodeURIComponent(text);
-
-
-    window.open(
-        url,
-        "_blank"
-    );
+window.open(url,"_blank");
 
 }
 
 
-/* =========================
-   COUNTER
-========================= */
+/* LOGIN */
 
-function startCounters(){
+function openLogin(){
 
-    const counters =
-    document.querySelectorAll(
-        ".stat h3"
-    );
+document
+.getElementById("loginOverlay")
+.classList
+.add("show");
 
-    counters.forEach(function(counter){
+}
 
-        const target =
-        Number(
-            counter.dataset.target
-        );
+function closeLogin(){
 
-        const suffix =
-        counter.dataset.suffix
-        ||
-        "";
+document
+.getElementById("loginOverlay")
+.classList
+.remove("show");
 
-        let current=0;
+}
 
-        const increment =
-        Math.max(
-            1,
-            Math.ceil(target/40)
-        );
+function loginAdmin(){
 
-        const timer =
-        setInterval(function(){
+const user=
+document.getElementById("adminUser").value;
 
-            current += increment;
+const pass=
+document.getElementById("adminPass").value;
 
-            if(current >= target){
+if(
+user==="admin"
+&&
+pass==="alfa123"
+){
 
-                current=target;
+localStorage.setItem(
+"alfaAdmin",
+"true"
+);
 
-                clearInterval(timer);
+closeLogin();
 
-            }
+openDashboard();
 
-            counter.textContent =
-            current + suffix;
+}else{
 
-        },35);
+document
+.getElementById("loginError")
+.style.display="block";
 
-    });
+}
 
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* DASHBOARD */
 
-const observer =
-new IntersectionObserver(
-function(entries){
+function openDashboard(){
 
-    entries.forEach(function(entry){
+document
+.getElementById("dashboard")
+.classList
+.add("show");
 
-        if(entry.isIntersecting){
+renderDashboard();
 
-            entry
-            .target
-            .classList
-            .add("visible");
-
-        }
-
-    });
-
-},
-{
-    threshold:.12
 }
+
+function closeDashboard(){
+
+document
+.getElementById("dashboard")
+.classList
+.remove("show");
+
+}
+
+function logout(){
+
+localStorage.removeItem("alfaAdmin");
+
+closeDashboard();
+
+}
+
+
+/* PROJECT DATA */
+
+function getProjects(){
+
+return JSON.parse(
+localStorage.getItem("alfaProjects")
+||"[]"
+);
+
+}
+
+function saveProjects(projects){
+
+localStorage.setItem(
+"alfaProjects",
+JSON.stringify(projects)
+);
+
+}
+
+
+/* ADD PROJECT */
+
+function addProject(e){
+
+e.preventDefault();
+
+const name=
+document.getElementById("projectName").value;
+
+const category=
+document.getElementById("projectCategory").value;
+
+const description=
+document.getElementById("projectDescription").value;
+
+
+const projects=getProjects();
+
+projects.push({
+
+id:Date.now(),
+
+name:name,
+
+category:category,
+
+description:description
+
+});
+
+saveProjects(projects);
+
+e.target.reset();
+
+renderDashboard();
+
+}
+
+
+/* DELETE PROJECT */
+
+function deleteProject(id){
+
+let projects=getProjects();
+
+projects=
+projects.filter(
+project=>project.id!==id
+);
+
+saveProjects(projects);
+
+renderDashboard();
+
+}
+
+
+/* DASHBOARD RENDER */
+
+function renderDashboard(){
+
+const projects=getProjects();
+
+const messages=
+JSON.parse(
+localStorage.getItem("alfaMessages")
+||"[]"
 );
 
 
 document
-.querySelectorAll(".reveal")
-.forEach(function(element){
-
-    observer.observe(element);
-
-});
+.getElementById("totalProjects")
+.textContent=
+6+projects.length;
 
 
-/* =========================
-   COUNTER OBSERVER
-========================= */
+document
+.getElementById("totalMessages")
+.textContent=
+messages.length;
 
-let counterStarted=false;
 
-const statsSection =
-document.querySelector(".stats");
+/* PROJECTS */
 
-const statsObserver =
-new IntersectionObserver(
-function(entries){
+const projectBox=
+document.getElementById("adminProjects");
 
-    if(
-        entries[0].isIntersecting
-        &&
-        !counterStarted
-    ){
+if(projects.length===0){
 
-        counterStarted=true;
+projectBox.innerHTML=
+`
+<div class="empty">
+Belum ada project tambahan.
+</div>
+`;
 
-        startCounters();
+}else{
 
-    }
+projectBox.innerHTML=
+projects.map(project=>`
 
-},
-{
-    threshold:.3
+<div class="admin-project">
+
+<div>
+
+<strong>
+${escapeHTML(project.name)}
+</strong>
+
+<small style="display:block;color:var(--muted)">
+${escapeHTML(project.category)}
+</small>
+
+</div>
+
+<button
+class="delete"
+onclick="deleteProject(${project.id})">
+
+Hapus
+
+</button>
+
+</div>
+
+`).join("");
+
 }
-);
-
-statsObserver.observe(statsSection);
 
 
-/* =========================
-   BACK TO TOP
-========================= */
+/* MESSAGES */
 
-window.addEventListener(
-"scroll",
-function(){
+const messageBox=
+document.getElementById("adminMessages");
 
-    const btn =
-    document.getElementById(
-        "topBtn"
-    );
+if(messages.length===0){
 
-    if(
-        window.scrollY > 500
-    ){
+messageBox.innerHTML=
+`
+<div class="empty">
+Belum ada pesan masuk.
+</div>
+`;
 
-        btn.style.display="block";
+}else{
 
-    }else{
+messageBox.innerHTML=
+messages
+.slice()
+.reverse()
+.map(msg=>`
 
-        btn.style.display="none";
+<div class="message-item">
 
-    }
+<strong>
+${escapeHTML(msg.name)}
+</strong>
+
+<small>
+${escapeHTML(msg.website)}
+•
+${escapeHTML(msg.budget)}
+</small>
+
+<small>
+${escapeHTML(msg.message)}
+</small>
+
+<small>
+${escapeHTML(msg.date)}
+</small>
+
+</div>
+
+`)
+.join("");
+
+}
+
+}
+
+
+/* SECURITY HELPER */
+
+function escapeHTML(value){
+
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* AUTO LOGIN */
+
+if(
+localStorage.getItem("alfaAdmin")
+==="true"
+){
+
+/* tetap tidak langsung membuka dashboard */
+
+}
+
+
+/* TOP BUTTON */
+
+window.addEventListener("scroll",()=>{
+
+const top=
+document.getElementById("top");
+
+top.style.display=
+window.scrollY>500
+? "block"
+: "none";
 
 });
 
