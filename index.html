@@ -8,16 +8,11 @@
   <!-- SEO -->
 
   <title>ALFA DESIGN | Jasa Pembuatan Website Profesional</title>
-
-  <meta name="description" content="ALFA DESIGN menyediakan jasa pembuatan website profesional untuk UMKM, bisnis, sekolah, yayasan, organisasi dan personal branding. Website modern, responsif dan siap online.">
-
-  <meta name="keywords" content="jasa pembuatan website, website profesional, jasa website UMKM, website sekolah, website yayasan, landing page, web design Indonesia, ALFA DESIGN">
-
+  <meta name="description" content="ALFA DESIGN menyediakan jasa pembuatan website profesional untuk UMKM, bisnis, sekolah, yayasan, organisasi dan personal branding. Modern, responsif dan siap online.">
+  <meta name="keywords" content="jasa pembuatan website, website profesional, website UMKM, landing page, website sekolah, website yayasan, web design Indonesia, ALFA DESIGN">
   <meta name="author" content="ALFA DESIGN">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
-
-  <!-- CANONICAL -->
 
   <link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Design/">
 
@@ -25,22 +20,20 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="ALFA DESIGN | Jasa Pembuatan Website Profesional">
-  <meta property="og:description" content="Jasa pembuatan website modern dan profesional untuk UMKM, sekolah, yayasan, bisnis dan organisasi.">
+  <meta property="og:description" content="Website modern dan profesional untuk UMKM, bisnis, sekolah, yayasan dan organisasi.">
   <meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Design/">
   <meta property="og:site_name" content="ALFA DESIGN">
   <meta property="og:locale" content="id_ID">
 
-  <!-- TWITTER / X -->
+  <!-- TWITTER -->
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ALFA DESIGN | Jasa Pembuatan Website Profesional">
-  <meta name="twitter:description" content="Website profesional untuk UMKM, bisnis, sekolah, yayasan dan organisasi.">
+  <meta name="twitter:title" content="ALFA DESIGN | Website Profesional">
+  <meta name="twitter:description" content="Jasa pembuatan website modern dan profesional.">
 
-  <meta name="theme-color" content="#0b1120">
+  <meta name="theme-color" content="#07111f">
 
-  <!-- =========================================
-       SCHEMA JSON-LD
-       ========================================= -->
+  <!-- SCHEMA JSON-LD -->
 
   <script type="application/ld+json">
   {
@@ -63,7 +56,6 @@
         "@id": "https://adnan0076767-lgtm.github.io/Alfa-Design/#website",
         "name": "ALFA DESIGN",
         "url": "https://adnan0076767-lgtm.github.io/Alfa-Design/",
-        "description": "Jasa pembuatan website profesional",
         "inLanguage": "id-ID",
         "publisher": {
           "@id": "https://adnan0076767-lgtm.github.io/Alfa-Design/#organization"
@@ -74,7 +66,7 @@
         "@id": "https://adnan0076767-lgtm.github.io/Alfa-Design/#service",
         "name": "ALFA DESIGN",
         "url": "https://adnan0076767-lgtm.github.io/Alfa-Design/",
-        "description": "Jasa pembuatan website profesional, landing page dan desain digital.",
+        "description": "Jasa pembuatan website profesional, landing page dan solusi digital.",
         "telephone": "+6283870874140",
         "areaServed": {
           "@type": "Country",
@@ -85,11 +77,20 @@
   }
   </script>
 
-  <!-- =========================================
-       STYLE
-       ========================================= -->
-
   <style>
+    :root{
+      --bg:#07111f;
+      --bg2:#0b1930;
+      --card:rgba(17,32,56,.72);
+      --card-solid:#101e35;
+      --primary:#36c8ff;
+      --primary2:#6c63ff;
+      --text:#f5f9ff;
+      --muted:#aab9cf;
+      --line:rgba(255,255,255,.10);
+      --success:#25d366;
+      --shadow:0 20px 60px rgba(0,0,0,.28);
+    }
 
     *{
       margin:0;
@@ -99,129 +100,368 @@
     }
 
     body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:#0b1120;
-      color:#ffffff;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
       line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(54,200,255,.10),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(108,99,255,.10),transparent 30%);
+      z-index:-1;
     }
 
     a{
       text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
     }
 
     /* NAVBAR */
-
     nav{
       position:fixed;
       top:0;
       left:0;
       width:100%;
-      z-index:1000;
-      background:rgba(11,17,32,.96);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      z-index:9999;
+      background:rgba(7,17,31,.78);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
     }
 
     .nav-container{
       max-width:1200px;
       margin:auto;
-      padding:18px 25px;
+      min-height:74px;
+      padding:0 22px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
     }
 
     .logo{
-      font-size:24px;
-      font-weight:bold;
-      color:#38bdf8;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:21px;
+      font-weight:800;
       letter-spacing:1px;
+    }
+
+    .logo-mark{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      color:#fff;
+      box-shadow:0 10px 30px rgba(54,200,255,.25);
+    }
+
+    .logo span{
+      color:var(--primary);
     }
 
     .nav-links{
       display:flex;
+      align-items:center;
       gap:25px;
     }
 
     .nav-links a{
-      color:white;
-      font-size:15px;
+      color:#d7e3f5;
+      font-size:14px;
       transition:.3s;
     }
 
     .nav-links a:hover{
-      color:#38bdf8;
+      color:var(--primary);
+    }
+
+    .nav-cta{
+      padding:10px 18px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),#4c9fff);
+      color:#06101d!important;
+      font-weight:bold;
+    }
+
+    .menu-toggle{
+      display:none;
+      background:none;
+      border:1px solid var(--line);
+      color:white;
+      border-radius:9px;
+      padding:8px 11px;
+      font-size:20px;
+      cursor:pointer;
     }
 
     /* HERO */
-
     .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:120px 20px 70px;
-      background:
-        radial-gradient(circle at top, #1e3a8a 0%, #0b1120 60%);
+      position:relative;
+      padding:130px 20px 80px;
+      overflow:hidden;
     }
 
-    .hero-content{
-      max-width:900px;
+    .hero::before,
+    .hero::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      filter:blur(70px);
+      opacity:.35;
+      pointer-events:none;
     }
 
-    .hero h1{
-      font-size:clamp(40px,6vw,72px);
-      line-height:1.15;
+    .hero::before{
+      width:350px;
+      height:350px;
+      background:#176bff;
+      top:5%;
+      left:-100px;
+    }
+
+    .hero::after{
+      width:400px;
+      height:400px;
+      background:#5c3cff;
+      right:-120px;
+      bottom:-100px;
+    }
+
+    .hero-container{
+      width:100%;
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:60px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:100px;
+      border:1px solid rgba(54,200,255,.25);
+      background:rgba(54,200,255,.08);
+      color:var(--primary);
+      font-size:13px;
       margin-bottom:20px;
     }
 
-    .hero h1 span{
-      color:#38bdf8;
+    .pulse{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--success);
+      box-shadow:0 0 0 0 rgba(37,211,102,.7);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      70%{box-shadow:0 0 0 10px rgba(37,211,102,0);}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+    }
+
+    .hero h1{
+      font-size:clamp(44px,6vw,76px);
+      line-height:1.08;
+      letter-spacing:-2px;
+      margin-bottom:22px;
+    }
+
+    .gradient-text{
+      background:linear-gradient(90deg,var(--primary),#7b8cff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
     .hero p{
-      max-width:750px;
-      margin:0 auto 30px;
-      font-size:19px;
-      color:#cbd5e1;
+      max-width:670px;
+      color:var(--muted);
+      font-size:18px;
+      margin-bottom:30px;
     }
 
-    /* BUTTON */
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:35px;
+    }
 
     .btn{
-      display:inline-block;
-      padding:15px 28px;
-      margin:7px;
-      border-radius:10px;
-      font-weight:bold;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:700;
       transition:.3s;
+      border:1px solid transparent;
     }
 
     .btn-primary{
-      background:#38bdf8;
-      color:#06101d;
+      background:linear-gradient(135deg,var(--primary),#529cff);
+      color:#04101c;
+      box-shadow:0 15px 35px rgba(54,200,255,.22);
     }
 
     .btn-primary:hover{
       transform:translateY(-3px);
-      box-shadow:0 10px 30px rgba(56,189,248,.25);
+      box-shadow:0 20px 45px rgba(54,200,255,.35);
     }
 
     .btn-outline{
-      color:#38bdf8;
-      border:1px solid #38bdf8;
+      border-color:var(--line);
+      color:#dce9fa;
+      background:rgba(255,255,255,.03);
     }
 
     .btn-outline:hover{
-      background:#38bdf8;
-      color:#06101d;
+      border-color:var(--primary);
+      color:var(--primary);
+      transform:translateY(-3px);
     }
 
-    /* SECTION */
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      color:#9eb1ca;
+      font-size:14px;
+    }
 
+    .hero-proof div{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    /* HERO CARD */
+    .hero-visual{
+      position:relative;
+    }
+
+    .browser-card{
+      background:linear-gradient(145deg,rgba(26,45,75,.9),rgba(9,20,38,.9));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      transform:perspective(1000px) rotateY(-5deg) rotateX(2deg);
+      transition:.5s;
+    }
+
+    .browser-card:hover{
+      transform:perspective(1000px) rotateY(0) rotateX(0) translateY(-8px);
+    }
+
+    .browser-top{
+      display:flex;
+      gap:7px;
+      padding:5px 5px 13px;
+    }
+
+    .dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#ff5f57;
+    }
+
+    .dot:nth-child(2){background:#ffbd2e;}
+    .dot:nth-child(3){background:#28c840;}
+
+    .screen{
+      min-height:420px;
+      border-radius:17px;
+      padding:28px;
+      background:
+        radial-gradient(circle at 70% 10%,rgba(54,200,255,.28),transparent 28%),
+        linear-gradient(145deg,#0e2341,#07111f);
+    }
+
+    .screen small{
+      color:var(--primary);
+      font-weight:bold;
+      letter-spacing:1px;
+    }
+
+    .screen h3{
+      font-size:34px;
+      margin:14px 0;
+      line-height:1.15;
+    }
+
+    .screen p{
+      color:#a9b9cf;
+      font-size:14px;
+      margin-bottom:24px;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      padding:18px;
+      border-radius:14px;
+      min-height:105px;
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:24px;
+      color:var(--primary);
+    }
+
+    .floating-card{
+      position:absolute;
+      left:-35px;
+      bottom:25px;
+      padding:15px 20px;
+      border-radius:16px;
+      background:rgba(15,31,55,.92);
+      backdrop-filter:blur(15px);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .floating-card strong{
+      color:var(--primary);
+      display:block;
+    }
+
+    /* GENERAL */
     section{
-      padding:90px 20px;
+      padding:100px 20px;
     }
 
     .container{
@@ -229,566 +469,1120 @@
       margin:auto;
     }
 
-    .section-title{
+    .section-head{
+      max-width:750px;
+      margin:0 auto 55px;
       text-align:center;
-      margin-bottom:50px;
     }
 
-    .section-title h2{
-      font-size:38px;
+    .eyebrow{
+      color:var(--primary);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:12px;
+      font-weight:bold;
       margin-bottom:12px;
     }
 
-    .section-title p{
-      color:#94a3b8;
-      max-width:700px;
-      margin:auto;
-    }
-
-    /* GRID */
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
-
-    /* CARD */
-
-    .card,
-    .portfolio-card{
-      background:#111827;
-      border:1px solid rgba(255,255,255,.08);
-      padding:30px;
-      border-radius:18px;
-      transition:.3s;
-    }
-
-    .card:hover,
-    .portfolio-card:hover{
-      transform:translateY(-8px);
-      border-color:#38bdf8;
-      box-shadow:0 15px 40px rgba(0,0,0,.25);
-    }
-
-    .card h3,
-    .portfolio-card h3{
-      color:#38bdf8;
+    .section-head h2{
+      font-size:clamp(32px,4vw,50px);
+      line-height:1.15;
       margin-bottom:15px;
     }
 
-    .card p,
-    .portfolio-card p{
-      color:#cbd5e1;
+    .section-head p{
+      color:var(--muted);
+    }
+
+    /* STATS */
+    .stats{
+      margin-top:-45px;
+      position:relative;
+      z-index:5;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .stat{
+      background:rgba(14,29,52,.88);
+      backdrop-filter:blur(14px);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:25px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:30px;
+      color:var(--primary);
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* SERVICES */
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .service-card{
+      padding:30px;
+      border-radius:20px;
+      background:linear-gradient(145deg,rgba(19,37,65,.9),rgba(11,24,43,.75));
+      border:1px solid var(--line);
+      transition:.35s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(54,200,255,.55);
+      box-shadow:var(--shadow);
+    }
+
+    .icon-box{
+      width:52px;
+      height:52px;
+      display:grid;
+      place-items:center;
+      border-radius:15px;
+      font-size:24px;
+      margin-bottom:20px;
+      background:linear-gradient(135deg,rgba(54,200,255,.18),rgba(108,99,255,.18));
+      border:1px solid rgba(54,200,255,.16);
+    }
+
+    .service-card h3{
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .service-card p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* WHY */
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+      align-items:stretch;
+    }
+
+    .why-panel{
+      background:linear-gradient(145deg,#102443,#0c192d);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:38px;
+    }
+
+    .why-panel h3{
+      font-size:28px;
+      margin-bottom:15px;
+    }
+
+    .why-panel>p{
+      color:var(--muted);
+      margin-bottom:25px;
+    }
+
+    .check-list{
+      list-style:none;
+      display:grid;
+      gap:14px;
+    }
+
+    .check-list li{
+      color:#d6e2f1;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .check{
+      color:var(--success);
+      font-weight:bold;
+    }
+
+    .process{
+      display:grid;
+      gap:15px;
+    }
+
+    .process-item{
+      display:flex;
+      gap:16px;
+      padding:18px;
+      border-radius:15px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .process-number{
+      width:38px;
+      height:38px;
+      min-width:38px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      font-weight:bold;
+    }
+
+    .process-item p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .portfolio-card{
+      overflow:hidden;
+      border-radius:22px;
+      background:#0e1d33;
+      border:1px solid var(--line);
+      transition:.35s;
+    }
+
+    .portfolio-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(54,200,255,.5);
+    }
+
+    .portfolio-cover{
+      height:190px;
+      padding:25px;
+      display:flex;
+      align-items:flex-end;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .portfolio-cover::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      right:-40px;
+      top:-50px;
+      background:rgba(255,255,255,.08);
+    }
+
+    .cover-shop{
+      background:linear-gradient(135deg,#146b89,#142f65);
+    }
+
+    .cover-school{
+      background:linear-gradient(135deg,#4d3d8e,#162c60);
+    }
+
+    .cover-umkm{
+      background:linear-gradient(135deg,#17675d,#153b46);
+    }
+
+    .portfolio-cover h3{
+      position:relative;
+      z-index:2;
+      font-size:25px;
+    }
+
+    .portfolio-body{
+      padding:25px;
+    }
+
+    .portfolio-body p{
+      color:var(--muted);
+      margin-bottom:20px;
+      font-size:14px;
+    }
+
+    .portfolio-link{
+      color:var(--primary);
+      font-weight:bold;
     }
 
     /* PRICING */
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .price-card{
+      padding:34px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(15,30,52,.8);
+      position:relative;
+    }
+
+    .price-card.featured{
+      border-color:rgba(54,200,255,.65);
+      background:linear-gradient(145deg,rgba(18,52,86,.95),rgba(13,28,50,.95));
+      transform:scale(1.04);
+      box-shadow:0 25px 70px rgba(54,200,255,.12);
+    }
+
+    .popular{
+      position:absolute;
+      top:0;
+      right:22px;
+      transform:translateY(-50%);
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      padding:7px 13px;
+      border-radius:50px;
+      font-size:11px;
+      font-weight:bold;
+    }
+
+    .price-card h3{
+      font-size:23px;
+      margin-bottom:10px;
+    }
+
+    .price-sub{
+      color:var(--muted);
+      font-size:14px;
+      min-height:48px;
+    }
 
     .price{
-      color:#38bdf8;
-      font-size:26px;
-      font-weight:bold;
-      margin:15px 0;
+      font-size:28px;
+      font-weight:800;
+      color:var(--primary);
+      margin:22px 0;
     }
 
-    /* ABOUT */
-
-    .about-box{
-      max-width:850px;
-      margin:auto;
-      text-align:center;
-      background:#111827;
-      padding:40px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .about-box p{
-      color:#cbd5e1;
-      font-size:17px;
+    .price-list{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin-bottom:25px;
+      color:#d6e2f1;
+      font-size:14px;
     }
 
     /* CTA */
-
-    .cta{
+    .cta-box{
+      position:relative;
+      overflow:hidden;
+      padding:70px 30px;
+      border-radius:28px;
       text-align:center;
-      background:linear-gradient(135deg,#123c63,#111827);
-      padding:70px 25px;
-      border-radius:25px;
+      background:
+        radial-gradient(circle at top right,rgba(54,200,255,.25),transparent 35%),
+        linear-gradient(135deg,#0f3158,#101a40);
+      border:1px solid var(--line);
     }
 
-    .cta h2{
-      font-size:38px;
+    .cta-box h2{
+      font-size:clamp(32px,5vw,52px);
       margin-bottom:15px;
     }
 
-    .cta p{
-      color:#cbd5e1;
-      margin-bottom:20px;
+    .cta-box p{
+      max-width:650px;
+      margin:0 auto 25px;
+      color:#b6c6db;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:45px 20px 25px;
+      border-top:1px solid var(--line);
+      background:#050c17;
+    }
+
+    .footer-grid{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.4fr .8fr .8fr;
+      gap:35px;
+      padding-bottom:35px;
+    }
+
+    .footer-brand p{
+      color:var(--muted);
+      max-width:450px;
+      margin-top:12px;
+    }
+
+    .footer-title{
+      color:#fff;
+      margin-bottom:14px;
+      font-weight:bold;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:9px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .copyright{
+      max-width:1200px;
+      margin:auto;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      color:#7f91a9;
+      text-align:center;
+      font-size:13px;
     }
 
     /* WHATSAPP */
-
     .whatsapp{
       position:fixed;
       right:20px;
       bottom:20px;
-      z-index:999;
-      background:#25d366;
-      color:white;
-      padding:15px 20px;
+      z-index:9998;
+      display:flex;
+      align-items:center;
+      gap:9px;
+      padding:14px 19px;
       border-radius:50px;
+      background:var(--success);
+      color:white;
       font-weight:bold;
-      box-shadow:0 10px 30px rgba(0,0,0,.3);
+      box-shadow:0 15px 40px rgba(37,211,102,.3);
+      transition:.3s;
     }
 
-    /* FOOTER */
-
-    footer{
-      text-align:center;
-      padding:35px 20px;
-      background:#060b14;
-      color:#94a3b8;
+    .whatsapp:hover{
+      transform:translateY(-4px);
     }
 
-    footer p{
-      margin:5px;
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .7s ease,transform .7s ease;
     }
 
-    /* MOBILE */
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
 
-    @media(max-width:700px){
-
-      .nav-links{
-        display:none;
+    /* RESPONSIVE */
+    @media(max-width:950px){
+      .hero-container,
+      .why-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero h1{
-        font-size:42px;
+      .hero{
+        text-align:center;
       }
 
       .hero p{
-        font-size:17px;
+        margin-left:auto;
+        margin-right:auto;
       }
 
-      .section-title h2{
-        font-size:30px;
+      .hero-buttons,
+      .hero-proof{
+        justify-content:center;
       }
 
-      .cta h2{
-        font-size:30px;
+      .hero-visual{
+        max-width:620px;
+        margin:auto;
+        width:100%;
       }
 
+      .service-grid,
+      .portfolio-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .pricing-grid{
+        grid-template-columns:1fr;
+        max-width:600px;
+        margin:auto;
+      }
+
+      .price-card.featured{
+        transform:none;
+      }
     }
 
+    @media(max-width:700px){
+      .nav-container{
+        min-height:68px;
+      }
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:68px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:15px 20px 20px;
+        background:rgba(7,17,31,.98);
+        border-bottom:1px solid var(--line);
+      }
+
+      .nav-links.active{
+        display:flex;
+      }
+
+      .nav-links a{
+        padding:14px 5px;
+      }
+
+      .nav-cta{
+        text-align:center;
+        margin-top:8px;
+      }
+
+      .hero{
+        padding-top:115px;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .browser-card{
+        transform:none;
+      }
+
+      .floating-card{
+        left:10px;
+        bottom:10px;
+      }
+
+      .stats{
+        margin-top:0;
+        padding-top:0;
+      }
+
+      .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .service-grid,
+      .portfolio-grid{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:75px 18px;
+      }
+
+      .why-panel{
+        padding:25px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .whatsapp{
+        right:15px;
+        bottom:15px;
+      }
+    }
+
+    @media(max-width:430px){
+      .hero h1{
+        font-size:38px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .stats-grid{
+        gap:10px;
+      }
+
+      .stat{
+        padding:18px 10px;
+      }
+    }
   </style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+  <!-- NAVBAR -->
 
-<nav>
-
-  <div class="nav-container">
+  <nav>
+    <div class="nav-container">
 
 ```
-<a href="#home" class="logo">
-  ALFA DESIGN
-</a>
+  <a href="#home" class="logo">
+    <div class="logo-mark">A</div>
+    ALFA <span>DESIGN</span>
+  </a>
 
-<div class="nav-links">
-  <a href="#home">Beranda</a>
-  <a href="#layanan">Layanan</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#harga">Harga</a>
-  <a href="#kontak">Kontak</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Beranda</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#keunggulan">Keunggulan</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#harga">Paket</a>
+    <a href="#kontak" class="nav-cta">Konsultasi</a>
+  </div>
+
+</div>
+```
+
+  </nav>
+
+  <!-- HERO -->
+
+  <header class="hero" id="home">
+    <div class="hero-container">
+
+```
+  <div class="hero-content reveal">
+    <div class="badge">
+      <span class="pulse"></span>
+      Solusi Digital untuk Bisnis & Organisasi
+    </div>
+
+    <h1>
+      Website Modern untuk
+      <span class="gradient-text">Bisnis yang Lebih Profesional.</span>
+    </h1>
+
+    <p>
+      ALFA DESIGN membantu UMKM, bisnis, sekolah, yayasan dan organisasi
+      membangun kehadiran digital melalui website yang modern, responsif
+      dan mudah diakses.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi%20pembuatan%20website." target="_blank" rel="noopener" class="btn btn-primary">
+        💬 Konsultasi WhatsApp
+      </a>
+
+      <a href="#portfolio" class="btn btn-outline">
+        Lihat Portfolio →
+      </a>
+    </div>
+
+    <div class="hero-proof">
+      <div>✓ Responsive Mobile</div>
+      <div>✓ Desain Modern</div>
+      <div>✓ Siap Online</div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="browser-card">
+      <div class="browser-top">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="screen">
+        <small>ALFA DESIGN DIGITAL STUDIO</small>
+        <h3>Build Your Digital Presence</h3>
+        <p>
+          Website profesional yang membantu bisnis tampil lebih terpercaya.
+        </p>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <strong>Modern</strong>
+            <span>UI Professional</span>
+          </div>
+
+          <div class="mini-card">
+            <strong>Mobile</strong>
+            <span>Responsive Design</span>
+          </div>
+
+          <div class="mini-card">
+            <strong>SEO</strong>
+            <span>Ready Structure</span>
+          </div>
+
+          <div class="mini-card">
+            <strong>Fast</strong>
+            <span>Lightweight Web</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="floating-card">
+      <strong>🚀 Ready to Grow</strong>
+      Website untuk masa depan bisnis Anda.
+    </div>
+  </div>
+
+</div>
+```
+
+  </header>
+
+  <!-- STATS -->
+
+  <div class="stats">
+    <div class="container">
+      <div class="stats-grid reveal">
+
+```
+    <div class="stat">
+      <strong>100%</strong>
+      <span>Responsive</span>
+    </div>
+
+    <div class="stat">
+      <strong>SEO</strong>
+      <span>Ready Structure</span>
+    </div>
+
+    <div class="stat">
+      <strong>24/7</strong>
+      <span>Website Online</span>
+    </div>
+
+    <div class="stat">
+      <strong>PRO</strong>
+      <span>Modern Design</span>
+    </div>
+
+  </div>
 </div>
 ```
 
   </div>
 
-</nav>
+  <!-- SERVICES -->
 
-<!-- HERO -->
-
-<header class="hero" id="home">
-
-  <div class="hero-content">
+  <section id="layanan">
+    <div class="container">
 
 ```
-<h1>
-  Jasa Pembuatan
-  <span>Website Profesional</span>
-</h1>
-
-<p>
-  ALFA DESIGN membantu UMKM, bisnis, sekolah, yayasan,
-  organisasi dan personal branding memiliki website modern,
-  profesional dan responsif.
-</p>
-
-<a href="#kontak" class="btn btn-primary">
-  Konsultasi Sekarang
-</a>
-
-<a href="#portfolio" class="btn btn-outline">
-  Lihat Portfolio
-</a>
-```
-
+  <div class="section-head reveal">
+    <div class="eyebrow">Layanan Kami</div>
+    <h2>Solusi Digital untuk Berbagai Kebutuhan</h2>
+    <p>
+      Kami membantu membangun website yang sesuai dengan tujuan dan kebutuhan Anda.
+    </p>
   </div>
 
-</header>
+  <div class="service-grid">
 
-<!-- LAYANAN -->
+    <article class="service-card reveal">
+      <div class="icon-box">🌐</div>
+      <h3>Website Profesional</h3>
+      <p>Website modern untuk bisnis, perusahaan dan personal branding.</p>
+    </article>
 
-<section id="layanan">
+    <article class="service-card reveal">
+      <div class="icon-box">🚀</div>
+      <h3>Landing Page</h3>
+      <p>Halaman promosi yang fokus menampilkan produk, jasa dan informasi utama.</p>
+    </article>
 
-  <div class="container">
+    <article class="service-card reveal">
+      <div class="icon-box">🏪</div>
+      <h3>Website UMKM</h3>
+      <p>Bangun kepercayaan pelanggan dengan kehadiran bisnis secara online.</p>
+    </article>
 
-```
-<div class="section-title">
+    <article class="service-card reveal">
+      <div class="icon-box">🏫</div>
+      <h3>Website Sekolah</h3>
+      <p>Website informasi untuk sekolah, yayasan dan lembaga pendidikan.</p>
+    </article>
 
-  <h2>Layanan ALFA DESIGN</h2>
+    <article class="service-card reveal">
+      <div class="icon-box">🛍️</div>
+      <h3>Katalog Produk</h3>
+      <p>Tampilkan produk dan layanan secara profesional dalam website.</p>
+    </article>
 
-  <p>
-    Solusi digital untuk membantu bisnis dan organisasi
-    tampil lebih profesional di internet.
-  </p>
-
-</div>
-
-
-<div class="grid">
-
-  <article class="card">
-
-    <h3>🌐 Website Profesional</h3>
-
-    <p>
-      Website modern dan responsif untuk bisnis,
-      perusahaan dan personal branding.
-    </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>🚀 Landing Page</h3>
-
-    <p>
-      Landing page profesional untuk promosi produk,
-      jasa dan kampanye digital.
-    </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>🏪 Website UMKM</h3>
-
-    <p>
-      Website untuk membantu UMKM menampilkan
-      produk dan layanan secara online.
-    </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>🏫 Website Sekolah</h3>
-
-    <p>
-      Website informasi untuk sekolah,
-      yayasan dan lembaga pendidikan.
-    </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>🛍️ Website Toko</h3>
-
-    <p>
-      Tampilan katalog produk dan simulasi
-      toko online profesional.
-    </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>🎨 Desain Digital</h3>
-
-    <p>
-      Desain digital untuk kebutuhan
-      branding dan promosi bisnis.
-    </p>
-
-  </article>
-
-</div>
-```
+    <article class="service-card reveal">
+      <div class="icon-box">🎨</div>
+      <h3>Desain Digital</h3>
+      <p>Solusi visual untuk membantu branding dan promosi digital Anda.</p>
+    </article>
 
   </div>
+</div>
+```
 
-</section>
+  </section>
 
-<!-- PORTFOLIO -->
+  <!-- WHY -->
 
-<section id="portfolio">
-
-  <div class="container">
+  <section id="keunggulan">
+    <div class="container">
 
 ```
-<div class="section-title">
+  <div class="section-head reveal">
+    <div class="eyebrow">Kenapa ALFA DESIGN</div>
+    <h2>Bukan Sekadar Website, Tapi Identitas Digital</h2>
+    <p>
+      Website yang baik harus mudah digunakan, nyaman dilihat dan membantu membangun kepercayaan.
+    </p>
+  </div>
 
-  <h2>Portfolio Website</h2>
+  <div class="why-grid">
 
-  <p>
-    Beberapa contoh project digital
-    yang menjadi portfolio ALFA DESIGN.
-  </p>
+    <div class="why-panel reveal">
+      <h3>Keunggulan Kami</h3>
+      <p>Fokus pada tampilan profesional dan pengalaman pengguna yang nyaman.</p>
 
+      <ul class="check-list">
+        <li><span class="check">✓</span> Desain modern dan profesional</li>
+        <li><span class="check">✓</span> Responsive untuk HP dan laptop</li>
+        <li><span class="check">✓</span> Struktur website lebih SEO-friendly</li>
+        <li><span class="check">✓</span> Navigasi mudah digunakan</li>
+        <li><span class="check">✓</span> Integrasi tombol WhatsApp</li>
+        <li><span class="check">✓</span> Siap dipublikasikan secara online</li>
+      </ul>
+    </div>
+
+    <div class="why-panel reveal">
+      <h3>Proses Pembuatan</h3>
+
+      <div class="process">
+
+        <div class="process-item">
+          <div class="process-number">1</div>
+          <div>
+            <strong>Konsultasi</strong>
+            <p>Diskusikan kebutuhan dan tujuan website Anda.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <div class="process-number">2</div>
+          <div>
+            <strong>Desain</strong>
+            <p>Menentukan struktur dan tampilan website.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <div class="process-number">3</div>
+          <div>
+            <strong>Development</strong>
+            <p>Website dibangun agar berfungsi dengan baik.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <div class="process-number">4</div>
+          <div>
+            <strong>Publish</strong>
+            <p>Website siap dipublikasikan dan digunakan.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </div>
+```
 
+  </section>
 
-<div class="grid">
+  <!-- PORTFOLIO -->
 
-  <article class="portfolio-card">
+  <section id="portfolio">
+    <div class="container">
 
-    <h3>ALFA SHOP</h3>
+```
+  <div class="section-head reveal">
+    <div class="eyebrow">Portfolio</div>
+    <h2>Beberapa Project Digital</h2>
+    <p>Contoh website dan project yang menjadi bagian dari portfolio ALFA DESIGN.</p>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <article class="portfolio-card reveal">
+      <div class="portfolio-cover cover-shop">
+        <h3>ALFA SHOP</h3>
+      </div>
+
+      <div class="portfolio-body">
+        <p>
+          Simulasi website toko online modern sebagai contoh portfolio digital.
+        </p>
+
+        <a href="https://adnan0076767-lgtm.github.io/Alfa-Shop/" target="_blank" rel="noopener" class="portfolio-link">
+          Lihat Website →
+        </a>
+      </div>
+    </article>
+
+    <article class="portfolio-card reveal">
+      <div class="portfolio-cover cover-school">
+        <h3>BELAJAR PINTAR SD</h3>
+      </div>
+
+      <div class="portfolio-body">
+        <p>
+          Platform pembelajaran digital interaktif untuk siswa sekolah dasar.
+        </p>
+
+        <a href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/" target="_blank" rel="noopener" class="portfolio-link">
+          Lihat Website →
+        </a>
+      </div>
+    </article>
+
+    <article class="portfolio-card reveal">
+      <div class="portfolio-cover cover-umkm">
+        <h3>WEBSITE UMKM</h3>
+      </div>
+
+      <div class="portfolio-body">
+        <p>
+          Konsep website profesional yang dapat dikembangkan untuk berbagai bisnis UMKM.
+        </p>
+
+        <a href="#kontak" class="portfolio-link">
+          Buat Website Serupa →
+        </a>
+      </div>
+    </article>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- PRICING -->
+
+  <section id="harga">
+    <div class="container">
+
+```
+  <div class="section-head reveal">
+    <div class="eyebrow">Paket Layanan</div>
+    <h2>Pilih Solusi yang Sesuai Kebutuhan</h2>
+    <p>Setiap project dapat disesuaikan dengan kebutuhan website Anda.</p>
+  </div>
+
+  <div class="pricing-grid">
+
+    <article class="price-card reveal">
+      <h3>STARTER</h3>
+      <p class="price-sub">Untuk kebutuhan website sederhana.</p>
+      <div class="price">Konsultasi</div>
+
+      <ul class="price-list">
+        <li>✓ Landing Page</li>
+        <li>✓ Responsive Design</li>
+        <li>✓ Tombol WhatsApp</li>
+        <li>✓ Informasi Bisnis</li>
+      </ul>
+
+      <a href="#kontak" class="btn btn-outline">Pilih Paket</a>
+    </article>
+
+    <article class="price-card featured reveal">
+      <div class="popular">PALING POPULER</div>
+
+      <h3>PROFESSIONAL</h3>
+      <p class="price-sub">Untuk UMKM dan bisnis yang ingin tampil profesional.</p>
+      <div class="price">Konsultasi</div>
+
+      <ul class="price-list">
+        <li>✓ Multi Section Website</li>
+        <li>✓ Responsive Premium</li>
+        <li>✓ Portfolio / Layanan</li>
+        <li>✓ SEO Basic Structure</li>
+        <li>✓ WhatsApp Integration</li>
+      </ul>
+
+      <a href="#kontak" class="btn btn-primary">Konsultasi Sekarang</a>
+    </article>
+
+    <article class="price-card reveal">
+      <h3>CUSTOM</h3>
+      <p class="price-sub">Untuk kebutuhan project yang lebih khusus.</p>
+      <div class="price">Custom</div>
+
+      <ul class="price-list">
+        <li>✓ Website Sesuai Kebutuhan</li>
+        <li>✓ Struktur Custom</li>
+        <li>✓ Fitur Tambahan</li>
+        <li>✓ Konsultasi Project</li>
+      </ul>
+
+      <a href="#kontak" class="btn btn-outline">Diskusikan Project</a>
+    </article>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- CTA -->
+
+  <section id="kontak">
+    <div class="container">
+
+```
+  <div class="cta-box reveal">
+    <div class="eyebrow">Mulai Sekarang</div>
+
+    <h2>Siap Membawa Bisnis Anda ke Dunia Digital?</h2>
 
     <p>
-      Simulasi website toko online modern
-      sebagai contoh portfolio digital.
+      Konsultasikan kebutuhan website Anda bersama ALFA DESIGN.
+      Mari buat tampilan digital yang lebih profesional.
     </p>
 
-    <br>
-
-    <a
-      href="https://adnan0076767-lgtm.github.io/Alfa-Shop/"
-      target="_blank"
-      rel="noopener"
-      class="btn btn-outline">
-
-      Lihat Website
-
+    <a href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi%20pembuatan%20website." target="_blank" rel="noopener" class="btn btn-primary">
+      💬 Hubungi via WhatsApp
     </a>
-
-  </article>
-
-
-  <article class="portfolio-card">
-
-    <h3>BELAJAR PINTAR SD</h3>
-
-    <p>
-      Platform pembelajaran digital
-      untuk siswa sekolah dasar.
-    </p>
-
-    <br>
-
-    <a
-      href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/"
-      target="_blank"
-      rel="noopener"
-      class="btn btn-outline">
-
-      Lihat Website
-
-    </a>
-
-  </article>
-
-
-  <article class="portfolio-card">
-
-    <h3>WEBSITE UMKM</h3>
-
-    <p>
-      Konsep website profesional
-      untuk bisnis dan UMKM Indonesia.
-    </p>
-
-  </article>
-
-</div>
-```
-
   </div>
 
-</section>
+</div>
+```
 
-<!-- HARGA -->
+  </section>
 
-<section id="harga">
+  <!-- FOOTER -->
 
-  <div class="container">
+  <footer>
 
 ```
-<div class="section-title">
+<div class="footer-grid">
 
-  <h2>Paket Website</h2>
-
-  <p>
-    Pilih solusi website sesuai kebutuhan Anda.
-  </p>
-
-</div>
-
-
-<div class="grid">
-
-  <article class="card">
-
-    <h3>STARTER</h3>
-
-    <div class="price">
-      Hubungi Kami
+  <div class="footer-brand">
+    <div class="logo">
+      <div class="logo-mark">A</div>
+      ALFA <span>DESIGN</span>
     </div>
 
     <p>
-      Cocok untuk landing page
-      dan website sederhana.
+      Solusi pembuatan website modern dan profesional untuk UMKM,
+      bisnis, sekolah, yayasan dan organisasi.
     </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>PROFESSIONAL</h3>
-
-    <div class="price">
-      Hubungi Kami
-    </div>
-
-    <p>
-      Cocok untuk UMKM,
-      bisnis dan perusahaan.
-    </p>
-
-  </article>
-
-
-  <article class="card">
-
-    <h3>CUSTOM</h3>
-
-    <div class="price">
-      Sesuai Project
-    </div>
-
-    <p>
-      Website dibuat sesuai
-      kebutuhan khusus Anda.
-    </p>
-
-  </article>
-
-</div>
-```
-
   </div>
 
-</section>
+  <div>
+    <div class="footer-title">Navigasi</div>
 
-<!-- TENTANG -->
-
-<section id="tentang">
-
-  <div class="container">
-
-```
-<div class="section-title">
-
-  <h2>Tentang ALFA DESIGN</h2>
-
-</div>
-
-
-<div class="about-box">
-
-  <p>
-    ALFA DESIGN adalah layanan kreatif digital yang berfokus
-    pada pembuatan website profesional, modern dan responsif.
-    Kami membantu UMKM, bisnis, sekolah, yayasan dan organisasi
-    membangun kehadiran digital yang lebih profesional.
-  </p>
-
-</div>
-```
-
+    <div class="footer-links">
+      <a href="#home">Beranda</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#harga">Paket</a>
+    </div>
   </div>
 
-</section>
+  <div>
+    <div class="footer-title">Kontak</div>
 
-<!-- KONTAK -->
+    <div class="footer-links">
+      <a href="https://wa.me/6283870874140" target="_blank" rel="noopener">WhatsApp ALFA DESIGN</a>
+      <a href="#kontak">Konsultasi Website</a>
+      <span>Indonesia</span>
+    </div>
+  </div>
 
-<section id="kontak">
+</div>
 
-  <div class="container">
+<div class="copyright">
+  © 2026 ALFA DESIGN — Jasa Pembuatan Website Profesional
+</div>
+```
+
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+
+<a
+ href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN"
+ target="_blank"
+ rel="noopener"
+ class="whatsapp"
+ aria-label="Hubungi ALFA DESIGN melalui WhatsApp">
 
 ```
-<div class="cta">
-
-  <h2>Siap Membuat Website Anda?</h2>
-
-  <p>
-    Konsultasikan kebutuhan website Anda bersama ALFA DESIGN.
-  </p>
-
-  <a
-    href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi%20pembuatan%20website."
-    target="_blank"
-    rel="noopener"
-    class="btn btn-primary">
-
-    💬 Hubungi WhatsApp
+💬 WhatsApp
+```
 
   </a>
 
-</div>
-```
+  <!-- JAVASCRIPT -->
 
-  </div>
+  <script>
 
-</section>
+    /* MOBILE MENU */
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-<!-- WHATSAPP FLOATING -->
+    menuToggle.addEventListener("click", function(){
+      navLinks.classList.toggle("active");
+      menuToggle.textContent =
+        navLinks.classList.contains("active") ? "✕" : "☰";
+    });
 
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN"
-target="_blank"
-rel="noopener"
-class="whatsapp">
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.textContent = "☰";
+      });
+    });
 
-💬 WhatsApp
+    /* SCROLL ANIMATION */
+    const reveals = document.querySelectorAll(".reveal");
 
-</a>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("active");
+        }
+      });
+    },{
+      threshold:0.12
+    });
 
-<!-- FOOTER -->
+    reveals.forEach(item => observer.observe(item));
 
-<footer>
-
-  <p>
-    © 2026 ALFA DESIGN — Jasa Pembuatan Website Profesional
-  </p>
-
-  <p>
-    Website • Landing Page • UMKM • Sekolah • Yayasan
-  </p>
-
-</footer>
+  </script>
 
 </body>
 </html>
