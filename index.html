@@ -7,15 +7,22 @@
 <title>ALFA DESIGN | Jasa Website Profesional Indonesia</title>
 
 <meta name="description" content="ALFA DESIGN adalah jasa pembuatan website profesional untuk UMKM, sekolah, yayasan, pesantren, organisasi, bisnis dan personal. Desain modern, responsive dan SEO friendly.">
+
 <meta name="keywords" content="Alfa Design, jasa website, website UMKM, landing page, website sekolah, website pesantren, website yayasan, website bisnis">
+
 <meta name="author" content="ALFA DESIGN">
 <meta name="robots" content="index, follow">
 
-<meta property="og:title" content="ALFA DESIGN | Digital Creative Studio">
-<meta property="og:description" content="Bangun website profesional bersama ALFA DESIGN.">
+<link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Design/">
+
+<meta property="og:title" content="ALFA DESIGN | Jasa Website Profesional">
+<meta property="og:description" content="Bangun website profesional untuk bisnis, UMKM, sekolah, yayasan dan organisasi bersama ALFA DESIGN.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Design/">
 <meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Design/ALFA-BANNER.png">
+
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -35,6 +42,7 @@
   --white:#fff;
   --muted:#9ba8c4;
   --green:#25d366;
+  --gold:#ffd166;
 }
 
 body{
@@ -58,6 +66,7 @@ body:before{
     linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
   background-size:50px 50px;
+  z-index:-1;
 }
 
 a{
@@ -223,6 +232,11 @@ header{
   color:white;
 }
 
+.btn-green{
+  background:var(--green);
+  color:#061b0d;
+}
+
 .hero-stats{
   margin-top:40px;
   display:flex;
@@ -300,6 +314,22 @@ header{
 .hero-card p{
   color:var(--muted);
   font-size:13px;
+}
+
+.hero-mini{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.hero-mini span{
+  padding:6px 10px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  color:#dce5fb;
+  font-size:10px;
 }
 
 /* ================= SECTION ================= */
@@ -471,11 +501,13 @@ section{
   overflow:hidden;
   background:var(--card);
   transition:.35s;
+  position:relative;
 }
 
 .project:hover{
   transform:translateY(-8px);
   border-color:rgba(0,229,255,.3);
+  box-shadow:0 20px 55px rgba(0,0,0,.25);
 }
 
 .project-image{
@@ -488,6 +520,26 @@ section{
     radial-gradient(circle at 25% 20%,rgba(0,229,255,.22),transparent 35%),
     radial-gradient(circle at 80% 80%,rgba(139,92,246,.2),transparent 35%),
     #080e1e;
+}
+
+.portfolio-badge{
+  position:absolute;
+  top:14px;
+  left:14px;
+  z-index:3;
+  padding:6px 10px;
+  border-radius:20px;
+  background:rgba(3,7,18,.82);
+  border:1px solid rgba(0,229,255,.3);
+  color:var(--cyan);
+  font-size:9px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.portfolio-badge.gold{
+  color:var(--gold);
+  border-color:rgba(255,209,102,.3);
 }
 
 .browser{
@@ -570,11 +622,40 @@ section{
   border-radius:10px;
   font-size:12px;
   font-weight:bold;
+  transition:.3s;
+}
+
+.project-actions a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(0,229,255,.4);
 }
 
 .project-actions a:first-child{
   background:linear-gradient(90deg,var(--cyan),#1683ff);
   color:#001018;
+}
+
+/* ================= PORTFOLIO CTA ================= */
+
+.portfolio-cta{
+  margin-top:35px;
+  padding:25px;
+  border:1px solid rgba(0,229,255,.18);
+  border-radius:20px;
+  background:rgba(0,229,255,.035);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.portfolio-cta h3{
+  margin-bottom:5px;
+}
+
+.portfolio-cta p{
+  color:var(--muted);
+  font-size:13px;
 }
 
 /* ================= PROCESS ================= */
@@ -665,6 +746,7 @@ section{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
+  align-items:stretch;
 }
 
 .price-card{
@@ -673,11 +755,15 @@ section{
   border-radius:24px;
   background:var(--card);
   position:relative;
+  display:flex;
+  flex-direction:column;
 }
 
 .price-card.featured{
   border-color:rgba(0,229,255,.5);
-  box-shadow:0 0 55px rgba(0,229,255,.08);
+  box-shadow:
+    0 0 55px rgba(0,229,255,.08),
+    inset 0 0 30px rgba(0,229,255,.025);
   transform:translateY(-7px);
 }
 
@@ -704,6 +790,12 @@ section{
   margin:13px 0;
 }
 
+.price small{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:normal;
+}
+
 .price-card>p{
   color:var(--muted);
   font-size:13px;
@@ -715,6 +807,54 @@ section{
   gap:11px;
   color:#dce5fb;
   font-size:13px;
+  flex:1;
+}
+
+.features div{
+  display:flex;
+  gap:8px;
+}
+
+.features div::first-letter{
+  color:var(--cyan);
+}
+
+.price-note{
+  margin-top:18px;
+  padding:11px;
+  border-radius:10px;
+  background:rgba(255,255,255,.035);
+  color:#8f9bb4;
+  font-size:10px;
+  text-align:center;
+}
+
+/* ================= PRICING INFO ================= */
+
+.pricing-info{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.pricing-info-box{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:rgba(255,255,255,.03);
+  text-align:center;
+}
+
+.pricing-info-box strong{
+  display:block;
+  color:var(--cyan);
+  margin-bottom:4px;
+}
+
+.pricing-info-box span{
+  color:var(--muted);
+  font-size:11px;
 }
 
 /* ================= FAQ ================= */
@@ -767,7 +907,7 @@ section{
 }
 
 .faq-item.active .faq-answer{
-  max-height:200px;
+  max-height:250px;
 }
 
 .faq-item.active .faq-question span{
@@ -796,6 +936,12 @@ section{
   max-width:650px;
   margin:0 auto 25px;
   color:var(--muted);
+}
+
+.cta-trust{
+  margin-top:25px;
+  color:#77839f;
+  font-size:11px;
 }
 
 /* ================= CONTACT ================= */
@@ -862,6 +1008,12 @@ section{
   border-color:rgba(0,229,255,.5);
 }
 
+.form-note{
+  color:#66728c;
+  font-size:10px;
+  text-align:center;
+}
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -897,6 +1049,10 @@ footer a:hover{
   color:var(--cyan);
 }
 
+.footer-wa{
+  color:var(--green)!important;
+}
+
 .copyright{
   text-align:center;
   color:#65718b;
@@ -928,6 +1084,20 @@ footer a:hover{
 
 .whatsapp:hover{
   transform:scale(1.1);
+}
+
+.whatsapp-label{
+  position:fixed;
+  right:90px;
+  bottom:34px;
+  background:#101827;
+  border:1px solid var(--line);
+  color:#dce5fb;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:11px;
+  z-index:998;
+  opacity:.9;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -973,8 +1143,17 @@ footer a:hover{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .pricing-info{
+    grid-template-columns:1fr;
+  }
+
   .hero-visual{
     min-height:400px;
+  }
+
+  .portfolio-cta{
+    flex-direction:column;
+    align-items:flex-start;
   }
 }
 
@@ -1043,7 +1222,16 @@ footer a:hover{
   .project-actions{
     flex-direction:column;
   }
+
+  .whatsapp-label{
+    display:none;
+  }
+
+  .portfolio-cta .btn{
+    width:100%;
+  }
 }
+
 </style>
 </head>
 
@@ -1052,6 +1240,7 @@ footer a:hover{
 <!-- ================= NAVBAR ================= -->
 
 <header>
+
 <div class="container navbar">
 
 <a href="#home" class="logo">
@@ -1059,6 +1248,7 @@ ALFA<span>DESIGN</span>
 </a>
 
 <nav class="nav-links" id="navLinks">
+
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#services">Layanan</a>
@@ -1068,11 +1258,13 @@ ALFA<span>DESIGN</span>
 <a href="#harga">Harga</a>
 <a href="#faq">FAQ</a>
 <a href="#contact" class="nav-cta">Kontak</a>
+
 </nav>
 
 <div class="menu" onclick="toggleMenu()">☰</div>
 
 </div>
+
 </header>
 
 
@@ -1153,8 +1345,10 @@ target="_blank">
 Creative • Professional • Digital
 </p>
 
-<div style="margin-top:20px;color:#00e5ff;font-size:12px;">
-WEBSITE • BRANDING • DIGITAL
+<div class="hero-mini">
+<span>WEBSITE</span>
+<span>BRANDING</span>
+<span>DIGITAL</span>
 </div>
 
 </div>
@@ -1266,110 +1460,80 @@ lembaga, organisasi atau personal Anda.
 <div class="services">
 
 <div class="service">
-
 <div class="service-icon">🏪</div>
-
 <h3>Website UMKM</h3>
-
 <p>
 Website profesional untuk memperkenalkan produk,
 layanan, lokasi, kontak dan identitas bisnis.
 </p>
-
 <a href="#contact" class="service-link">
 Mulai Project →
 </a>
-
 </div>
 
 
 <div class="service">
-
 <div class="service-icon">🚀</div>
-
 <h3>Landing Page</h3>
-
 <p>
 Landing page modern untuk promosi produk,
 jasa, campaign, event dan pemasaran digital.
 </p>
-
 <a href="#contact" class="service-link">
 Mulai Project →
 </a>
-
 </div>
 
 
 <div class="service">
-
 <div class="service-icon">🎓</div>
-
 <h3>Website Sekolah</h3>
-
 <p>
 Website sekolah untuk profil, program,
 berita, galeri, kegiatan dan informasi siswa.
 </p>
-
 <a href="#contact" class="service-link">
 Mulai Project →
 </a>
-
 </div>
 
 
 <div class="service">
-
 <div class="service-icon">🕌</div>
-
 <h3>Website Yayasan & Pesantren</h3>
-
 <p>
 Website lembaga untuk profil, program,
 kegiatan, informasi pendidikan dan kontak.
 </p>
-
 <a href="#contact" class="service-link">
 Mulai Project →
 </a>
-
 </div>
 
 
 <div class="service">
-
 <div class="service-icon">🛒</div>
-
 <h3>E-Commerce</h3>
-
 <p>
 Konsep toko online dengan katalog produk,
 pencarian, promosi dan integrasi kontak.
 </p>
-
 <a href="#contact" class="service-link">
 Mulai Project →
 </a>
-
 </div>
 
 
 <div class="service">
-
 <div class="service-icon">💼</div>
-
 <h3>Company Profile</h3>
-
 <p>
 Website perusahaan dan profesional untuk
 meningkatkan kepercayaan calon pelanggan.
 </p>
-
 <a href="#contact" class="service-link">
 Mulai Project →
 </a>
-
 </div>
 
 </div>
@@ -1396,8 +1560,8 @@ Project & Demo ALFA DESIGN.
 </h2>
 
 <p>
-Klik tombol untuk melihat project yang tersedia.
-Portfolio dapat terus ditambahkan sesuai project terbaru.
+Beberapa project dan konsep yang dapat menjadi
+referensi untuk kebutuhan website Anda.
 </p>
 
 </div>
@@ -1406,64 +1570,15 @@ Portfolio dapat terus ditambahkan sesuai project terbaru.
 <div class="portfolio">
 
 
-<!-- UMKM -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>🏪</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>Website UMKM</h3>
-
-<p>
-Konsep website profesional untuk bisnis dan UMKM.
-</p>
-
-<div class="tags">
-<span class="tag">UMKM</span>
-<span class="tag">BUSINESS</span>
-</div>
-
-<div class="project-actions">
-
-<a href="#contact">
-Pesan Website
-</a>
-
-<a href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20Website%20UMKM."
-target="_blank">
-Konsultasi
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
 <!-- ALFA SHOP -->
 
 <div class="project">
 
 <div class="project-image">
+
+<div class="portfolio-badge">
+LIVE DEMO
+</div>
 
 <div class="browser">
 
@@ -1486,12 +1601,14 @@ Konsultasi
 <h3>ALFA SHOP</h3>
 
 <p>
-Demo konsep toko online ALFA DESIGN.
+Demo konsep toko online dengan katalog dan
+pengalaman belanja digital.
 </p>
 
 <div class="tags">
 <span class="tag">E-COMMERCE</span>
 <span class="tag">SHOP</span>
+<span class="tag">DEMO</span>
 </div>
 
 <div class="project-actions">
@@ -1505,7 +1622,7 @@ Lihat Website
 <a
 href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20project%20ALFA%20SHOP."
 target="_blank">
-Info
+Konsultasi
 </a>
 
 </div>
@@ -1520,6 +1637,10 @@ Info
 <div class="project">
 
 <div class="project-image">
+
+<div class="portfolio-badge">
+LIVE DEMO
+</div>
 
 <div class="browser">
 
@@ -1542,12 +1663,14 @@ Info
 <h3>Belajar Pintar SD</h3>
 
 <p>
-Platform pembelajaran digital untuk siswa SD.
+Konsep platform pembelajaran digital untuk
+siswa sekolah dasar.
 </p>
 
 <div class="tags">
 <span class="tag">EDUCATION</span>
 <span class="tag">APP</span>
+<span class="tag">DEMO</span>
 </div>
 
 <div class="project-actions">
@@ -1561,7 +1684,7 @@ Lihat Website
 <a
 href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20project%20Belajar%20Pintar%20SD."
 target="_blank">
-Info
+Konsultasi
 </a>
 
 </div>
@@ -1571,11 +1694,15 @@ Info
 </div>
 
 
-<!-- AL HIKMAH -->
+<!-- SUGIH SAWARGI -->
 
 <div class="project">
 
 <div class="project-image">
+
+<div class="portfolio-badge gold">
+PROJECT
+</div>
 
 <div class="browser">
 
@@ -1586,7 +1713,7 @@ Info
 </div>
 
 <div class="browser-body">
-<span>🕌</span>
+<span>🥬</span>
 </div>
 
 </div>
@@ -1595,25 +1722,91 @@ Info
 
 <div class="project-info">
 
-<h3>Website Al-Hikmah</h3>
+<h3>SUGIH SAWARGI</h3>
 
 <p>
-Konsep website pesantren dan lembaga pendidikan.
+Website e-commerce untuk distribusi dan
+penjualan sayuran.
 </p>
 
 <div class="tags">
-<span class="tag">PESANTREN</span>
+<span class="tag">E-COMMERCE</span>
+<span class="tag">UMKM</span>
+<span class="tag">VEGETABLE</span>
+</div>
+
+<div class="project-actions">
+
+<a
+href="https://adnan0076767-lgtm.github.io/Sugih-Sawargi/"
+target="_blank">
+Lihat Website
+</a>
+
+<a
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20project%20SUGIH%20SAWARGI."
+target="_blank">
+Info
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- YAYASAN -->
+
+<div class="project">
+
+<div class="project-image">
+
+<div class="portfolio-badge">
+PROJECT
+</div>
+
+<div class="browser">
+
+<div class="browser-top">
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+
+<div class="browser-body">
+<span>🏛️</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="project-info">
+
+<h3>Yayasan Sailendra Nusantara</h3>
+
+<p>
+Website profil yayasan untuk lembaga pendidikan,
+sosial dan program organisasi.
+</p>
+
+<div class="tags">
+<span class="tag">YAYASAN</span>
+<span class="tag">PROFILE</span>
 <span class="tag">EDUCATION</span>
 </div>
 
 <div class="project-actions">
 
-<a href="#contact">
-Lihat Demo
+<a
+href="https://adnan0076767-lgtm.github.io/Yayasan-Sailendra-Nusantara/"
+target="_blank">
+Lihat Website
 </a>
 
 <a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20Website%20Al-Hikmah."
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20Website%20Yayasan."
 target="_blank">
 Konsultasi
 </a>
@@ -1630,6 +1823,10 @@ Konsultasi
 <div class="project">
 
 <div class="project-image">
+
+<div class="portfolio-badge">
+CREATIVE
+</div>
 
 <div class="browser">
 
@@ -1652,18 +1849,20 @@ Konsultasi
 <h3>ALFA AI Video Ads</h3>
 
 <p>
-Konsep aplikasi kreatif untuk membuat video promosi.
+Konsep aplikasi kreatif untuk kebutuhan
+konten dan video promosi digital.
 </p>
 
 <div class="tags">
 <span class="tag">AI</span>
 <span class="tag">CREATIVE</span>
+<span class="tag">VIDEO</span>
 </div>
 
 <div class="project-actions">
 
 <a href="#contact">
-Lihat Demo
+Lihat Konsep
 </a>
 
 <a
@@ -1684,6 +1883,10 @@ Info
 <div class="project">
 
 <div class="project-image">
+
+<div class="portfolio-badge">
+CUSTOM
+</div>
 
 <div class="browser">
 
@@ -1706,12 +1909,14 @@ Info
 <h3>Company Profile</h3>
 
 <p>
-Konsep website perusahaan dan organisasi profesional.
+Konsep website perusahaan dan organisasi
+dengan tampilan profesional.
 </p>
 
 <div class="tags">
 <span class="tag">CORPORATE</span>
 <span class="tag">PROFILE</span>
+<span class="tag">CUSTOM</span>
 </div>
 
 <div class="project-actions">
@@ -1731,6 +1936,29 @@ Konsultasi
 </div>
 
 </div>
+
+
+</div>
+
+
+<div class="portfolio-cta">
+
+<div>
+
+<h3>Punya project yang ingin ditampilkan di sini?</h3>
+
+<p>
+Konsultasikan kebutuhan website Anda dan kita bisa mulai dari konsep sederhana.
+</p>
+
+</div>
+
+<a
+class="btn btn-primary"
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20membuat%20website."
+target="_blank">
+🚀 Buat Project
+</a>
 
 </div>
 
@@ -1765,54 +1993,35 @@ Proses sederhana agar project lebih mudah dan terarah.
 <div class="process">
 
 <div class="step">
-
 <div class="step-number">01</div>
-
 <h3>Konsultasi</h3>
-
 <p>
 Ceritakan kebutuhan website dan konsep bisnis Anda.
 </p>
-
 </div>
 
-
 <div class="step">
-
 <div class="step-number">02</div>
-
 <h3>Konsep</h3>
-
 <p>
 Kami menentukan struktur, fitur dan tampilan website.
 </p>
-
 </div>
 
-
 <div class="step">
-
 <div class="step-number">03</div>
-
 <h3>Pengerjaan</h3>
-
 <p>
 Website dibuat responsive dan disesuaikan dengan project.
 </p>
-
 </div>
 
-
 <div class="step">
-
 <div class="step-number">04</div>
-
 <h3>Publish</h3>
-
 <p>
 Website siap dipublikasikan dan digunakan.
 </p>
-
 </div>
 
 </div>
@@ -1946,8 +2155,8 @@ Pilih Paket Sesuai Kebutuhan.
 </h2>
 
 <p>
-Harga awal dapat disesuaikan berdasarkan fitur dan tingkat
-kesulitan project.
+Harga awal dapat disesuaikan berdasarkan fitur,
+jumlah halaman dan tingkat kesulitan project.
 </p>
 
 </div>
@@ -1955,6 +2164,8 @@ kesulitan project.
 
 <div class="pricing">
 
+
+<!-- STARTER -->
 
 <div class="price-card">
 
@@ -1965,7 +2176,8 @@ Rp499K
 </div>
 
 <p>
-Untuk personal dan usaha kecil.
+Untuk personal dan usaha kecil yang ingin
+memiliki identitas online profesional.
 </p>
 
 <div class="features">
@@ -1975,18 +2187,25 @@ Untuk personal dan usaha kecil.
 <div>✓ Desain Modern</div>
 <div>✓ WhatsApp</div>
 <div>✓ Basic SEO</div>
+<div>✓ Publish Website</div>
 
 </div>
 
 <a
 class="btn btn-dark"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20STARTER."
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20STARTER%20Rp499K.%20Saya%20ingin%20konsultasi."
 target="_blank">
-Pilih Paket
+💬 Pilih Starter
 </a>
+
+<div class="price-note">
+Cocok untuk mulai membangun kehadiran online.
+</div>
 
 </div>
 
+
+<!-- PROFESSIONAL -->
 
 <div class="price-card featured">
 
@@ -2001,7 +2220,8 @@ Rp999K
 </div>
 
 <p>
-Untuk UMKM dan bisnis profesional.
+Untuk UMKM dan bisnis yang membutuhkan
+website lebih lengkap dan profesional.
 </p>
 
 <div class="features">
@@ -2013,18 +2233,25 @@ Untuk UMKM dan bisnis profesional.
 <div>✓ WhatsApp Integration</div>
 <div>✓ Basic SEO</div>
 <div>✓ Social Media</div>
+<div>✓ Multi Section</div>
 
 </div>
 
 <a
 class="btn btn-primary"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20PROFESSIONAL."
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20PROFESSIONAL%20Rp999K.%20Saya%20ingin%20konsultasi."
 target="_blank">
-Pilih Paket
+🚀 Pilih Professional
 </a>
+
+<div class="price-note">
+Pilihan rekomendasi untuk UMKM & bisnis.
+</div>
 
 </div>
 
+
+<!-- BUSINESS -->
 
 <div class="price-card">
 
@@ -2035,7 +2262,8 @@ Rp1,9JT
 </div>
 
 <p>
-Untuk perusahaan, organisasi dan project kompleks.
+Untuk perusahaan, organisasi dan project
+yang membutuhkan konsep lebih custom.
 </p>
 
 <div class="features">
@@ -2047,16 +2275,41 @@ Untuk perusahaan, organisasi dan project kompleks.
 <div>✓ SEO Structure</div>
 <div>✓ Social Media</div>
 <div>✓ Konsultasi</div>
+<div>✓ Custom Feature</div>
 
 </div>
 
 <a
 class="btn btn-dark"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20BUSINESS."
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20BUSINESS%20Rp1,9JT.%20Saya%20ingin%20konsultasi."
 target="_blank">
-Konsultasi
+💼 Konsultasi Business
 </a>
 
+<div class="price-note">
+Fitur dan harga dapat disesuaikan dengan kebutuhan.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pricing-info">
+
+<div class="pricing-info-box">
+<strong>💬 Konsultasi</strong>
+<span>Diskusikan kebutuhan sebelum menentukan paket.</span>
+</div>
+
+<div class="pricing-info-box">
+<strong>📱 Responsive</strong>
+<span>Website dirancang untuk HP, tablet dan desktop.</span>
+</div>
+
+<div class="pricing-info-box">
+<strong>⚡ Custom</strong>
+<span>Fitur dapat disesuaikan berdasarkan project.</span>
 </div>
 
 </div>
@@ -2100,13 +2353,11 @@ Berapa harga pembuatan website?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Harga mulai dari Rp499.000 untuk paket Starter.
 Harga final dapat disesuaikan dengan fitur,
 jumlah halaman dan tingkat kompleksitas website.
 </p>
-
 </div>
 
 </div>
@@ -2120,13 +2371,11 @@ Berapa lama website selesai?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Waktu pengerjaan bergantung pada ukuran project.
 Landing page sederhana dapat dikerjakan lebih cepat,
 sedangkan website kompleks membutuhkan waktu lebih lama.
 </p>
-
 </div>
 
 </div>
@@ -2140,12 +2389,10 @@ Apakah website bisa dibuka di HP?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Ya. Website dibuat responsive sehingga dapat menyesuaikan
 tampilan smartphone, tablet dan komputer.
 </p>
-
 </div>
 
 </div>
@@ -2159,13 +2406,11 @@ Apakah bisa membuat website UMKM?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Bisa. ALFA DESIGN dapat membuat website UMKM lengkap
 dengan profil bisnis, produk, layanan, galeri, lokasi,
 kontak dan tombol WhatsApp.
 </p>
-
 </div>
 
 </div>
@@ -2179,13 +2424,11 @@ Apakah bisa membuat website sekolah atau pesantren?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Bisa. Website dapat dibuat untuk sekolah, yayasan,
 pesantren dan lembaga pendidikan dengan struktur
 yang disesuaikan kebutuhan.
 </p>
-
 </div>
 
 </div>
@@ -2199,13 +2442,11 @@ Apakah bisa request desain sendiri?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Bisa. Anda dapat memberikan contoh website, warna,
 logo, gambar atau konsep yang diinginkan untuk dijadikan
 referensi desain.
 </p>
-
 </div>
 
 </div>
@@ -2219,16 +2460,15 @@ Bagaimana cara memesan?
 </button>
 
 <div class="faq-answer">
-
 <p>
 Klik tombol WhatsApp di website ini dan kirimkan kebutuhan
 project Anda. Kita dapat mendiskusikan konsep, fitur,
 harga dan proses pengerjaannya.
 </p>
-
 </div>
 
 </div>
+
 
 </div>
 
@@ -2264,10 +2504,19 @@ target="_blank">
 🚀 Mulai Project
 </a>
 
-<a class="btn btn-dark" href="#contact">
-📩 Hubungi Kami
+<a
+class="btn btn-dark"
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi%20mengenai%20paket%20website."
+target="_blank">
+💬 Tanya Paket
 </a>
 
+</div>
+
+<div class="cta-trust">
+✓ Konsultasi awal gratis &nbsp; • &nbsp;
+✓ Harga dapat disesuaikan &nbsp; • &nbsp;
+✓ Website responsive
 </div>
 
 </div>
@@ -2428,6 +2677,10 @@ type="submit">
 🚀 Kirim ke WhatsApp
 </button>
 
+<div class="form-note">
+Pesan akan dibuka melalui WhatsApp Anda.
+</div>
+
 </form>
 
 </div>
@@ -2471,6 +2724,7 @@ bisnis dan personal.
 <a href="#about">About</a>
 <a href="#services">Layanan</a>
 <a href="#portfolio">Portfolio</a>
+<a href="#harga">Harga</a>
 <a href="#faq">FAQ</a>
 
 </div>
@@ -2480,20 +2734,35 @@ bisnis dan personal.
 
 <h4>Portfolio</h4>
 
-<a href="https://adnan0076767-lgtm.github.io/Alfa-Shop/" target="_blank">
+<a
+href="https://adnan0076767-lgtm.github.io/Alfa-Shop/"
+target="_blank">
 ALFA SHOP
 </a>
 
-<a href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/" target="_blank">
+<a
+href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/"
+target="_blank">
 Belajar Pintar SD
 </a>
 
-<a href="#contact">
-Website UMKM
+<a
+href="https://adnan0076767-lgtm.github.io/Sugih-Sawargi/"
+target="_blank">
+SUGIH SAWARGI
 </a>
 
-<a href="#contact">
-Website Al-Hikmah
+<a
+href="https://adnan0076767-lgtm.github.io/Yayasan-Sailendra-Nusantara/"
+target="_blank">
+Yayasan Sailendra Nusantara
+</a>
+
+<a
+class="footer-wa"
+href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi."
+target="_blank">
+💬 WhatsApp: 0838-7087-4140
 </a>
 
 </div>
@@ -2516,6 +2785,10 @@ All Rights Reserved.
 
 <!-- ================= FLOAT WHATSAPP ================= -->
 
+<div class="whatsapp-label">
+Chat ALFA DESIGN
+</div>
+
 <a
 class="whatsapp"
 href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi%20website."
@@ -2527,7 +2800,7 @@ aria-label="WhatsApp">
 
 <script>
 
-/* MOBILE MENU */
+/* ================= MOBILE MENU ================= */
 
 function toggleMenu(){
 
@@ -2538,7 +2811,7 @@ nav.classList.toggle("active");
 }
 
 
-/* CLOSE MOBILE MENU */
+/* ================= CLOSE MOBILE MENU ================= */
 
 document.querySelectorAll(".nav-links a").forEach(function(link){
 
@@ -2551,7 +2824,7 @@ document.getElementById("navLinks").classList.remove("active");
 });
 
 
-/* FAQ */
+/* ================= FAQ ================= */
 
 document.querySelectorAll(".faq-question").forEach(function(button){
 
@@ -2574,31 +2847,46 @@ item.classList.toggle("active");
 });
 
 
-/* WHATSAPP FORM */
+/* ================= WHATSAPP FORM ================= */
 
 function sendWhatsApp(event){
 
 event.preventDefault();
 
-const nama=document.getElementById("nama").value;
-const project=document.getElementById("project").value;
-const budget=document.getElementById("budget").value;
-const pesan=document.getElementById("pesan").value;
+const nama=document.getElementById("nama").value.trim();
+const project=document.getElementById("project").value.trim();
+const budget=document.getElementById("budget").value.trim();
+const pesan=document.getElementById("pesan").value.trim();
 
-const text=
-"Halo ALFA DESIGN,%0A%0A"+
-"Nama: "+encodeURIComponent(nama)+"%0A"+
-"Project: "+encodeURIComponent(project)+"%0A"+
-"Budget/Paket: "+encodeURIComponent(budget || "-")+"%0A%0A"+
-"Kebutuhan:%0A"+
-encodeURIComponent(pesan);
+const text =
+"Halo ALFA DESIGN,%0A%0A" +
+"Nama: " + encodeURIComponent(nama) + "%0A" +
+"Project: " + encodeURIComponent(project) + "%0A" +
+"Budget/Paket: " + encodeURIComponent(budget || "-") + "%0A%0A" +
+"Kebutuhan:%0A" +
+encodeURIComponent(pesan) +
+"%0A%0ASaya ingin konsultasi lebih lanjut.";
 
 window.open(
-"https://wa.me/6283870874140?text="+text,
+"https://wa.me/6283870874140?text=" + text,
 "_blank"
 );
 
 }
+
+
+/* ================= SMART WHATSAPP LABEL ================= */
+
+let waLabel=document.querySelector(".whatsapp-label");
+
+setTimeout(function(){
+
+if(waLabel){
+waLabel.style.opacity="0";
+waLabel.style.transition="opacity .8s";
+}
+
+},5000);
 
 </script>
 
