@@ -1,2892 +1,2422 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ALFA DESIGN | Jasa Website Profesional Indonesia</title>
-
-<meta name="description" content="ALFA DESIGN adalah jasa pembuatan website profesional untuk UMKM, sekolah, yayasan, pesantren, organisasi, bisnis dan personal. Desain modern, responsive dan SEO friendly.">
-
-<meta name="keywords" content="Alfa Design, jasa website, website UMKM, landing page, website sekolah, website pesantren, website yayasan, website bisnis">
-
-<meta name="author" content="ALFA DESIGN">
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Design/">
-
-<meta property="og:title" content="ALFA DESIGN | Jasa Website Profesional">
-<meta property="og:description" content="Bangun website profesional untuk bisnis, UMKM, sekolah, yayasan dan organisasi bersama ALFA DESIGN.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Design/">
-<meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Design/ALFA-BANNER.png">
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-:root{
-  --bg:#030712;
-  --bg2:#07111f;
-  --card:rgba(255,255,255,.055);
-  --card2:rgba(255,255,255,.08);
-  --line:rgba(255,255,255,.12);
-  --cyan:#00e5ff;
-  --blue:#1683ff;
-  --purple:#8b5cf6;
-  --white:#fff;
-  --muted:#9ba8c4;
-  --green:#25d366;
-  --gold:#ffd166;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 10% 10%,rgba(0,229,255,.12),transparent 28%),
-    radial-gradient(circle at 90% 20%,rgba(139,92,246,.13),transparent 28%),
-    linear-gradient(180deg,#030712,#050b18 50%,#030712);
-  color:var(--white);
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.25;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:50px 50px;
-  z-index:-1;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button,
-input,
-textarea{
-  font-family:inherit;
-}
-
-.container{
-  width:92%;
-  max-width:1200px;
-  margin:auto;
-}
-
-/* ================= NAVBAR ================= */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-  background:rgba(3,7,18,.78);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
-}
-
-.navbar{
-  height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-size:24px;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.logo span{
-  color:var(--cyan);
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:25px;
-}
-
-.nav-links a{
-  font-size:13px;
-  color:#dbe5ff;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.nav-links a:hover{
-  color:var(--cyan);
-}
-
-.nav-cta{
-  padding:10px 17px;
-  border:1px solid rgba(0,229,255,.35);
-  border-radius:10px;
-  background:rgba(0,229,255,.08);
-}
-
-.menu{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-  padding-top:120px;
-  display:flex;
-  align-items:center;
-  position:relative;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:60px;
-  align-items:center;
-}
-
-.badge{
-  display:inline-flex;
-  padding:8px 15px;
-  border:1px solid rgba(0,229,255,.3);
-  border-radius:50px;
-  background:rgba(0,229,255,.06);
-  color:var(--cyan);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:1px;
-  margin-bottom:22px;
-}
-
-.hero h1{
-  font-size:clamp(43px,6vw,76px);
-  line-height:.99;
-  letter-spacing:-4px;
-  margin-bottom:25px;
-}
-
-.gradient{
-  background:linear-gradient(90deg,var(--cyan),#fff,var(--purple));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.hero-description{
-  color:var(--muted);
-  font-size:18px;
-  max-width:680px;
-  margin-bottom:30px;
-}
-
-.buttons{
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:14px 21px;
-  font-weight:bold;
-  font-size:14px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-.btn-primary{
-  background:linear-gradient(90deg,var(--cyan),#1683ff);
-  color:#001018;
-  box-shadow:0 0 35px rgba(0,229,255,.18);
-}
-
-.btn-dark{
-  background:rgba(255,255,255,.045);
-  color:white;
-}
-
-.btn-green{
-  background:var(--green);
-  color:#061b0d;
-}
-
-.hero-stats{
-  margin-top:40px;
-  display:flex;
-  gap:35px;
-  flex-wrap:wrap;
-}
-
-.hero-stat strong{
-  display:block;
-  color:var(--cyan);
-  font-size:25px;
-}
-
-.hero-stat span{
-  color:#77839f;
-  font-size:12px;
-}
-
-.hero-visual{
-  min-height:500px;
-  position:relative;
-  border:1px solid var(--line);
-  border-radius:32px;
-  background:
-    radial-gradient(circle at center,rgba(0,229,255,.11),transparent 40%),
-    linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.orbit{
-  position:absolute;
-  width:330px;
-  height:330px;
-  border:1px solid rgba(0,229,255,.2);
-  border-radius:50%;
-  animation:spin 18s linear infinite;
-}
-
-.orbit.two{
-  width:420px;
-  height:420px;
-  border-color:rgba(139,92,246,.15);
-  animation-direction:reverse;
-}
-
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-
-.hero-card{
-  position:relative;
-  z-index:2;
-  width:72%;
-  padding:38px 25px;
-  text-align:center;
-  border-radius:25px;
-  background:rgba(10,18,35,.78);
-  border:1px solid rgba(0,229,255,.25);
-  backdrop-filter:blur(15px);
-  box-shadow:0 25px 90px rgba(0,0,0,.45);
-}
-
-.hero-icon{
-  font-size:70px;
-  margin-bottom:8px;
-}
-
-.hero-card h3{
-  font-size:27px;
-}
-
-.hero-card p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.hero-mini{
-  margin-top:20px;
-  display:flex;
-  justify-content:center;
-  gap:7px;
-  flex-wrap:wrap;
-}
-
-.hero-mini span{
-  padding:6px 10px;
-  border-radius:20px;
-  border:1px solid var(--line);
-  color:#dce5fb;
-  font-size:10px;
-}
-
-/* ================= SECTION ================= */
-
-section{
-  padding:105px 0;
-  position:relative;
-}
-
-.section-head{
-  max-width:760px;
-  text-align:center;
-  margin:0 auto 50px;
-}
-
-.kicker{
-  color:var(--cyan);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
-.section-head h2{
-  font-size:43px;
-  line-height:1.1;
-  margin:12px 0;
-}
-
-.section-head p{
-  color:var(--muted);
-}
-
-/* ================= ABOUT ================= */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:60px;
-  align-items:center;
-}
-
-.about-box{
-  min-height:450px;
-  border:1px solid var(--line);
-  border-radius:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle,rgba(0,229,255,.1),transparent 45%),
-    rgba(255,255,255,.035);
-}
-
-.about-logo{
-  width:230px;
-  height:230px;
-  border-radius:50%;
-  border:2px solid rgba(0,229,255,.4);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  box-shadow:
-    0 0 50px rgba(0,229,255,.12),
-    inset 0 0 50px rgba(0,229,255,.05);
-}
-
-.about-logo strong{
-  font-size:70px;
-}
-
-.about-logo span{
-  color:var(--cyan);
-  letter-spacing:4px;
-  font-size:11px;
-}
-
-.about-content h2{
-  font-size:43px;
-  line-height:1.1;
-  margin:12px 0 20px;
-}
-
-.about-content p{
-  color:var(--muted);
-  margin-bottom:15px;
-}
-
-.check-list{
-  margin-top:25px;
-  display:grid;
-  gap:12px;
-}
-
-.check{
-  padding:13px 15px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:rgba(255,255,255,.035);
-}
-
-.check b{
-  color:var(--cyan);
-  margin-right:7px;
-}
-
-/* ================= SERVICES ================= */
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.service{
-  padding:29px;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:var(--card);
-  transition:.35s;
-}
-
-.service:hover{
-  transform:translateY(-8px);
-  border-color:rgba(0,229,255,.3);
-  background:var(--card2);
-}
-
-.service-icon{
-  width:58px;
-  height:58px;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,229,255,.08);
-  font-size:27px;
-  margin-bottom:18px;
-}
-
-.service h3{
-  margin-bottom:8px;
-}
-
-.service p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-.service-link{
-  display:inline-block;
-  margin-top:18px;
-  color:var(--cyan);
-  font-size:13px;
-  font-weight:bold;
-}
-
-/* ================= PORTFOLIO ================= */
-
-.portfolio{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.project{
-  border:1px solid var(--line);
-  border-radius:23px;
-  overflow:hidden;
-  background:var(--card);
-  transition:.35s;
-  position:relative;
-}
-
-.project:hover{
-  transform:translateY(-8px);
-  border-color:rgba(0,229,255,.3);
-  box-shadow:0 20px 55px rgba(0,0,0,.25);
-}
-
-.project-image{
-  height:220px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  background:
-    radial-gradient(circle at 25% 20%,rgba(0,229,255,.22),transparent 35%),
-    radial-gradient(circle at 80% 80%,rgba(139,92,246,.2),transparent 35%),
-    #080e1e;
-}
-
-.portfolio-badge{
-  position:absolute;
-  top:14px;
-  left:14px;
-  z-index:3;
-  padding:6px 10px;
-  border-radius:20px;
-  background:rgba(3,7,18,.82);
-  border:1px solid rgba(0,229,255,.3);
-  color:var(--cyan);
-  font-size:9px;
-  font-weight:bold;
-  letter-spacing:1px;
-}
-
-.portfolio-badge.gold{
-  color:var(--gold);
-  border-color:rgba(255,209,102,.3);
-}
-
-.browser{
-  width:78%;
-  height:72%;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.18);
-  background:#0c1528;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
-}
-
-.browser-top{
-  height:23px;
-  display:flex;
-  align-items:center;
-  gap:5px;
-  padding-left:9px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#67738d;
-}
-
-.browser-body{
-  display:flex;
-  height:calc(100% - 23px);
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.browser-body span{
-  font-size:40px;
-}
-
-.project-info{
-  padding:23px;
-}
-
-.project-info h3{
-  margin-bottom:7px;
-}
-
-.project-info p{
-  color:var(--muted);
-  font-size:13px;
-  min-height:42px;
-}
-
-.tags{
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin:15px 0;
-}
-
-.tag{
-  font-size:10px;
-  padding:5px 9px;
-  border-radius:20px;
-  background:rgba(0,229,255,.07);
-  color:var(--cyan);
-}
-
-.project-actions{
-  display:flex;
-  gap:9px;
-}
-
-.project-actions a{
-  flex:1;
-  text-align:center;
-  padding:10px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  font-size:12px;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.project-actions a:hover{
-  transform:translateY(-2px);
-  border-color:rgba(0,229,255,.4);
-}
-
-.project-actions a:first-child{
-  background:linear-gradient(90deg,var(--cyan),#1683ff);
-  color:#001018;
-}
-
-/* ================= PORTFOLIO CTA ================= */
-
-.portfolio-cta{
-  margin-top:35px;
-  padding:25px;
-  border:1px solid rgba(0,229,255,.18);
-  border-radius:20px;
-  background:rgba(0,229,255,.035);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.portfolio-cta h3{
-  margin-bottom:5px;
-}
-
-.portfolio-cta p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ================= PROCESS ================= */
-
-.process{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.step{
-  text-align:center;
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--card);
-}
-
-.step-number{
-  width:45px;
-  height:45px;
-  margin:0 auto 15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:rgba(0,229,255,.1);
-  color:var(--cyan);
-  font-weight:bold;
-}
-
-.step p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ================= TESTIMONIAL ================= */
-
-.testimonials{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.testimonial{
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:var(--card);
-}
-
-.stars{
-  color:#ffd166;
-  letter-spacing:2px;
-  margin-bottom:15px;
-}
-
-.testimonial p{
-  color:#d4ddf5;
-  font-size:14px;
-  margin-bottom:23px;
-}
-
-.person{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.avatar{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,var(--cyan),var(--purple));
-  font-weight:bold;
-}
-
-.person small{
-  color:var(--muted);
-}
-
-/* ================= PRICING ================= */
-
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  align-items:stretch;
-}
-
-.price-card{
-  padding:31px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:var(--card);
-  position:relative;
-  display:flex;
-  flex-direction:column;
-}
-
-.price-card.featured{
-  border-color:rgba(0,229,255,.5);
-  box-shadow:
-    0 0 55px rgba(0,229,255,.08),
-    inset 0 0 30px rgba(0,229,255,.025);
-  transform:translateY(-7px);
-}
-
-.popular{
-  position:absolute;
-  top:17px;
-  right:17px;
-  padding:5px 9px;
-  border-radius:20px;
-  background:var(--cyan);
-  color:#001018;
-  font-size:9px;
-  font-weight:bold;
-}
-
-.price-card h3{
-  font-size:20px;
-}
-
-.price{
-  color:var(--cyan);
-  font-size:35px;
-  font-weight:900;
-  margin:13px 0;
-}
-
-.price small{
-  color:var(--muted);
-  font-size:12px;
-  font-weight:normal;
-}
-
-.price-card>p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.features{
-  margin:25px 0;
-  display:grid;
-  gap:11px;
-  color:#dce5fb;
-  font-size:13px;
-  flex:1;
-}
-
-.features div{
-  display:flex;
-  gap:8px;
-}
-
-.features div::first-letter{
-  color:var(--cyan);
-}
-
-.price-note{
-  margin-top:18px;
-  padding:11px;
-  border-radius:10px;
-  background:rgba(255,255,255,.035);
-  color:#8f9bb4;
-  font-size:10px;
-  text-align:center;
-}
-
-/* ================= PRICING INFO ================= */
-
-.pricing-info{
-  margin-top:30px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.pricing-info-box{
-  padding:20px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:rgba(255,255,255,.03);
-  text-align:center;
-}
-
-.pricing-info-box strong{
-  display:block;
-  color:var(--cyan);
-  margin-bottom:4px;
-}
-
-.pricing-info-box span{
-  color:var(--muted);
-  font-size:11px;
-}
-
-/* ================= FAQ ================= */
-
-.faq{
-  max-width:850px;
-  margin:auto;
-  display:grid;
-  gap:12px;
-}
-
-.faq-item{
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:var(--card);
-  overflow:hidden;
-}
-
-.faq-question{
-  width:100%;
-  background:none;
-  border:0;
-  color:white;
-  padding:19px 21px;
-  text-align:left;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.faq-question span{
-  color:var(--cyan);
-  font-size:20px;
-  transition:.3s;
-}
-
-.faq-answer{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .35s ease;
-}
-
-.faq-answer p{
-  color:var(--muted);
-  font-size:13px;
-  padding:0 21px 20px;
-}
-
-.faq-item.active .faq-answer{
-  max-height:250px;
-}
-
-.faq-item.active .faq-question span{
-  transform:rotate(45deg);
-}
-
-/* ================= CTA ================= */
-
-.cta{
-  padding:75px 30px;
-  text-align:center;
-  border:1px solid rgba(0,229,255,.2);
-  border-radius:30px;
-  background:
-    radial-gradient(circle at center,rgba(0,229,255,.12),transparent 55%),
-    rgba(255,255,255,.035);
-}
-
-.cta h2{
-  font-size:43px;
-  line-height:1.1;
-  margin-bottom:14px;
-}
-
-.cta p{
-  max-width:650px;
-  margin:0 auto 25px;
-  color:var(--muted);
-}
-
-.cta-trust{
-  margin-top:25px;
-  color:#77839f;
-  font-size:11px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-
-.contact-card{
-  padding:30px;
-  border:1px solid var(--line);
-  border-radius:23px;
-  background:var(--card);
-}
-
-.contact-info{
-  display:grid;
-  gap:22px;
-}
-
-.contact-item{
-  display:flex;
-  gap:15px;
-}
-
-.contact-icon{
-  font-size:25px;
-}
-
-.contact-item h4{
-  margin-bottom:2px;
-}
-
-.contact-item p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.form{
-  display:grid;
-  gap:13px;
-}
-
-.form input,
-.form textarea{
-  width:100%;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.2);
-  color:white;
-  border-radius:11px;
-  padding:14px;
-  outline:none;
-}
-
-.form textarea{
-  min-height:145px;
-  resize:vertical;
-}
-
-.form input:focus,
-.form textarea:focus{
-  border-color:rgba(0,229,255,.5);
-}
-
-.form-note{
-  color:#66728c;
-  font-size:10px;
-  text-align:center;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  border-top:1px solid var(--line);
-  padding:55px 0 25px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:40px;
-}
-
-.footer-brand p{
-  color:var(--muted);
-  max-width:400px;
-  margin-top:12px;
-  font-size:13px;
-}
-
-footer h4{
-  margin-bottom:14px;
-}
-
-footer a{
-  display:block;
-  color:var(--muted);
-  font-size:13px;
-  margin:8px 0;
-}
-
-footer a:hover{
-  color:var(--cyan);
-}
-
-.footer-wa{
-  color:var(--green)!important;
-}
-
-.copyright{
-  text-align:center;
-  color:#65718b;
-  font-size:11px;
-  border-top:1px solid var(--line);
-  margin-top:35px;
-  padding-top:20px;
-}
-
-/* ================= FLOAT WHATSAPP ================= */
-
-.whatsapp{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  width:61px;
-  height:61px;
-  border-radius:50%;
-  background:var(--green);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-size:29px;
-  z-index:999;
-  box-shadow:0 10px 35px rgba(0,0,0,.4);
-  transition:.3s;
-}
-
-.whatsapp:hover{
-  transform:scale(1.1);
-}
-
-.whatsapp-label{
-  position:fixed;
-  right:90px;
-  bottom:34px;
-  background:#101827;
-  border:1px solid var(--line);
-  color:#dce5fb;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:11px;
-  z-index:998;
-  opacity:.9;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:950px){
-
-  .nav-links{
-    position:absolute;
-    right:-100%;
-    top:76px;
-    width:270px;
-    padding:25px;
-    flex-direction:column;
-    align-items:flex-start;
-    background:rgba(3,7,18,.98);
-    border-left:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    transition:.3s;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ALFA DESIGN | Jasa Website Profesional Indonesia</title>
+
+  <meta name="description" content="ALFA DESIGN menyediakan jasa pembuatan website profesional untuk UMKM, sekolah, yayasan, organisasi, perusahaan dan bisnis. Website modern, responsive, SEO friendly dan siap online.">
+  <meta name="keywords" content="jasa website, jasa pembuatan website, website UMKM, website sekolah, website yayasan, landing page, e-commerce, company profile, Alfa Design">
+  <meta name="author" content="ALFA DESIGN">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Design/">
+
+  <meta property="og:title" content="ALFA DESIGN | Jasa Website Profesional Indonesia">
+  <meta property="og:description" content="Bangun identitas digital yang lebih profesional bersama ALFA DESIGN. Website modern untuk UMKM, sekolah, yayasan, organisasi dan bisnis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Design/">
+  <meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Design/ALFA-BANNER.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ALFA DESIGN | Jasa Website Profesional">
+  <meta name="twitter:description" content="Jasa website profesional untuk bisnis, UMKM, sekolah, yayasan dan organisasi.">
+  <meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Design/ALFA-BANNER.png">
+
+  <style>
+    :root{
+      --bg:#030712;
+      --bg2:#07111f;
+      --card:rgba(255,255,255,.055);
+      --card2:rgba(255,255,255,.085);
+      --line:rgba(255,255,255,.11);
+      --cyan:#00e5ff;
+      --blue:#1683ff;
+      --purple:#8b5cf6;
+      --white:#ffffff;
+      --muted:#9ba8c4;
+      --green:#25d366;
+      --gold:#ffd166;
+      --danger:#ff5577;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(0,229,255,.10),transparent 25%),
+        radial-gradient(circle at 90% 15%,rgba(139,92,246,.13),transparent 25%),
+        radial-gradient(circle at 50% 80%,rgba(22,131,255,.08),transparent 30%),
+        var(--bg);
+      color:var(--white);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.20;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:50px 50px;
+      z-index:-1;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(1180px,92%);
+      margin:auto;
+    }
+
+    .section{
+      padding:100px 0;
+      position:relative;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:55px;
+    }
+
+    .section-title .mini{
+      display:inline-block;
+      color:var(--cyan);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:3px;
+      margin-bottom:12px;
+    }
+
+    .section-title h2{
+      font-size:clamp(32px,5vw,52px);
+      line-height:1.1;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      max-width:680px;
+      margin:auto;
+      color:var(--muted);
+    }
+
+    /* NAVBAR */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      padding:16px 0;
+      background:rgba(3,7,18,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .logo{
+      font-size:23px;
+      font-weight:900;
+      letter-spacing:1px;
+      white-space:nowrap;
+    }
+
+    .logo span{
+      color:var(--cyan);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+    }
+
+    .nav-links a{
+      color:#cbd5e1;
+      font-size:13px;
+      font-weight:700;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--cyan);
+    }
+
+    .nav-cta{
+      padding:10px 17px;
+      border:1px solid rgba(0,229,255,.35);
+      border-radius:30px;
+      color:var(--cyan)!important;
+      background:rgba(0,229,255,.06);
+    }
+
+    .menu-btn{
+      display:none;
+      border:1px solid var(--line);
+      background:var(--card);
+      color:white;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:20px;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      padding:150px 0 80px;
+      display:flex;
+      align-items:center;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:70px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid rgba(0,229,255,.25);
+      border-radius:30px;
+      background:rgba(0,229,255,.06);
+      color:var(--cyan);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:1.5px;
+      margin-bottom:22px;
+    }
+
+    .hero h1{
+      font-size:clamp(43px,6vw,76px);
+      line-height:.98;
+      letter-spacing:-3px;
+      margin-bottom:24px;
+    }
+
+    .hero h1 span{
+      color:var(--cyan);
+      text-shadow:0 0 35px rgba(0,229,255,.25);
+    }
+
+    .hero-text{
+      max-width:650px;
+      color:var(--muted);
+      font-size:17px;
+      margin-bottom:30px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:13px;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:9px;
+      min-height:48px;
+      padding:13px 22px;
+      border-radius:13px;
+      font-size:14px;
+      font-weight:800;
+      border:1px solid var(--line);
+      transition:.25s;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--cyan),var(--blue));
+      color:#001018;
+      box-shadow:0 12px 35px rgba(0,229,255,.15);
+    }
+
+    .btn-secondary{
+      background:var(--card);
+      color:white;
+    }
+
+    .btn-whatsapp{
+      background:var(--green);
+      color:#04150a;
+      border-color:transparent;
+    }
+
+    .trust-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      color:#cbd5e1;
+      font-size:12px;
+    }
+
+    .trust-item{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .trust-item b{
+      color:var(--cyan);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual{
+      position:relative;
+      min-height:460px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .orbit{
+      width:340px;
+      height:340px;
+      border-radius:50%;
+      border:1px solid rgba(0,229,255,.16);
+      box-shadow:
+        0 0 80px rgba(0,229,255,.08),
+        inset 0 0 80px rgba(139,92,246,.05);
+      position:relative;
+    }
+
+    .orbit::before,
+    .orbit::after{
+      content:"";
+      position:absolute;
+      inset:25px;
+      border-radius:50%;
+      border:1px dashed rgba(139,92,246,.20);
+    }
+
+    .orbit::after{
+      inset:65px;
+      border-color:rgba(0,229,255,.16);
+    }
+
+    .orbit-dot{
+      position:absolute;
+      width:12px;
+      height:12px;
+      background:var(--cyan);
+      border-radius:50%;
+      box-shadow:0 0 25px var(--cyan);
+    }
+
+    .dot1{top:8%;left:50%}
+    .dot2{bottom:20%;left:7%;background:var(--purple)}
+    .dot3{right:4%;top:35%;background:var(--blue)}
+
+    .brand-card{
+      position:absolute;
+      width:250px;
+      padding:28px;
+      border-radius:24px;
+      background:rgba(8,17,31,.86);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(20px);
+      text-align:center;
+      box-shadow:0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .brand-card .ad{
+      width:80px;
+      height:80px;
+      margin:auto auto 18px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid rgba(0,229,255,.35);
+      color:var(--cyan);
+      font-size:26px;
+      font-weight:900;
+      box-shadow:0 0 35px rgba(0,229,255,.12);
+    }
+
+    .brand-card h3{
+      font-size:22px;
+      margin-bottom:5px;
+    }
+
+    .brand-card p{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* STATS */
+
+    .stats{
+      margin-top:-20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
+    .stat{
+      padding:23px;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:18px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:27px;
+      color:var(--cyan);
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .about-logo{
+      width:min(330px,80vw);
+      aspect-ratio:1;
+      margin:auto;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(0,229,255,.2);
+      background:
+        radial-gradient(circle,rgba(0,229,255,.10),transparent 60%),
+        var(--card);
+      box-shadow:0 0 100px rgba(0,229,255,.07);
+    }
+
+    .about-logo-inner{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.12);
+      display:grid;
+      place-items:center;
+      color:var(--cyan);
+      font-size:65px;
+      font-weight:900;
+    }
+
+    .about-content h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .about-content h2 span{
+      color:var(--cyan);
+    }
+
+    .about-content p{
+      color:var(--muted);
+      margin-bottom:25px;
+    }
+
+    .check-list{
+      display:grid;
+      gap:13px;
+      margin-bottom:28px;
+    }
+
+    .check{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px 14px;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:12px;
+    }
+
+    .check i{
+      color:var(--cyan);
+      font-style:normal;
+      font-weight:bold;
+    }
+
+    .check span{
+      color:#d7deec;
+      font-size:13px;
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      padding:27px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(145deg,var(--card),rgba(255,255,255,.025));
+      transition:.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      width:130px;
+      height:130px;
+      right:-60px;
+      top:-60px;
+      border-radius:50%;
+      background:rgba(0,229,255,.08);
+      filter:blur(5px);
+    }
+
+    .service-card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(0,229,255,.3);
+      box-shadow:0 20px 60px rgba(0,0,0,.20);
+    }
+
+    .service-icon{
+      width:53px;
+      height:53px;
+      display:grid;
+      place-items:center;
+      border-radius:15px;
+      background:rgba(0,229,255,.08);
+      border:1px solid rgba(0,229,255,.16);
+      font-size:23px;
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      font-size:18px;
+      margin-bottom:9px;
+    }
+
+    .service-card p{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:20px;
+    }
+
+    .service-link{
+      color:var(--cyan);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-filters{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:9px;
+      margin-bottom:28px;
+    }
+
+    .filter-btn{
+      border:1px solid var(--line);
+      background:var(--card);
+      color:#b9c4d8;
+      padding:9px 15px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover{
+      background:rgba(0,229,255,.09);
+      color:var(--cyan);
+      border-color:rgba(0,229,255,.3);
+    }
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .portfolio-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--card);
+      overflow:hidden;
+      transition:.3s;
+    }
+
+    .portfolio-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(0,229,255,.25);
+    }
+
+    .portfolio-preview{
+      height:180px;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(0,229,255,.16),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(139,92,246,.15),transparent 30%),
+        #07111f;
+      display:grid;
+      place-items:center;
+      position:relative;
+      border-bottom:1px solid var(--line);
+    }
+
+    .browser{
+      width:78%;
+      height:105px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.14);
+      background:#0a1423;
+      overflow:hidden;
+      box-shadow:0 15px 30px rgba(0,0,0,.35);
+    }
+
+    .browser-top{
+      height:18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      gap:4px;
+      padding-left:7px;
+    }
+
+    .browser-top i{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#7d8aa1;
+    }
+
+    .browser-body{
+      padding:13px;
+    }
+
+    .browser-line{
+      height:7px;
+      width:65%;
+      border-radius:5px;
+      background:rgba(0,229,255,.45);
+      margin-bottom:9px;
+    }
+
+    .browser-line.small{
+      width:40%;
+      background:rgba(255,255,255,.13);
+    }
+
+    .portfolio-info{
+      padding:21px;
+    }
+
+    .portfolio-label{
+      display:inline-block;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:1px;
+      color:var(--cyan);
+      padding:5px 8px;
+      border-radius:20px;
+      background:rgba(0,229,255,.07);
+      margin-bottom:10px;
+    }
+
+    .portfolio-info h3{
+      font-size:18px;
+      margin-bottom:7px;
+    }
+
+    .portfolio-info p{
+      color:var(--muted);
+      font-size:12px;
+      min-height:40px;
+      margin-bottom:15px;
+    }
+
+    .portfolio-link{
+      display:inline-flex;
+      color:var(--cyan);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    /* PROCESS */
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+    }
+
+    .process-card{
+      padding:27px 22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--card);
+      text-align:center;
+      position:relative;
+    }
+
+    .process-number{
+      width:48px;
+      height:48px;
+      margin:0 auto 17px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:rgba(0,229,255,.08);
+      border:1px solid rgba(0,229,255,.2);
+      color:var(--cyan);
+      font-weight:900;
+    }
+
+    .process-card h3{
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .process-card p{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* PACKAGES */
+
+    .package-note{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:-30px;
+      margin-bottom:30px;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .price-card{
+      border:1px solid var(--line);
+      background:linear-gradient(145deg,var(--card),rgba(255,255,255,.025));
+      border-radius:22px;
+      padding:30px;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .price-card.popular{
+      border-color:rgba(0,229,255,.38);
+      box-shadow:0 20px 70px rgba(0,229,255,.08);
+      transform:translateY(-8px);
+    }
+
+    .popular-badge{
+      position:absolute;
+      top:17px;
+      right:17px;
+      background:rgba(0,229,255,.1);
+      border:1px solid rgba(0,229,255,.3);
+      color:var(--cyan);
+      border-radius:30px;
+      padding:5px 9px;
+      font-size:9px;
+      font-weight:900;
+    }
+
+    .price-card h3{
+      font-size:21px;
+      margin-bottom:6px;
+    }
+
+    .price-desc{
+      color:var(--muted);
+      font-size:12px;
+      min-height:40px;
+    }
+
+    .price{
+      margin:22px 0 6px;
+      font-size:35px;
+      font-weight:900;
+    }
+
+    .price small{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:normal;
+    }
+
+    .price-start{
+      color:var(--gold);
+      font-size:10px;
+      font-weight:800;
+      margin-bottom:20px;
+    }
+
+    .feature-list{
+      display:grid;
+      gap:10px;
+      margin-bottom:25px;
+      flex:1;
+    }
+
+    .feature-list div{
+      font-size:12px;
+      color:#d4dbea;
+      display:flex;
+      gap:8px;
+    }
+
+    .feature-list b{
+      color:var(--cyan);
+    }
+
+    .suitable{
+      padding:13px;
+      border-radius:12px;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.06);
+      margin-bottom:20px;
+    }
+
+    .suitable strong{
+      display:block;
+      font-size:10px;
+      color:var(--cyan);
+      margin-bottom:3px;
+    }
+
+    .suitable span{
+      font-size:11px;
+      color:#bcc6d9;
+    }
+
+    /* TRUST */
+
+    .trust-box{
+      margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .trust-box-item{
+      padding:17px;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:15px;
+      text-align:center;
+    }
+
+    .trust-box-item strong{
+      display:block;
+      color:var(--cyan);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+
+    .trust-box-item span{
+      color:var(--muted);
+      font-size:10px;
+    }
+
+    /* TESTIMONIAL */
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .testimonial{
+      padding:26px;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:19px;
+    }
+
+    .stars{
+      color:var(--gold);
+      letter-spacing:2px;
+      margin-bottom:13px;
+    }
+
+    .testimonial p{
+      color:#cbd5e1;
+      font-size:13px;
+      margin-bottom:20px;
+    }
+
+    .person{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .avatar{
+      width:39px;
+      height:39px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:rgba(0,229,255,.1);
+      color:var(--cyan);
+      font-weight:900;
+    }
+
+    .person strong{
+      font-size:12px;
+    }
+
+    .person span{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+    }
+
+    /* FAQ */
+
+    .faq{
+      max-width:850px;
+      margin:auto;
+      display:grid;
+      gap:10px;
+    }
+
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:15px;
+      overflow:hidden;
+      background:var(--card);
+    }
+
+    .faq-question{
+      width:100%;
+      border:0;
+      background:none;
+      color:white;
+      padding:18px 20px;
+      text-align:left;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:13px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .faq-question span{
+      color:var(--cyan);
+      font-size:18px;
+    }
+
+    .faq-answer{
+      display:none;
+      padding:0 20px 19px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .faq-item.active .faq-answer{
+      display:block;
+    }
+
+    /* CTA */
+
+    .cta-box{
+      padding:60px 40px;
+      border-radius:28px;
+      border:1px solid rgba(0,229,255,.20);
+      background:
+        radial-gradient(circle at 20% 20%,rgba(0,229,255,.12),transparent 35%),
+        radial-gradient(circle at 80% 80%,rgba(139,92,246,.13),transparent 35%),
+        rgba(255,255,255,.04);
+      text-align:center;
+    }
+
+    .cta-box h2{
+      font-size:clamp(30px,5vw,52px);
+      line-height:1.05;
+      margin-bottom:15px;
+    }
+
+    .cta-box h2 span{
+      color:var(--cyan);
+    }
+
+    .cta-box p{
+      color:var(--muted);
+      max-width:650px;
+      margin:0 auto 25px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:25px;
+    }
+
+    .contact-card,
+    .form-card{
+      padding:28px;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:20px;
+    }
+
+    .contact-card h3,
+    .form-card h3{
+      font-size:22px;
+      margin-bottom:8px;
+    }
+
+    .contact-card > p{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:22px;
+    }
+
+    .contact-item{
+      padding:15px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.025);
+      border-radius:13px;
+      margin-bottom:10px;
+    }
+
+    .contact-item small{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      margin-bottom:3px;
+    }
+
+    .contact-item strong{
+      color:#eaf1ff;
+      font-size:13px;
+    }
+
+    form{
+      display:grid;
+      gap:12px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    input,
+    textarea,
+    select{
+      width:100%;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.20);
+      color:white;
+      padding:13px 14px;
+      border-radius:11px;
+      outline:none;
+      font-family:inherit;
+      font-size:12px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus{
+      border-color:rgba(0,229,255,.4);
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    select option{
+      background:#07111f;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:35px 0 100px;
+      border-top:1px solid rgba(255,255,255,.07);
+      margin-top:20px;
+    }
+
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+    }
+
+    .footer-grid p{
+      color:var(--muted);
+      font-size:11px;
+    }
+
+    .footer-brand{
+      font-weight:900;
+      font-size:18px;
+    }
+
+    .footer-brand span{
+      color:var(--cyan);
+    }
+
+    /* FLOATING WA */
+
+    .wa-float{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:999;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .wa-label{
+      padding:9px 13px;
+      background:#101827;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:10px;
+      color:white;
+      font-size:11px;
+      font-weight:800;
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
+
+    .wa-button{
+      width:57px;
+      height:57px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--green);
+      color:#03130a;
+      font-size:25px;
+      box-shadow:0 10px 35px rgba(37,211,102,.25);
+      animation:pulse 2.5s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{box-shadow:0 10px 35px rgba(37,211,102,.25)}
+      50%{box-shadow:0 10px 45px rgba(37,211,102,.45)}
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      .nav-links{
+        position:absolute;
+        top:74px;
+        left:4%;
+        right:4%;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:18px;
+        border:1px solid var(--line);
+        border-radius:18px;
+        background:rgba(3,7,18,.96);
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        padding:9px 5px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:130px;
+      }
+
+      .hero-visual{
+        min-height:380px;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .process-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .trust-box{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:620px){
+
+      .section{
+        padding:75px 0;
+      }
+
+      .hero h1{
+        letter-spacing:-2px;
+      }
+
+      .hero-text{
+        font-size:15px;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .hero-buttons .btn{
+        width:100%;
+      }
+
+      .stats-grid,
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .testimonial-grid,
+      .process-grid{
+        grid-template-columns:1fr;
+      }
+
+      .price-card.popular{
+        transform:none;
+      }
+
+      .trust-box{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .orbit{
+        width:280px;
+        height:280px;
+      }
+
+      .brand-card{
+        width:210px;
+        padding:23px;
+      }
+
+      .brand-card .ad{
+        width:65px;
+        height:65px;
+        font-size:22px;
+      }
+
+      .cta-box{
+        padding:45px 22px;
+      }
+
+      .footer-grid{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .wa-label{
+        display:none;
+      }
+
+      .wa-float{
+        right:15px;
+        bottom:15px;
+      }
+    }
+  </style>
+
+  <!-- ORGANIZATION / PROFESSIONAL SERVICE -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"ALFA DESIGN",
+    "url":"https://adnan0076767-lgtm.github.io/Alfa-Design/",
+    "description":"Jasa pembuatan website profesional untuk UMKM, sekolah, yayasan, organisasi dan perusahaan.",
+    "telephone":"+6283870874140",
+    "email":"adnanfarisi007@gmail.com",
+    "areaServed":"Indonesia",
+    "serviceType":[
+      "Website UMKM",
+      "Landing Page",
+      "Website Sekolah",
+      "Website Yayasan",
+      "E-Commerce",
+      "Company Profile"
+    ]
   }
+  </script>
 
-  .nav-links.active{
-    right:0;
+  <!-- FAQ SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Apakah ALFA DESIGN menerima pembuatan website untuk UMKM?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ya. ALFA DESIGN menyediakan website profesional untuk UMKM dan bisnis."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Apakah website bisa dibuka di HP?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ya. Website dibuat responsive agar nyaman digunakan di smartphone, tablet dan desktop."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Apakah website bisa menggunakan domain sendiri?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Bisa. Website dapat dipersiapkan untuk menggunakan domain custom."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Apakah tersedia website e-commerce?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ya. ALFA DESIGN dapat membuat konsep website katalog maupun e-commerce sesuai kebutuhan."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Bagaimana cara memesan website?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Hubungi ALFA DESIGN melalui WhatsApp untuk konsultasi kebutuhan website."
+        }
+      }
+    ]
   }
-
-  .menu{
-    display:block;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .services,
-  .portfolio,
-  .testimonials,
-  .pricing{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .process{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .pricing-info{
-    grid-template-columns:1fr;
-  }
-
-  .hero-visual{
-    min-height:400px;
-  }
-
-  .portfolio-cta{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-}
-
-@media(max-width:620px){
-
-  .container{
-    width:90%;
-  }
-
-  section{
-    padding:75px 0;
-  }
-
-  .hero{
-    padding-top:105px;
-  }
-
-  .hero h1{
-    font-size:44px;
-    letter-spacing:-2px;
-  }
-
-  .hero-description{
-    font-size:16px;
-  }
-
-  .hero-stats{
-    gap:20px;
-  }
-
-  .services,
-  .portfolio,
-  .testimonials,
-  .pricing,
-  .process,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .price-card.featured{
-    transform:none;
-  }
-
-  .section-head h2,
-  .about-content h2,
-  .cta h2{
-    font-size:34px;
-  }
-
-  .hero-visual{
-    min-height:320px;
-  }
-
-  .hero-card{
-    width:78%;
-  }
-
-  .about-box{
-    min-height:330px;
-  }
-
-  .buttons .btn{
-    width:100%;
-  }
-
-  .project-actions{
-    flex-direction:column;
-  }
-
-  .whatsapp-label{
-    display:none;
-  }
-
-  .portfolio-cta .btn{
-    width:100%;
-  }
-}
-
-</style>
+  </script>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
 <header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">ALFA<span>DESIGN</span></a>
 
-<div class="container navbar">
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#proses">Proses</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#harga">Harga</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontak" class="nav-cta">Konsultasi</a>
+      </div>
 
-<a href="#home" class="logo">
-ALFA<span>DESIGN</span>
-</a>
-
-<nav class="nav-links" id="navLinks">
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Layanan</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#process">Proses</a>
-<a href="#testimoni">Testimoni</a>
-<a href="#harga">Harga</a>
-<a href="#faq">FAQ</a>
-<a href="#contact" class="nav-cta">Kontak</a>
-
-</nav>
-
-<div class="menu" onclick="toggleMenu()">☰</div>
-
-</div>
-
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </div>
 </header>
 
-
-<!-- ================= HERO ================= -->
-
+<!-- HERO -->
 <section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
 
-<div class="container hero-grid">
+      <div>
+        <div class="badge">✦ DIGITAL CREATIVE STUDIO</div>
 
-<div>
+        <h1>
+          BANGUN IDENTITAS DIGITAL
+          <span>YANG LEBIH PROFESIONAL.</span>
+        </h1>
 
-<div class="badge">
-✦ DIGITAL CREATIVE STUDIO
-</div>
+        <p class="hero-text">
+          Kami membantu UMKM, bisnis, sekolah, yayasan, organisasi dan perusahaan
+          memiliki website modern yang profesional, responsive dan siap digunakan
+          untuk membangun kepercayaan pelanggan.
+        </p>
 
-<h1>
-BANGUN
-<span class="gradient">IDENTITAS DIGITAL</span>
-YANG LEBIH PROFESIONAL.
-</h1>
+        <div class="hero-buttons">
+          <a
+            href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi%20pembuatan%20website."
+            target="_blank"
+            class="btn btn-whatsapp">
+            💬 Konsultasi Gratis
+          </a>
 
-<p class="hero-description">
-ALFA DESIGN membantu UMKM, bisnis, sekolah, yayasan,
-pesantren, organisasi, dan personal memiliki website
-modern yang profesional, responsive, cepat, dan siap
-dipakai untuk membangun kepercayaan pelanggan.
-</p>
+          <a href="#portfolio" class="btn btn-secondary">
+            🚀 Lihat Portfolio
+          </a>
+        </div>
 
-<div class="buttons">
+        <div class="trust-row">
+          <div class="trust-item"><b>✓</b> Responsive</div>
+          <div class="trust-item"><b>✓</b> SEO Friendly</div>
+          <div class="trust-item"><b>✓</b> WhatsApp Ready</div>
+          <div class="trust-item"><b>✓</b> Harga Terjangkau</div>
+        </div>
+      </div>
 
-<a
-class="btn btn-primary"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi%20website."
-target="_blank">
-💬 Konsultasi Gratis
-</a>
+      <div class="hero-visual">
+        <div class="orbit">
+          <div class="orbit-dot dot1"></div>
+          <div class="orbit-dot dot2"></div>
+          <div class="orbit-dot dot3"></div>
+        </div>
 
-<a class="btn btn-dark" href="#portfolio">
-🚀 Lihat Portfolio
-</a>
+        <div class="brand-card">
+          <div class="ad">AD</div>
+          <h3>ALFA DESIGN</h3>
+          <p>Website • Digital • Creative</p>
+        </div>
+      </div>
 
-</div>
-
-<div class="hero-stats">
-
-<div class="hero-stat">
-<strong>100%</strong>
-<span>Responsive</span>
-</div>
-
-<div class="hero-stat">
-<strong>SEO</strong>
-<span>Friendly</span>
-</div>
-
-<div class="hero-stat">
-<strong>24/7</strong>
-<span>Online Contact</span>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="hero-visual">
-
-<div class="orbit"></div>
-<div class="orbit two"></div>
-
-<div class="hero-card">
-
-<div class="hero-icon">💻</div>
-
-<h3>ALFA DESIGN</h3>
-
-<p>
-Creative • Professional • Digital
-</p>
-
-<div class="hero-mini">
-<span>WEBSITE</span>
-<span>BRANDING</span>
-<span>DIGITAL</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Responsive Design</span>
+      </div>
 
-<!-- ================= ABOUT ================= -->
+      <div class="stat">
+        <strong>SEO</strong>
+        <span>Friendly Structure</span>
+      </div>
 
-<section id="about">
-
-<div class="container">
-
-<div class="about-grid">
-
-<div class="about-box">
-
-<div class="about-logo">
-<strong>AD</strong>
-<span>ALFA DESIGN</span>
-</div>
-
-</div>
-
-<div class="about-content">
-
-<div class="kicker">
-ABOUT ALFA DESIGN
-</div>
-
-<h2>
-Kami Membantu Brand Anda Tampil Lebih Profesional.
-</h2>
-
-<p>
-ALFA DESIGN adalah digital creative studio yang berfokus
-pada pembuatan website dan solusi digital untuk membantu
-bisnis, lembaga, organisasi, maupun personal membangun
-kehadiran online.
-</p>
-
-<p>
-Kami menggabungkan desain modern dengan struktur website
-yang responsive, mudah digunakan, dan dapat dikembangkan
-sesuai kebutuhan.
-</p>
-
-<div class="check-list">
-
-<div class="check">
-<b>✓</b>
-Desain modern dan profesional
-</div>
-
-<div class="check">
-<b>✓</b>
-Responsive untuk HP, tablet dan desktop
-</div>
-
-<div class="check">
-<b>✓</b>
-Struktur SEO friendly
-</div>
-
-<div class="check">
-<b>✓</b>
-Integrasi WhatsApp dan social media
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>Online Contact</span>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
 
-<!-- ================= SERVICES ================= -->
+      <div>
+        <div class="about-logo">
+          <div class="about-logo-inner">AD</div>
+        </div>
+      </div>
 
-<section id="services">
+      <div class="about-content">
+        <div class="section-title" style="text-align:left;margin-bottom:25px">
+          <span class="mini">TENTANG ALFA DESIGN</span>
+        </div>
 
-<div class="container">
+        <h2>
+          Bukan Sekadar Website.
+          <span>Kami Bangun Identitas.</span>
+        </h2>
 
-<div class="section-head">
+        <p>
+          Website bukan hanya halaman internet. Website adalah bagian dari
+          identitas profesional sebuah bisnis, organisasi maupun lembaga.
+          Karena itu ALFA DESIGN fokus membuat tampilan yang modern,
+          mudah digunakan dan memiliki tujuan yang jelas.
+        </p>
 
-<div class="kicker">
-LAYANAN KAMI
-</div>
+        <div class="check-list">
+          <div class="check">
+            <i>✓</i>
+            <span>Desain modern dan profesional</span>
+          </div>
 
-<h2>
-Solusi Digital untuk Berbagai Kebutuhan.
-</h2>
+          <div class="check">
+            <i>✓</i>
+            <span>Responsive untuk smartphone, tablet dan desktop</span>
+          </div>
 
-<p>
-Pilih layanan yang sesuai dengan kebutuhan bisnis,
-lembaga, organisasi atau personal Anda.
-</p>
+          <div class="check">
+            <i>✓</i>
+            <span>Struktur website SEO friendly</span>
+          </div>
 
-</div>
+          <div class="check">
+            <i>✓</i>
+            <span>Integrasi WhatsApp untuk memudahkan komunikasi pelanggan</span>
+          </div>
+        </div>
 
+        <a
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi."
+          target="_blank"
+          class="btn btn-primary">
+          Mulai Konsultasi →
+        </a>
+      </div>
 
-<div class="services">
-
-<div class="service">
-<div class="service-icon">🏪</div>
-<h3>Website UMKM</h3>
-<p>
-Website profesional untuk memperkenalkan produk,
-layanan, lokasi, kontak dan identitas bisnis.
-</p>
-<a href="#contact" class="service-link">
-Mulai Project →
-</a>
-</div>
-
-
-<div class="service">
-<div class="service-icon">🚀</div>
-<h3>Landing Page</h3>
-<p>
-Landing page modern untuk promosi produk,
-jasa, campaign, event dan pemasaran digital.
-</p>
-<a href="#contact" class="service-link">
-Mulai Project →
-</a>
-</div>
-
-
-<div class="service">
-<div class="service-icon">🎓</div>
-<h3>Website Sekolah</h3>
-<p>
-Website sekolah untuk profil, program,
-berita, galeri, kegiatan dan informasi siswa.
-</p>
-<a href="#contact" class="service-link">
-Mulai Project →
-</a>
-</div>
-
-
-<div class="service">
-<div class="service-icon">🕌</div>
-<h3>Website Yayasan & Pesantren</h3>
-<p>
-Website lembaga untuk profil, program,
-kegiatan, informasi pendidikan dan kontak.
-</p>
-<a href="#contact" class="service-link">
-Mulai Project →
-</a>
-</div>
-
-
-<div class="service">
-<div class="service-icon">🛒</div>
-<h3>E-Commerce</h3>
-<p>
-Konsep toko online dengan katalog produk,
-pencarian, promosi dan integrasi kontak.
-</p>
-<a href="#contact" class="service-link">
-Mulai Project →
-</a>
-</div>
-
-
-<div class="service">
-<div class="service-icon">💼</div>
-<h3>Company Profile</h3>
-<p>
-Website perusahaan dan profesional untuk
-meningkatkan kepercayaan calon pelanggan.
-</p>
-<a href="#contact" class="service-link">
-Mulai Project →
-</a>
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
-<!-- ================= PORTFOLIO ================= -->
-
-<section id="portfolio">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="kicker">
-PORTFOLIO PROFESIONAL
-</div>
-
-<h2>
-Project & Demo ALFA DESIGN.
-</h2>
-
-<p>
-Beberapa project dan konsep yang dapat menjadi
-referensi untuk kebutuhan website Anda.
-</p>
-
-</div>
-
-
-<div class="portfolio">
-
-
-<!-- ALFA SHOP -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="portfolio-badge">
-LIVE DEMO
-</div>
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>🛒</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>ALFA SHOP</h3>
-
-<p>
-Demo konsep toko online dengan katalog dan
-pengalaman belanja digital.
-</p>
-
-<div class="tags">
-<span class="tag">E-COMMERCE</span>
-<span class="tag">SHOP</span>
-<span class="tag">DEMO</span>
-</div>
-
-<div class="project-actions">
-
-<a
-href="https://adnan0076767-lgtm.github.io/Alfa-Shop/"
-target="_blank">
-Lihat Website
-</a>
-
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20project%20ALFA%20SHOP."
-target="_blank">
-Konsultasi
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- BELAJAR PINTAR -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="portfolio-badge">
-LIVE DEMO
-</div>
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>🎓</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>Belajar Pintar SD</h3>
-
-<p>
-Konsep platform pembelajaran digital untuk
-siswa sekolah dasar.
-</p>
-
-<div class="tags">
-<span class="tag">EDUCATION</span>
-<span class="tag">APP</span>
-<span class="tag">DEMO</span>
-</div>
-
-<div class="project-actions">
-
-<a
-href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/"
-target="_blank">
-Lihat Website
-</a>
-
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20project%20Belajar%20Pintar%20SD."
-target="_blank">
-Konsultasi
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- SUGIH SAWARGI -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="portfolio-badge gold">
-PROJECT
-</div>
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>🥬</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>SUGIH SAWARGI</h3>
-
-<p>
-Website e-commerce untuk distribusi dan
-penjualan sayuran.
-</p>
-
-<div class="tags">
-<span class="tag">E-COMMERCE</span>
-<span class="tag">UMKM</span>
-<span class="tag">VEGETABLE</span>
-</div>
-
-<div class="project-actions">
-
-<a
-href="https://adnan0076767-lgtm.github.io/Sugih-Sawargi/"
-target="_blank">
-Lihat Website
-</a>
-
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20project%20SUGIH%20SAWARGI."
-target="_blank">
-Info
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- YAYASAN -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="portfolio-badge">
-PROJECT
-</div>
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>🏛️</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>Yayasan Sailendra Nusantara</h3>
-
-<p>
-Website profil yayasan untuk lembaga pendidikan,
-sosial dan program organisasi.
-</p>
-
-<div class="tags">
-<span class="tag">YAYASAN</span>
-<span class="tag">PROFILE</span>
-<span class="tag">EDUCATION</span>
-</div>
-
-<div class="project-actions">
-
-<a
-href="https://adnan0076767-lgtm.github.io/Yayasan-Sailendra-Nusantara/"
-target="_blank">
-Lihat Website
-</a>
-
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20Website%20Yayasan."
-target="_blank">
-Konsultasi
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- AI VIDEO ADS -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="portfolio-badge">
-CREATIVE
-</div>
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>🎬</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>ALFA AI Video Ads</h3>
-
-<p>
-Konsep aplikasi kreatif untuk kebutuhan
-konten dan video promosi digital.
-</p>
-
-<div class="tags">
-<span class="tag">AI</span>
-<span class="tag">CREATIVE</span>
-<span class="tag">VIDEO</span>
-</div>
-
-<div class="project-actions">
-
-<a href="#contact">
-Lihat Konsep
-</a>
-
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20dengan%20ALFA%20AI%20Video%20Ads."
-target="_blank">
-Info
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- COMPANY PROFILE -->
-
-<div class="project">
-
-<div class="project-image">
-
-<div class="portfolio-badge">
-CUSTOM
-</div>
-
-<div class="browser">
-
-<div class="browser-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
-
-<div class="browser-body">
-<span>💼</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="project-info">
-
-<h3>Company Profile</h3>
-
-<p>
-Konsep website perusahaan dan organisasi
-dengan tampilan profesional.
-</p>
-
-<div class="tags">
-<span class="tag">CORPORATE</span>
-<span class="tag">PROFILE</span>
-<span class="tag">CUSTOM</span>
-</div>
-
-<div class="project-actions">
-
-<a href="#contact">
-Pesan Website
-</a>
-
-<a
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20membuat%20Company%20Profile."
-target="_blank">
-Konsultasi
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="portfolio-cta">
-
-<div>
-
-<h3>Punya project yang ingin ditampilkan di sini?</h3>
-
-<p>
-Konsultasikan kebutuhan website Anda dan kita bisa mulai dari konsep sederhana.
-</p>
-
-</div>
-
-<a
-class="btn btn-primary"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20membuat%20website."
-target="_blank">
-🚀 Buat Project
-</a>
-
-</div>
-
-</div>
-
+<!-- SERVICES -->
+<section class="section" id="layanan">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="mini">LAYANAN</span>
+      <h2>Solusi Digital Untuk Berbagai Kebutuhan</h2>
+      <p>
+        Pilih jenis website yang sesuai dengan kebutuhan bisnis,
+        lembaga atau organisasi Anda.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🏪</div>
+        <h3>Website UMKM</h3>
+        <p>
+          Tampilkan produk, layanan, lokasi dan kontak bisnis agar terlihat
+          lebih profesional.
+        </p>
+        <a href="#harga" class="service-link">Mulai dari Rp499K →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h3>Landing Page</h3>
+        <p>
+          Halaman promosi fokus konversi untuk produk, jasa, event maupun
+          kampanye digital.
+        </p>
+        <a href="#harga" class="service-link">Lihat Paket →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Website Sekolah</h3>
+        <p>
+          Profil sekolah, informasi akademik, program, berita dan kontak
+          dalam satu website.
+        </p>
+        <a href="#kontak" class="service-link">Konsultasikan →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏛️</div>
+        <h3>Website Yayasan</h3>
+        <p>
+          Website profil profesional untuk yayasan, pesantren, madrasah,
+          lembaga sosial dan program organisasi.
+        </p>
+        <a href="#kontak" class="service-link">Konsultasikan →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>E-Commerce</h3>
+        <p>
+          Katalog produk dan konsep toko online yang dapat dikembangkan
+          sesuai kebutuhan bisnis.
+        </p>
+        <a href="#kontak" class="service-link">Bahas Kebutuhan →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Company Profile</h3>
+        <p>
+          Bangun citra perusahaan dengan website yang profesional dan
+          meyakinkan calon pelanggan.
+        </p>
+        <a href="#kontak" class="service-link">Konsultasikan →</a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
 
-<!-- ================= PROCESS ================= -->
+    <div class="section-title">
+      <span class="mini">PORTFOLIO</span>
+      <h2>Beberapa Project & Demo</h2>
+      <p>
+        Contoh project yang dapat menjadi referensi untuk kebutuhan
+        website Anda.
+      </p>
+    </div>
 
-<section id="process">
+    <div class="portfolio-filters">
+      <button class="filter-btn active" onclick="filterPortfolio('all',this)">Semua</button>
+      <button class="filter-btn" onclick="filterPortfolio('business',this)">Bisnis</button>
+      <button class="filter-btn" onclick="filterPortfolio('education',this)">Pendidikan</button>
+      <button class="filter-btn" onclick="filterPortfolio('organization',this)">Organisasi</button>
+      <button class="filter-btn" onclick="filterPortfolio('creative',this)">Creative</button>
+    </div>
 
-<div class="container">
+    <div class="portfolio-grid">
 
-<div class="section-head">
+      <div class="portfolio-card" data-category="business">
+        <div class="portfolio-preview">
+          <div class="browser">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="browser-body">
+              <div class="browser-line"></div>
+              <div class="browser-line small"></div>
+            </div>
+          </div>
+        </div>
 
-<div class="kicker">
-CARA KERJA
-</div>
+        <div class="portfolio-info">
+          <span class="portfolio-label">LIVE DEMO</span>
+          <h3>ALFA SHOP</h3>
+          <p>Demo konsep toko online UMKM.</p>
+          <a
+            href="https://adnan0076767-lgtm.github.io/Alfa-Shop/"
+            target="_blank"
+            class="portfolio-link">
+            Buka Website →
+          </a>
+        </div>
+      </div>
 
-<h2>
-Dari Ide Menjadi Website.
-</h2>
+      <div class="portfolio-card" data-category="education">
+        <div class="portfolio-preview">
+          <div class="browser">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="browser-body">
+              <div class="browser-line"></div>
+              <div class="browser-line small"></div>
+            </div>
+          </div>
+        </div>
 
-<p>
-Proses sederhana agar project lebih mudah dan terarah.
-</p>
+        <div class="portfolio-info">
+          <span class="portfolio-label">LIVE DEMO</span>
+          <h3>Belajar Pintar SD</h3>
+          <p>Konsep website pendidikan sekolah dasar.</p>
+          <a
+            href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/"
+            target="_blank"
+            class="portfolio-link">
+            Buka Website →
+          </a>
+        </div>
+      </div>
 
-</div>
+      <div class="portfolio-card" data-category="business">
+        <div class="portfolio-preview">
+          <div class="browser">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="browser-body">
+              <div class="browser-line"></div>
+              <div class="browser-line small"></div>
+            </div>
+          </div>
+        </div>
 
+        <div class="portfolio-info">
+          <span class="portfolio-label">PROJECT</span>
+          <h3>SUGIH SAWARGI</h3>
+          <p>Konsep e-commerce distribusi sayuran.</p>
+          <a
+            href="https://adnan0076767-lgtm.github.io/Sugih-Sawargi/"
+            target="_blank"
+            class="portfolio-link">
+            Lihat Project →
+          </a>
+        </div>
+      </div>
 
-<div class="process">
+      <div class="portfolio-card" data-category="organization">
+        <div class="portfolio-preview">
+          <div class="browser">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="browser-body">
+              <div class="browser-line"></div>
+              <div class="browser-line small"></div>
+            </div>
+          </div>
+        </div>
 
-<div class="step">
-<div class="step-number">01</div>
-<h3>Konsultasi</h3>
-<p>
-Ceritakan kebutuhan website dan konsep bisnis Anda.
-</p>
-</div>
+        <div class="portfolio-info">
+          <span class="portfolio-label">PROJECT</span>
+          <h3>Yayasan Sailendra Nusantara</h3>
+          <p>Website profil yayasan dan lembaga.</p>
+          <a
+            href="https://adnan0076767-lgtm.github.io/Yayasan-Sailendra-Nusantara/"
+            target="_blank"
+            class="portfolio-link">
+            Lihat Project →
+          </a>
+        </div>
+      </div>
 
-<div class="step">
-<div class="step-number">02</div>
-<h3>Konsep</h3>
-<p>
-Kami menentukan struktur, fitur dan tampilan website.
-</p>
-</div>
+      <div class="portfolio-card" data-category="creative">
+        <div class="portfolio-preview">
+          <div class="browser">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="browser-body">
+              <div class="browser-line"></div>
+              <div class="browser-line small"></div>
+            </div>
+          </div>
+        </div>
 
-<div class="step">
-<div class="step-number">03</div>
-<h3>Pengerjaan</h3>
-<p>
-Website dibuat responsive dan disesuaikan dengan project.
-</p>
-</div>
+        <div class="portfolio-info">
+          <span class="portfolio-label">CREATIVE</span>
+          <h3>ALFA AI VIDEO ADS</h3>
+          <p>Konsep creative advertising untuk promosi digital.</p>
+          <a href="#kontak" class="portfolio-link">
+            Konsultasikan →
+          </a>
+        </div>
+      </div>
 
-<div class="step">
-<div class="step-number">04</div>
-<h3>Publish</h3>
-<p>
-Website siap dipublikasikan dan digunakan.
-</p>
-</div>
+      <div class="portfolio-card" data-category="business">
+        <div class="portfolio-preview">
+          <div class="browser">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="browser-body">
+              <div class="browser-line"></div>
+              <div class="browser-line small"></div>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="portfolio-info">
+          <span class="portfolio-label">CUSTOM</span>
+          <h3>Company Profile</h3>
+          <p>Konsep website perusahaan sesuai kebutuhan brand.</p>
+          <a href="#kontak" class="portfolio-link">
+            Buat Project →
+          </a>
+        </div>
+      </div>
 
-</div>
-
+    </div>
+  </div>
 </section>
 
+<!-- PROCESS -->
+<section class="section" id="proses">
+  <div class="container">
 
-<!-- ================= TESTIMONIAL ================= -->
+    <div class="section-title">
+      <span class="mini">PROSES</span>
+      <h2>Simple. Jelas. Terarah.</h2>
+      <p>
+        Proses dibuat sederhana supaya Anda tidak perlu pusing dengan
+        hal teknis.
+      </p>
+    </div>
 
-<section id="testimoni">
+    <div class="process-grid">
 
-<div class="container">
+      <div class="process-card">
+        <div class="process-number">01</div>
+        <h3>Konsultasi</h3>
+        <p>Diskusikan kebutuhan, tujuan dan konsep website.</p>
+      </div>
 
-<div class="section-head">
+      <div class="process-card">
+        <div class="process-number">02</div>
+        <h3>Konsep</h3>
+        <p>Menentukan struktur, konten dan tampilan website.</p>
+      </div>
 
-<div class="kicker">
-TESTIMONI
-</div>
+      <div class="process-card">
+        <div class="process-number">03</div>
+        <h3>Pengerjaan</h3>
+        <p>Website dikembangkan sesuai konsep yang disepakati.</p>
+      </div>
 
-<h2>
-Kepercayaan Adalah Prioritas.
-</h2>
+      <div class="process-card">
+        <div class="process-number">04</div>
+        <h3>Publish</h3>
+        <p>Website siap online dan dapat dibagikan kepada pelanggan.</p>
+      </div>
 
-<p>
-Contoh tampilan testimonial untuk social proof.
-</p>
-
-</div>
-
-
-<div class="testimonials">
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-"Website terlihat modern dan profesional.
-Sangat cocok untuk memperkenalkan bisnis kami
-kepada calon pelanggan."
-</p>
-
-<div class="person">
-
-<div class="avatar">A</div>
-
-<div>
-<b>Andi</b><br>
-<small>Owner UMKM</small>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-"Tampilannya responsive dan mudah digunakan.
-Konsepnya juga terlihat jauh lebih profesional."
-</p>
-
-<div class="person">
-
-<div class="avatar">R</div>
-
-<div>
-<b>Rina</b><br>
-<small>Entrepreneur</small>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-"Website membantu bisnis kami terlihat lebih
-serius dan terpercaya di internet."
-</p>
-
-<div class="person">
-
-<div class="avatar">D</div>
-
-<div>
-<b>Deni</b><br>
-<small>Business Owner</small>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
+<!-- PRICING -->
+<section class="section" id="harga">
+  <div class="container">
 
-<!-- ================= PRICING ================= -->
+    <div class="section-title">
+      <span class="mini">PAKET HARGA</span>
+      <h2>Pilih Paket Sesuai Kebutuhan</h2>
+      <p>
+        Harga awal untuk membantu menentukan pilihan. Kebutuhan custom
+        dapat dikonsultasikan terlebih dahulu.
+      </p>
+    </div>
 
-<section id="harga">
+    <p class="package-note">
+      💡 Semua paket dapat disesuaikan dengan kebutuhan project.
+    </p>
 
-<div class="container">
+    <div class="pricing-grid">
 
-<div class="section-head">
+      <!-- STARTER -->
+      <div class="price-card">
 
-<div class="kicker">
-PAKET WEBSITE
-</div>
+        <h3>STARTER</h3>
 
-<h2>
-Pilih Paket Sesuai Kebutuhan.
-</h2>
+        <p class="price-desc">
+          Cocok untuk UMKM atau bisnis yang baru mulai membangun kehadiran online.
+        </p>
 
-<p>
-Harga awal dapat disesuaikan berdasarkan fitur,
-jumlah halaman dan tingkat kesulitan project.
-</p>
+        <div class="price">
+          Rp499K
+          <small>/project</small>
+        </div>
 
-</div>
+        <div class="price-start">MULAI DARI</div>
 
+        <div class="suitable">
+          <strong>COCOK UNTUK</strong>
+          <span>UMKM • Personal Brand • Jasa</span>
+        </div>
 
-<div class="pricing">
+        <div class="feature-list">
+          <div><b>✓</b> Landing page profesional</div>
+          <div><b>✓</b> Responsive mobile</div>
+          <div><b>✓</b> Tombol WhatsApp</div>
+          <div><b>✓</b> Informasi bisnis</div>
+          <div><b>✓</b> SEO basic</div>
+        </div>
 
+        <a
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20tertarik%20dengan%20paket%20STARTER%20Rp499K."
+          target="_blank"
+          class="btn btn-secondary">
+          Pilih Starter →
+        </a>
 
-<!-- STARTER -->
+      </div>
 
-<div class="price-card">
+      <!-- PROFESSIONAL -->
+      <div class="price-card popular">
 
-<h3>STARTER</h3>
+        <div class="popular-badge">BEST SELLER</div>
 
-<div class="price">
-Rp499K
-</div>
+        <h3>PROFESSIONAL</h3>
 
-<p>
-Untuk personal dan usaha kecil yang ingin
-memiliki identitas online profesional.
-</p>
+        <p class="price-desc">
+          Pilihan ideal untuk bisnis yang ingin terlihat lebih serius dan profesional.
+        </p>
 
-<div class="features">
+        <div class="price">
+          Rp999K
+          <small>/project</small>
+        </div>
 
-<div>✓ Landing Page</div>
-<div>✓ Responsive Mobile</div>
-<div>✓ Desain Modern</div>
-<div>✓ WhatsApp</div>
-<div>✓ Basic SEO</div>
-<div>✓ Publish Website</div>
+        <div class="price-start">MULAI DARI</div>
 
-</div>
+        <div class="suitable">
+          <strong>COCOK UNTUK</strong>
+          <span>Bisnis • UMKM berkembang • Organisasi</span>
+        </div>
 
-<a
-class="btn btn-dark"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20STARTER%20Rp499K.%20Saya%20ingin%20konsultasi."
-target="_blank">
-💬 Pilih Starter
-</a>
+        <div class="feature-list">
+          <div><b>✓</b> Website multi-section</div>
+          <div><b>✓</b> Responsive mobile & desktop</div>
+          <div><b>✓</b> WhatsApp conversion</div>
+          <div><b>✓</b> SEO friendly</div>
+          <div><b>✓</b> Portfolio / galeri</div>
+          <div><b>✓</b> Form kontak</div>
+        </div>
 
-<div class="price-note">
-Cocok untuk mulai membangun kehadiran online.
-</div>
+        <a
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20tertarik%20dengan%20paket%20PROFESSIONAL%20Rp999K."
+          target="_blank"
+          class="btn btn-primary">
+          Pilih Professional →
+        </a>
 
-</div>
+      </div>
 
+      <!-- BUSINESS -->
+      <div class="price-card">
 
-<!-- PROFESSIONAL -->
+        <h3>BUSINESS</h3>
 
-<div class="price-card featured">
+        <p class="price-desc">
+          Untuk perusahaan atau project yang membutuhkan website lebih lengkap.
+        </p>
 
-<div class="popular">
-BEST SELLER
-</div>
+        <div class="price">
+          Rp1,9JT
+          <small>/project</small>
+        </div>
 
-<h3>PROFESSIONAL</h3>
+        <div class="price-start">MULAI DARI</div>
 
-<div class="price">
-Rp999K
-</div>
+        <div class="suitable">
+          <strong>COCOK UNTUK</strong>
+          <span>Perusahaan • Yayasan • E-Commerce</span>
+        </div>
 
-<p>
-Untuk UMKM dan bisnis yang membutuhkan
-website lebih lengkap dan profesional.
-</p>
+        <div class="feature-list">
+          <div><b>✓</b> Website custom</div>
+          <div><b>✓</b> Struktur lebih lengkap</div>
+          <div><b>✓</b> Katalog / portfolio</div>
+          <div><b>✓</b> WhatsApp integration</div>
+          <div><b>✓</b> SEO friendly</div>
+          <div><b>✓</b> Custom kebutuhan project</div>
+        </div>
 
-<div class="features">
+        <a
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi%20paket%20BUSINESS%20Rp1%2C9JT."
+          target="_blank"
+          class="btn btn-secondary">
+          Konsultasi Business →
+        </a>
 
-<div>✓ Website Profesional</div>
-<div>✓ Responsive</div>
-<div>✓ Portfolio</div>
-<div>✓ Testimoni</div>
-<div>✓ WhatsApp Integration</div>
-<div>✓ Basic SEO</div>
-<div>✓ Social Media</div>
-<div>✓ Multi Section</div>
+      </div>
 
-</div>
+    </div>
 
-<a
-class="btn btn-primary"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20PROFESSIONAL%20Rp999K.%20Saya%20ingin%20konsultasi."
-target="_blank">
-🚀 Pilih Professional
-</a>
+    <div class="trust-box">
+      <div class="trust-box-item">
+        <strong>💬 Konsultasi</strong>
+        <span>Diskusikan kebutuhan dahulu</span>
+      </div>
 
-<div class="price-note">
-Pilihan rekomendasi untuk UMKM & bisnis.
-</div>
+      <div class="trust-box-item">
+        <strong>📱 Responsive</strong>
+        <span>Nyaman di berbagai perangkat</span>
+      </div>
 
-</div>
+      <div class="trust-box-item">
+        <strong>🚀 Siap Online</strong>
+        <span>Website siap dipublikasikan</span>
+      </div>
 
+      <div class="trust-box-item">
+        <strong>⚙️ Custom</strong>
+        <span>Dapat disesuaikan kebutuhan</span>
+      </div>
+    </div>
 
-<!-- BUSINESS -->
-
-<div class="price-card">
-
-<h3>BUSINESS</h3>
-
-<div class="price">
-Rp1,9JT
-</div>
-
-<p>
-Untuk perusahaan, organisasi dan project
-yang membutuhkan konsep lebih custom.
-</p>
-
-<div class="features">
-
-<div>✓ Custom Design</div>
-<div>✓ Multi Section</div>
-<div>✓ Portfolio</div>
-<div>✓ Testimoni</div>
-<div>✓ SEO Structure</div>
-<div>✓ Social Media</div>
-<div>✓ Konsultasi</div>
-<div>✓ Custom Feature</div>
-
-</div>
-
-<a
-class="btn btn-dark"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20tertarik%20Paket%20BUSINESS%20Rp1,9JT.%20Saya%20ingin%20konsultasi."
-target="_blank">
-💼 Konsultasi Business
-</a>
-
-<div class="price-note">
-Fitur dan harga dapat disesuaikan dengan kebutuhan.
-</div>
-
-</div>
-
-</div>
-
-
-<div class="pricing-info">
-
-<div class="pricing-info-box">
-<strong>💬 Konsultasi</strong>
-<span>Diskusikan kebutuhan sebelum menentukan paket.</span>
-</div>
-
-<div class="pricing-info-box">
-<strong>📱 Responsive</strong>
-<span>Website dirancang untuk HP, tablet dan desktop.</span>
-</div>
-
-<div class="pricing-info-box">
-<strong>⚡ Custom</strong>
-<span>Fitur dapat disesuaikan berdasarkan project.</span>
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- TESTIMONIAL -->
+<section class="section" id="testimoni">
+  <div class="container">
 
-<!-- ================= FAQ ================= -->
+    <div class="section-title">
+      <span class="mini">TESTIMONI</span>
+      <h2>Pengalaman Project</h2>
+      <p>
+        Contoh format social proof yang dapat dikembangkan bersama
+        feedback dari klien nyata.
+      </p>
+    </div>
 
-<section id="faq">
+    <div class="testimonial-grid">
 
-<div class="container">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Website terlihat lebih profesional dan lebih mudah dibagikan
+          kepada pelanggan.”
+        </p>
 
-<div class="section-head">
+        <div class="person">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Andi</strong>
+            <span>Contoh testimonial</span>
+          </div>
+        </div>
+      </div>
 
-<div class="kicker">
-FAQ
-</div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Tampilannya modern dan pelanggan jadi lebih mudah melihat
+          informasi bisnis.”
+        </p>
 
-<h2>
-Pertanyaan yang Sering Ditanyakan.
-</h2>
+        <div class="person">
+          <div class="avatar">R</div>
+          <div>
+            <strong>Rina</strong>
+            <span>Contoh testimonial</span>
+          </div>
+        </div>
+      </div>
 
-<p>
-Klik pertanyaan untuk melihat jawabannya.
-</p>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Proses konsultasinya sederhana dan kebutuhan website bisa
+          dijelaskan melalui WhatsApp.”
+        </p>
 
-</div>
+        <div class="person">
+          <div class="avatar">D</div>
+          <div>
+            <strong>Deni</strong>
+            <span>Contoh testimonial</span>
+          </div>
+        </div>
+      </div>
 
-
-<div class="faq">
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Berapa harga pembuatan website?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Harga mulai dari Rp499.000 untuk paket Starter.
-Harga final dapat disesuaikan dengan fitur,
-jumlah halaman dan tingkat kompleksitas website.
-</p>
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Berapa lama website selesai?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Waktu pengerjaan bergantung pada ukuran project.
-Landing page sederhana dapat dikerjakan lebih cepat,
-sedangkan website kompleks membutuhkan waktu lebih lama.
-</p>
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Apakah website bisa dibuka di HP?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Ya. Website dibuat responsive sehingga dapat menyesuaikan
-tampilan smartphone, tablet dan komputer.
-</p>
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Apakah bisa membuat website UMKM?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Bisa. ALFA DESIGN dapat membuat website UMKM lengkap
-dengan profil bisnis, produk, layanan, galeri, lokasi,
-kontak dan tombol WhatsApp.
-</p>
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Apakah bisa membuat website sekolah atau pesantren?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Bisa. Website dapat dibuat untuk sekolah, yayasan,
-pesantren dan lembaga pendidikan dengan struktur
-yang disesuaikan kebutuhan.
-</p>
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Apakah bisa request desain sendiri?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Bisa. Anda dapat memberikan contoh website, warna,
-logo, gambar atau konsep yang diinginkan untuk dijadikan
-referensi desain.
-</p>
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Bagaimana cara memesan?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Klik tombol WhatsApp di website ini dan kirimkan kebutuhan
-project Anda. Kita dapat mendiskusikan konsep, fitur,
-harga dan proses pengerjaannya.
-</p>
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
 
-<!-- ================= CTA ================= -->
+    <div class="section-title">
+      <span class="mini">FAQ</span>
+      <h2>Pertanyaan Yang Sering Ditanyakan</h2>
+      <p>
+        Masih bingung mulai dari mana? Cek beberapa pertanyaan berikut.
+      </p>
+    </div>
 
-<section>
+    <div class="faq">
 
-<div class="container">
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah ALFA DESIGN menerima website UMKM?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Ya. Website UMKM menjadi salah satu layanan utama ALFA DESIGN.
+        </div>
+      </div>
 
-<div class="cta">
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah website responsive?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Ya. Website dirancang agar dapat menyesuaikan tampilan
+          smartphone, tablet dan desktop.
+        </div>
+      </div>
 
-<h2>
-Punya Ide Website?
-<span class="gradient">Mari Wujudkan.</span>
-</h2>
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah bisa menggunakan domain sendiri?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Bisa. Website dapat dipersiapkan untuk menggunakan domain custom.
+        </div>
+      </div>
 
-<p>
-Jangan biarkan bisnis atau organisasi Anda terlihat biasa.
-Bangun identitas digital profesional bersama ALFA DESIGN.
-</p>
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah tersedia e-commerce?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Ya. Konsep katalog maupun e-commerce dapat dibuat sesuai kebutuhan.
+        </div>
+      </div>
 
-<div class="buttons" style="justify-content:center;">
+      <div class="faq-item">
+        <button class="faq-question">
+          Bagaimana cara memesan?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Klik tombol WhatsApp dan jelaskan kebutuhan website Anda.
+          Konsultasi awal dapat dilakukan melalui WhatsApp.
+        </div>
+      </div>
 
-<a
-class="btn btn-primary"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20punya%20ide%20website%20dan%20ingin%20konsultasi."
-target="_blank">
-🚀 Mulai Project
-</a>
+    </div>
 
-<a
-class="btn btn-dark"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi%20mengenai%20paket%20website."
-target="_blank">
-💬 Tanya Paket
-</a>
-
-</div>
-
-<div class="cta-trust">
-✓ Konsultasi awal gratis &nbsp; • &nbsp;
-✓ Harga dapat disesuaikan &nbsp; • &nbsp;
-✓ Website responsive
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- CTA -->
+<section class="section">
+  <div class="container">
 
-<!-- ================= CONTACT ================= -->
+    <div class="cta-box">
+      <h2>
+        Siap Membuat Website
+        <span>Lebih Profesional?</span>
+      </h2>
 
-<section id="contact">
+      <p>
+        Ceritakan kebutuhan Anda. Kami bantu menentukan konsep website
+        yang paling sesuai dengan bisnis atau organisasi Anda.
+      </p>
 
-<div class="container">
+      <a
+        href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20membuat%20website%20dan%20ingin%20konsultasi."
+        target="_blank"
+        class="btn btn-whatsapp">
+        💬 Chat WhatsApp Sekarang
+      </a>
+    </div>
 
-<div class="section-head">
-
-<div class="kicker">
-CONTACT
-</div>
-
-<h2>
-Mari Diskusikan Project Anda.
-</h2>
-
-<p>
-Isi form di samping dan pesan akan langsung diarahkan ke WhatsApp.
-</p>
-
-</div>
-
-
-<div class="contact-grid">
-
-
-<div class="contact-card">
-
-<div class="contact-info">
-
-
-<div class="contact-item">
-
-<div class="contact-icon">
-💬
-</div>
-
-<div>
-
-<h4>WhatsApp</h4>
-
-<p>
-0838-7087-4140
-</p>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="contact-icon">
-🌐
-</div>
-
-<div>
-
-<h4>ALFA DESIGN</h4>
-
-<p>
-Digital Creative Studio
-</p>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="contact-icon">
-💻
-</div>
-
-<div>
-
-<h4>Layanan</h4>
-
-<p>
-Website • Landing Page • UMKM • Sekolah • Yayasan • Business
-</p>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="contact-icon">
-⚡
-</div>
-
-<div>
-
-<h4>Konsultasi</h4>
-
-<p>
-Diskusikan kebutuhan website Anda melalui WhatsApp.
-</p>
-
-</div>
-
-</div>
-
-
-<a
-class="btn btn-primary"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi."
-target="_blank">
-💬 Chat WhatsApp
-</a>
-
-</div>
-
-</div>
-
-
-<div class="contact-card">
-
-<form class="form" onsubmit="sendWhatsApp(event)">
-
-<input
-id="nama"
-type="text"
-placeholder="Nama Anda"
-required>
-
-<input
-id="project"
-type="text"
-placeholder="Jenis Website / Project"
-required>
-
-<input
-id="budget"
-type="text"
-placeholder="Budget / Paket (opsional)">
-
-<textarea
-id="pesan"
-placeholder="Ceritakan kebutuhan website Anda..."
-required></textarea>
-
-<button
-class="btn btn-primary"
-type="submit">
-🚀 Kirim ke WhatsApp
-</button>
-
-<div class="form-note">
-Pesan akan dibuka melalui WhatsApp Anda.
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- CONTACT -->
+<section class="section" id="kontak">
+  <div class="container">
 
-<!-- ================= FOOTER ================= -->
+    <div class="section-title">
+      <span class="mini">KONTAK</span>
+      <h2>Mulai Dari Konsultasi</h2>
+      <p>
+        Tidak harus langsung menentukan paket. Ceritakan dulu kebutuhan
+        website Anda.
+      </p>
+    </div>
 
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <h3>ALFA DESIGN</h3>
+
+        <p>
+          Digital Creative Studio untuk kebutuhan website dan identitas
+          digital profesional.
+        </p>
+
+        <div class="contact-item">
+          <small>WHATSAPP</small>
+          <strong>0838-7087-4140</strong>
+        </div>
+
+        <div class="contact-item">
+          <small>EMAIL</small>
+          <strong>adnanfarisi007@gmail.com</strong>
+        </div>
+
+        <div class="contact-item">
+          <small>LAYANAN</small>
+          <strong>Website • Landing Page • E-Commerce • Company Profile</strong>
+        </div>
+
+        <a
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi."
+          target="_blank"
+          class="btn btn-whatsapp"
+          style="width:100%;margin-top:10px;">
+          💬 Chat WhatsApp
+        </a>
+
+      </div>
+
+      <div class="form-card">
+
+        <h3>Kirim Detail Project</h3>
+
+        <p style="color:var(--muted);font-size:12px;margin-bottom:20px;">
+          Isi form berikut dan lanjutkan ke WhatsApp.
+        </p>
+
+        <form onsubmit="sendWhatsApp(event)">
+
+          <div class="form-row">
+            <input
+              id="name"
+              type="text"
+              placeholder="Nama"
+              required>
+
+            <select id="project" required>
+              <option value="">Jenis Project</option>
+              <option>Website UMKM</option>
+              <option>Landing Page</option>
+              <option>Website Sekolah</option>
+              <option>Website Yayasan</option>
+              <option>E-Commerce</option>
+              <option>Company Profile</option>
+              <option>Project Custom</option>
+            </select>
+          </div>
+
+          <select id="budget" required>
+            <option value="">Perkiraan Budget</option>
+            <option>Di bawah Rp500K</option>
+            <option>Rp500K - Rp1JT</option>
+            <option>Rp1JT - Rp2JT</option>
+            <option>Di atas Rp2JT</option>
+            <option>Belum tahu / ingin konsultasi</option>
+          </select>
+
+          <textarea
+            id="message"
+            placeholder="Ceritakan kebutuhan website Anda..."
+            required></textarea>
+
+          <button type="submit" class="btn btn-primary">
+            Kirim ke WhatsApp →
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
+  <div class="container">
+    <div class="footer-grid">
 
-<div class="container">
+      <div class="footer-brand">
+        ALFA<span>DESIGN</span>
+      </div>
 
-<div class="footer-grid">
+      <p>
+        © 2026 ALFA DESIGN. Website & Digital Design.
+      </p>
 
+      <p>
+        Profesional • Responsive • Modern
+      </p>
 
-<div>
-
-<div class="logo">
-ALFA<span>DESIGN</span>
-</div>
-
-<p class="footer-brand">
-Digital creative studio untuk website profesional,
-UMKM, sekolah, yayasan, pesantren, organisasi,
-bisnis dan personal.
-</p>
-
-</div>
-
-
-<div>
-
-<h4>Navigasi</h4>
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Layanan</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#harga">Harga</a>
-<a href="#faq">FAQ</a>
-
-</div>
-
-
-<div>
-
-<h4>Portfolio</h4>
-
-<a
-href="https://adnan0076767-lgtm.github.io/Alfa-Shop/"
-target="_blank">
-ALFA SHOP
-</a>
-
-<a
-href="https://adnan0076767-lgtm.github.io/belajar-pintar-sd/"
-target="_blank">
-Belajar Pintar SD
-</a>
-
-<a
-href="https://adnan0076767-lgtm.github.io/Sugih-Sawargi/"
-target="_blank">
-SUGIH SAWARGI
-</a>
-
-<a
-href="https://adnan0076767-lgtm.github.io/Yayasan-Sailendra-Nusantara/"
-target="_blank">
-Yayasan Sailendra Nusantara
-</a>
-
-<a
-class="footer-wa"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi."
-target="_blank">
-💬 WhatsApp: 0838-7087-4140
-</a>
-
-</div>
-
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 <b>ALFA DESIGN</b> — Digital Creative Studio.
-All Rights Reserved.
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+<div class="wa-float">
+  <div class="wa-label" id="waLabel">
+    Konsultasi Gratis
+  </div>
 
-<!-- ================= FLOAT WHATSAPP ================= -->
-
-<div class="whatsapp-label">
-Chat ALFA DESIGN
+  <a
+    class="wa-button"
+    href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN%2C%20saya%20ingin%20konsultasi%20website."
+    target="_blank"
+    aria-label="Chat WhatsApp">
+    💬
+  </a>
 </div>
-
-<a
-class="whatsapp"
-href="https://wa.me/6283870874140?text=Halo%20ALFA%20DESIGN,%20saya%20ingin%20konsultasi%20website."
-target="_blank"
-aria-label="WhatsApp">
-☎
-</a>
-
 
 <script>
 
-/* ================= MOBILE MENU ================= */
+  /* MOBILE MENU */
 
-function toggleMenu(){
+  function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+  }
 
-const nav=document.getElementById("navLinks");
-
-nav.classList.toggle("active");
-
-}
-
-
-/* ================= CLOSE MOBILE MENU ================= */
-
-document.querySelectorAll(".nav-links a").forEach(function(link){
-
-link.addEventListener("click",function(){
-
-document.getElementById("navLinks").classList.remove("active");
-
-});
-
-});
+  document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      document.getElementById("navLinks").classList.remove("show");
+    });
+  });
 
 
-/* ================= FAQ ================= */
+  /* FAQ */
 
-document.querySelectorAll(".faq-question").forEach(function(button){
+  document.querySelectorAll(".faq-question").forEach(button=>{
+    button.addEventListener("click",()=>{
 
-button.addEventListener("click",function(){
+      const item = button.parentElement;
+      const isActive = item.classList.contains("active");
 
-const item=this.parentElement;
+      document.querySelectorAll(".faq-item").forEach(el=>{
+        el.classList.remove("active");
+        const span = el.querySelector(".faq-question span");
+        if(span) span.textContent = "+";
+      });
 
-document.querySelectorAll(".faq-item").forEach(function(other){
+      if(!isActive){
+        item.classList.add("active");
+        const span = button.querySelector("span");
+        if(span) span.textContent = "−";
+      }
 
-if(other!==item){
-other.classList.remove("active");
-}
-
-});
-
-item.classList.toggle("active");
-
-});
-
-});
-
-
-/* ================= WHATSAPP FORM ================= */
-
-function sendWhatsApp(event){
-
-event.preventDefault();
-
-const nama=document.getElementById("nama").value.trim();
-const project=document.getElementById("project").value.trim();
-const budget=document.getElementById("budget").value.trim();
-const pesan=document.getElementById("pesan").value.trim();
-
-const text =
-"Halo ALFA DESIGN,%0A%0A" +
-"Nama: " + encodeURIComponent(nama) + "%0A" +
-"Project: " + encodeURIComponent(project) + "%0A" +
-"Budget/Paket: " + encodeURIComponent(budget || "-") + "%0A%0A" +
-"Kebutuhan:%0A" +
-encodeURIComponent(pesan) +
-"%0A%0ASaya ingin konsultasi lebih lanjut.";
-
-window.open(
-"https://wa.me/6283870874140?text=" + text,
-"_blank"
-);
-
-}
+    });
+  });
 
 
-/* ================= SMART WHATSAPP LABEL ================= */
+  /* PORTFOLIO FILTER */
 
-let waLabel=document.querySelector(".whatsapp-label");
+  function filterPortfolio(category, button){
 
-setTimeout(function(){
+    document.querySelectorAll(".filter-btn").forEach(btn=>{
+      btn.classList.remove("active");
+    });
 
-if(waLabel){
-waLabel.style.opacity="0";
-waLabel.style.transition="opacity .8s";
-}
+    button.classList.add("active");
 
-},5000);
+    document.querySelectorAll(".portfolio-card").forEach(card=>{
+
+      if(category === "all"){
+        card.style.display = "";
+      }else{
+        card.style.display =
+          card.dataset.category === category ? "" : "none";
+      }
+
+    });
+  }
+
+
+  /* WHATSAPP FORM */
+
+  function sendWhatsApp(event){
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const project =
+      document.getElementById("project").value;
+
+    const budget =
+      document.getElementById("budget").value;
+
+    const message =
+      document.getElementById("message").value.trim();
+
+    const text =
+      "Halo ALFA DESIGN,%0A%0A" +
+      "Nama: " + encodeURIComponent(name) + "%0A" +
+      "Jenis Project: " + encodeURIComponent(project) + "%0A" +
+      "Budget: " + encodeURIComponent(budget) + "%0A%0A" +
+      "Kebutuhan:%0A" +
+      encodeURIComponent(message);
+
+    window.open(
+      "https://wa.me/6283870874140?text=" + text,
+      "_blank"
+    );
+  }
+
+
+  /* FLOATING LABEL */
+
+  setTimeout(()=>{
+    const label = document.getElementById("waLabel");
+
+    if(label){
+      label.style.transition = "opacity .5s";
+      label.style.opacity = "0";
+    }
+  },7000);
 
 </script>
 
