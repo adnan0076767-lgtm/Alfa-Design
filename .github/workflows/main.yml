@@ -1,4 +1,4 @@
-name: Update ALFA DESIGN Preview
+name: Fix ALFA DESIGN Preview Image
 
 on:
   workflow_dispatch:
@@ -7,14 +7,14 @@ permissions:
   contents: write
 
 jobs:
-  update-preview:
+  fix-preview:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Replace preview image
+      - name: Fix OG and Twitter image
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -22,30 +22,35 @@ jobs:
           file = Path("index.html")
           text = file.read_text(encoding="utf-8")
 
-          old = "ALFA-BANNER.png"
-          new = "LOGO-PREVIEW-ALFA.jpg"
+          old_url = "https://adnan0076767-lgtm.github.io/Alfa-Design/ALFA-BANNER.png"
+          new_url = "https://adnan0076767-lgtm.github.io/Alfa-Design/LOGO-PREVIEW-ALFA.jpg"
 
-          if old not in text:
-              print("ALFA-BANNER.png tidak ditemukan.")
-              raise SystemExit(0)
+          count = text.count(old_url)
 
-          updated = text.replace(old, new)
-          file.write_text(updated, encoding="utf-8")
+          print(f"Ditemukan {count} URL lama.")
 
-          print("Preview image berhasil diganti.")
+          if count == 0:
+              raise SystemExit("URL lama tidak ditemukan.")
+
+          text = text.replace(old_url, new_url)
+
+          file.write_text(text, encoding="utf-8")
+
+          print("OG/Twitter preview berhasil diperbarui.")
           PY
 
-      - name: Commit perubahan
+      - name: Verify
+        run: |
+          grep -n "og:image" index.html
+          grep -n "twitter:image" index.html
+
+      - name: Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add index.html
 
-          if git diff --cached --quiet; then
-            echo "Tidak ada perubahan."
-            exit 0
-          fi
+          git commit -m "Fix ALFA DESIGN preview image"
 
-          git commit -m "Set ALFA DESIGN social preview image"
           git push
